@@ -92,8 +92,8 @@ const Index = () => {
               transition={{ duration: 0.8, delay: 0.6 }}
             >
               <AnimatedCounter 
-                end={1} 
-                suffix="-Minute" 
+                end={0} 
+                prefix="T+" 
                 label="Settlement" 
                 icon={<Zap className="w-8 h-8 text-navy-deep" />}
               />
@@ -254,7 +254,7 @@ const Index = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
             {[
-              { icon: Zap, title: "Instant Settlement", desc: "Complete transactions in under 1 minute with real-time processing and confirmation." },
+              { icon: Zap, title: "Instant Settlement", desc: "T+0 settlement with real-time processing and confirmation on the same business day." },
               { icon: Clock, title: "24/7 Availability", desc: "Never stop operating. Our infrastructure runs continuously regardless of banking hours." },
               { icon: Shield, title: "Regulated Compliance", desc: "Built under U.S. MSB standards with full AML/CFT and OFAC adherence." },
               { icon: Globe, title: "Built for Africa", desc: "Optimized infrastructure designed specifically for Sub-Saharan regional requirements." },
