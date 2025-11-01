@@ -1,290 +1,466 @@
-import { ArrowRight, Zap, Clock, Shield, Globe, Vault, Network, CheckCircle2, Building2, Heart, Briefcase, TrendingUp, Users } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
+import { ArrowRight, Zap, Clock, Shield, Globe, Vault, Network, Building2, Heart, Briefcase, TrendingUp, Users, Link2, CheckCircle2, Lock, FileCheck, Eye } from "lucide-react";
+import { motion } from "framer-motion";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import StatCounter from "@/components/StatCounter";
-import FeatureCard from "@/components/FeatureCard";
-import UseCaseCard from "@/components/UseCaseCard";
-import heroNetwork from "@/assets/hero-network.jpg";
+import AnimatedGlobe from "@/components/AnimatedGlobe";
+import GlassPanel from "@/components/GlassPanel";
+import AnimatedCounter from "@/components/AnimatedCounter";
+import ScrollReveal from "@/components/ScrollReveal";
+import RippleButton from "@/components/RippleButton";
+import FlowStep from "@/components/FlowStep";
+import UseCaseCarousel from "@/components/UseCaseCarousel";
+import AfricaMapNetwork from "@/components/AfricaMapNetwork";
+import CurvedDivider from "@/components/CurvedDivider";
+import dashboardMockup from "@/assets/dashboard-mockup.jpg";
 
 const Index = () => {
+  const useCases = [
+    {
+      icon: Building2,
+      title: "Banks & FX Desks",
+      description: "Park reserves in stablecoins to hedge volatility and retain value. Access institutional-grade custody and instant liquidity."
+    },
+    {
+      icon: Users,
+      title: "Fintechs & PSPs",
+      description: "Integrate our rails to enable stablecoin settlement. Embed compliant infrastructure directly into your platform."
+    },
+    {
+      icon: Briefcase,
+      title: "Corporates & Enterprises",
+      description: "Manage cross-border treasury in real time with seamless stablecoin conversions and 24/7 availability."
+    },
+    {
+      icon: Heart,
+      title: "NGOs & Aid Organizations",
+      description: "Disburse funds instantly and transparently with full audit trails and compliance monitoring."
+    },
+    {
+      icon: TrendingUp,
+      title: "Liquidity Partners",
+      description: "Provide or access stablecoin liquidity seamlessly through our unified infrastructure layer."
+    },
+    {
+      icon: Network,
+      title: "Payment Processors",
+      description: "Enable instant cross-border settlements with minimal fees and maximum speed for your merchants."
+    },
+  ];
+
   return (
     <div className="min-h-screen">
       <Navigation />
 
-      {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <div 
-          className="absolute inset-0 opacity-20"
-          style={{
-            backgroundImage: `url(${heroNetwork})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-          }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-background via-background/95 to-background" />
+      {/* Hero Section - Immersive with Animated Network */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden particle-bg">
+        <AnimatedGlobe />
         
         <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 py-32">
-          <div className="max-w-4xl mx-auto text-center space-y-8 animate-fade-in">
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-heading font-bold leading-tight">
-              Stablecoin Infrastructure for{" "}
-              <span className="text-gradient">Sub-Saharan Africa</span>
-            </h1>
+          <motion.div 
+            className="max-w-5xl mx-auto text-center space-y-12"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1 }}
+          >
+            <motion.div
+              initial={{ y: 50, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              <h1 className="text-6xl sm:text-7xl lg:text-8xl font-heading font-bold leading-tight tracking-tight">
+                The Stablecoin Infrastructure Powering{" "}
+                <span className="text-gradient animate-gradient">Sub-Saharan Africa</span>
+              </h1>
+            </motion.div>
             
-            <p className="text-xl sm:text-2xl text-muted-foreground font-body max-w-3xl mx-auto leading-relaxed">
-              HashPay provides compliant on-ramp, off-ramp, and custody rails connecting global liquidity to local fiat economies — enabling banks, fintechs, and organizations to move and preserve value instantly.
-            </p>
+            <motion.p 
+              className="text-xl sm:text-2xl text-foreground/90 font-body max-w-4xl mx-auto leading-relaxed"
+              initial={{ y: 30, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+            >
+              HashPay provides compliant on-ramp, off-ramp, and custody rails that connect global liquidity 
+              to African economies — empowering banks, fintechs, and organizations to move and preserve 
+              value instantly.
+            </motion.p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-              <Button size="lg" className="gradient-gold text-navy-deep hover:opacity-90 text-lg px-8 py-6 font-semibold group">
+            {/* Animated Stats */}
+            <motion.div 
+              className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-8"
+              initial={{ y: 30, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+            >
+              <AnimatedCounter 
+                end={1} 
+                suffix="-Minute" 
+                label="Settlement" 
+                icon={<Zap className="w-8 h-8 text-navy-deep" />}
+              />
+              <AnimatedCounter 
+                end={24} 
+                suffix="/7" 
+                label="Operations" 
+                icon={<Clock className="w-8 h-8 text-navy-deep" />}
+              />
+              <AnimatedCounter 
+                end={100} 
+                suffix="%" 
+                label="Compliance" 
+                icon={<Shield className="w-8 h-8 text-navy-deep" />}
+              />
+            </motion.div>
+
+            <motion.div 
+              className="flex flex-col sm:flex-row gap-6 justify-center pt-8"
+              initial={{ y: 30, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.8 }}
+            >
+              <RippleButton size="lg" className="text-lg px-12 py-8">
                 Contact Sales
-                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </Button>
-              <Button size="lg" variant="outline" className="text-lg px-8 py-6 border-primary/50 hover:border-primary">
-                Learn More
-              </Button>
-            </div>
-
-            {/* Stats */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-16">
-              <StatCounter end={1} suffix="-Minute" label="Settlement Time" />
-              <StatCounter end={24} suffix="/7" label="Operations" />
-              <StatCounter end={100} suffix="%" label="Compliance" />
-            </div>
-          </div>
+                <ArrowRight className="w-5 h-5" />
+              </RippleButton>
+              <RippleButton size="lg" className="text-lg px-12 py-8 bg-transparent border-2 border-primary text-primary hover:bg-primary/10">
+                View Platform
+              </RippleButton>
+            </motion.div>
+          </motion.div>
         </div>
+
+        <CurvedDivider />
       </section>
 
-      {/* How It Works */}
-      <section className="py-24 bg-card/50">
+      {/* How It Works - Sequential Flow Animation */}
+      <section className="py-32 bg-card relative">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center space-y-4 mb-16">
-            <h2 className="text-4xl sm:text-5xl font-heading font-bold">How It Works</h2>
-            <p className="text-xl text-muted-foreground font-body max-w-2xl mx-auto">
-              Three simple steps to instant, compliant stablecoin infrastructure
-            </p>
-          </div>
+          <ScrollReveal>
+            <div className="text-center space-y-6 mb-20">
+              <h2 className="text-5xl sm:text-6xl font-heading font-bold">
+                The <span className="text-gradient">HashPay Network</span> Works
+              </h2>
+              <p className="text-xl text-muted-foreground font-body max-w-3xl mx-auto leading-relaxed">
+                Three seamless steps connect traditional finance to stablecoin infrastructure
+              </p>
+            </div>
+          </ScrollReveal>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+            <FlowStep
+              number="01"
+              title="Connect"
+              description="API / Bank integration panel with automated network connectivity and compliance verification."
+              icon={Link2}
+              delay={0}
+            />
+            <FlowStep
+              number="02"
+              title="Convert"
+              description="Seamless fiat ↔ stablecoin exchange with built-in AML/KYC screening and real-time FX pricing."
+              icon={Network}
+              delay={0.2}
+            />
+            <FlowStep
+              number="03"
+              title="Settle & Custody"
+              description="Instant payouts or secure asset parking in institutional-grade custody with multi-signature protection."
+              icon={Vault}
+              delay={0.4}
+            />
+          </div>
+        </div>
+
+        <CurvedDivider flip />
+      </section>
+
+      {/* Platform Overview - Glassmorphic Dashboard */}
+      <section className="py-32 relative overflow-hidden particle-bg">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center max-w-7xl mx-auto">
+            <ScrollReveal direction="left">
+              <div className="space-y-8">
+                <h2 className="text-5xl sm:text-6xl font-heading font-bold leading-tight">
+                  Built for Institutional{" "}
+                  <span className="text-gradient">Performance</span>
+                </h2>
+                
+                <div className="space-y-6">
+                  {[
+                    "Unified API infrastructure for seamless integration",
+                    "Modular on-ramp, off-ramp, and custody services",
+                    "Real-time FX engine with risk-scoring algorithms",
+                    "Bank-grade security with multi-tier custody",
+                    "Smart liquidity routing for instant settlements",
+                  ].map((item, idx) => (
+                    <motion.div
+                      key={idx}
+                      className="flex items-start space-x-4 group"
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.5, delay: idx * 0.1 }}
+                    >
+                      <motion.div
+                        whileHover={{ scale: 1.2, rotate: 360 }}
+                        transition={{ duration: 0.5 }}
+                      >
+                        <CheckCircle2 className="w-7 h-7 text-primary flex-shrink-0 mt-1" />
+                      </motion.div>
+                      <span className="text-lg font-body text-foreground/90 group-hover:text-foreground transition-colors">
+                        {item}
+                      </span>
+                    </motion.div>
+                  ))}
+                </div>
+
+                <RippleButton className="mt-8">
+                  Request Platform Access
+                  <ArrowRight className="w-5 h-5" />
+                </RippleButton>
+              </div>
+            </ScrollReveal>
+
+            <ScrollReveal direction="right">
+              <GlassPanel className="p-4 overflow-hidden">
+                <motion.img
+                  src={dashboardMockup}
+                  alt="HashPay Platform Dashboard"
+                  className="rounded-xl w-full"
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.5 }}
+                />
+              </GlassPanel>
+            </ScrollReveal>
+          </div>
+        </div>
+
+        <CurvedDivider />
+      </section>
+
+      {/* Why HashPay - Animated Tiles */}
+      <section className="py-32 bg-card relative">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <ScrollReveal>
+            <div className="text-center space-y-6 mb-20">
+              <h2 className="text-5xl sm:text-6xl font-heading font-bold">
+                Why Institutions Choose{" "}
+                <span className="text-gradient">HashPay</span>
+              </h2>
+              <p className="text-xl text-muted-foreground font-body max-w-3xl mx-auto">
+                Enterprise-grade infrastructure built for African financial innovation
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
             {[
-              { num: "01", title: "Connect", desc: "Integrate via API, dashboard, or bank portal" },
-              { num: "02", title: "Convert", desc: "Seamless fiat ↔ stablecoin exchange with built-in AML/KYC" },
-              { num: "03", title: "Settle & Custody", desc: "Receive instant payouts or park assets in stablecoin custody" },
-            ].map((step, idx) => (
-              <Card key={idx} className="p-8 bg-background border-border relative overflow-hidden group hover:border-primary/50 transition-all">
-                <div className="absolute top-4 right-4 text-6xl font-mono font-bold text-primary/10 group-hover:text-primary/20 transition-colors">
-                  {step.num}
-                </div>
-                <div className="relative space-y-3">
-                  <h3 className="text-2xl font-heading font-bold">{step.title}</h3>
-                  <p className="text-muted-foreground font-body">{step.desc}</p>
-                </div>
-              </Card>
+              { icon: Zap, title: "Instant Settlement", desc: "Complete transactions in under 1 minute with real-time processing and confirmation." },
+              { icon: Clock, title: "24/7 Availability", desc: "Never stop operating. Our infrastructure runs continuously regardless of banking hours." },
+              { icon: Shield, title: "Regulated Compliance", desc: "Built under U.S. MSB standards with full AML/CFT and OFAC adherence." },
+              { icon: Globe, title: "Built for Africa", desc: "Optimized infrastructure designed specifically for Sub-Saharan regional requirements." },
+              { icon: Vault, title: "Custody & Preservation", desc: "Institutions can park currency in stablecoins to maintain value and hedge inflation." },
+              { icon: Network, title: "Modular Access", desc: "Use on-ramp, off-ramp, or custody services independently or combined." },
+            ].map((feature, idx) => (
+              <GlassPanel key={idx} delay={idx * 0.1}>
+                <motion.div
+                  whileHover={{ y: -8 }}
+                  className="space-y-4"
+                >
+                  <motion.div
+                    className="w-16 h-16 rounded-2xl bg-gradient-gold flex items-center justify-center"
+                    whileHover={{ rotate: 360 }}
+                    transition={{ duration: 0.6 }}
+                  >
+                    <feature.icon className="w-8 h-8 text-navy-deep" />
+                  </motion.div>
+                  <h3 className="text-2xl font-heading font-bold">{feature.title}</h3>
+                  <p className="text-muted-foreground font-body leading-relaxed">{feature.desc}</p>
+                </motion.div>
+              </GlassPanel>
             ))}
           </div>
         </div>
+
+        <CurvedDivider flip />
       </section>
 
-      {/* Platform Overview */}
-      <section className="py-24">
+      {/* Compliance Section - Trust Shield */}
+      <section className="py-32 relative overflow-hidden particle-bg">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
-              <h2 className="text-4xl sm:text-5xl font-heading font-bold">
-                Built for Institutional <span className="text-gradient">Performance</span>
-              </h2>
-              <ul className="space-y-4">
-                {[
-                  "Unified API infrastructure",
-                  "On-ramp, off-ramp, and custody modules",
-                  "Real-time FX + risk-scoring engine",
-                  "Secure institutional custody layer",
-                ].map((item, idx) => (
-                  <li key={idx} className="flex items-start space-x-3">
-                    <CheckCircle2 className="w-6 h-6 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-lg font-body text-muted-foreground">{item}</span>
-                  </li>
-                ))}
-              </ul>
-              <Button size="lg" className="gradient-gold text-navy-deep hover:opacity-90 font-semibold">
-                Request Platform Access
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </Button>
+          <div className="max-w-5xl mx-auto">
+            <ScrollReveal>
+              <div className="text-center space-y-8 mb-16">
+                <h2 className="text-5xl sm:text-6xl font-heading font-bold">
+                  Built for Regulation. Backed by{" "}
+                  <span className="text-gradient">Integrity</span>
+                </h2>
+                <p className="text-xl text-foreground/90 font-body leading-relaxed max-w-3xl mx-auto">
+                  HashPay operates under U.S. MSB registration and partners with licensed transmitters 
+                  to maintain AML/CFT, OFAC, and FinCEN standards. Every transaction is monitored, 
+                  logged, and audit-ready.
+                </p>
+              </div>
+            </ScrollReveal>
+
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16">
+              {[
+                { icon: Shield, label: "Compliance" },
+                { icon: FileCheck, label: "Audit" },
+                { icon: Lock, label: "Encryption" },
+                { icon: Eye, label: "24/7 Monitoring" },
+              ].map((badge, idx) => (
+                <GlassPanel key={idx} delay={idx * 0.1} className="text-center">
+                  <motion.div
+                    whileHover={{ scale: 1.1 }}
+                    className="space-y-4"
+                  >
+                    <motion.div
+                      animate={{ 
+                        boxShadow: [
+                          "0 0 20px rgba(253, 198, 57, 0.3)",
+                          "0 0 40px rgba(253, 198, 57, 0.5)",
+                          "0 0 20px rgba(253, 198, 57, 0.3)"
+                        ]
+                      }}
+                      transition={{ duration: 3, repeat: Infinity }}
+                      className="w-16 h-16 mx-auto rounded-xl bg-primary/10 flex items-center justify-center"
+                    >
+                      <badge.icon className="w-8 h-8 text-primary" />
+                    </motion.div>
+                    <p className="font-body font-semibold">{badge.label}</p>
+                  </motion.div>
+                </GlassPanel>
+              ))}
             </div>
-            
-            <Card className="p-8 bg-card border-border">
-              <div className="aspect-video bg-muted rounded-lg flex items-center justify-center">
-                <div className="text-center space-y-2">
-                  <Network className="w-16 h-16 text-primary mx-auto" />
-                  <p className="text-muted-foreground font-body">Platform Dashboard Preview</p>
+          </div>
+        </div>
+
+        <CurvedDivider />
+      </section>
+
+      {/* Use Cases - Cinematic Carousel */}
+      <section className="py-32 bg-card relative">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <ScrollReveal>
+            <div className="text-center space-y-6 mb-20">
+              <h2 className="text-5xl sm:text-6xl font-heading font-bold">
+                Built For <span className="text-gradient">Your Needs</span>
+              </h2>
+              <p className="text-xl text-muted-foreground font-body max-w-3xl mx-auto">
+                Flexible infrastructure serving diverse financial use cases across the ecosystem
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <UseCaseCarousel useCases={useCases} />
+        </div>
+
+        <CurvedDivider flip />
+      </section>
+
+      {/* About Section - Africa Network Map */}
+      <section className="py-32 relative overflow-hidden particle-bg">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center max-w-7xl mx-auto">
+            <ScrollReveal direction="left">
+              <AfricaMapNetwork />
+            </ScrollReveal>
+
+            <ScrollReveal direction="right">
+              <div className="space-y-8">
+                <h2 className="text-5xl sm:text-6xl font-heading font-bold leading-tight">
+                  The Vision Behind the{" "}
+                  <span className="text-gradient">Infrastructure</span>
+                </h2>
+                
+                <div className="space-y-6">
+                  <p className="text-xl text-foreground/90 font-body leading-relaxed">
+                    Founded in 2025, HashPay LLC is a U.S.-based financial technology company 
+                    focused on stablecoin infrastructure for Sub-Saharan Africa.
+                  </p>
+                  <p className="text-xl text-foreground/90 font-body leading-relaxed">
+                    We connect traditional finance to blockchain-based liquidity through secure, 
+                    compliant rails that operate 24/7.
+                  </p>
+                </div>
+
+                <div className="grid grid-cols-3 gap-6 pt-8">
+                  {["Speed", "Compliance", "Transparency"].map((value, idx) => (
+                    <motion.div
+                      key={idx}
+                      className="text-center space-y-2"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.5, delay: idx * 0.1 }}
+                    >
+                      <motion.div
+                        className="text-5xl font-mono font-bold text-gradient"
+                        animate={{ scale: [1, 1.1, 1] }}
+                        transition={{ duration: 2, repeat: Infinity, delay: idx * 0.3 }}
+                      >
+                        •
+                      </motion.div>
+                      <p className="font-heading font-semibold text-lg">{value}</p>
+                    </motion.div>
+                  ))}
                 </div>
               </div>
-            </Card>
+            </ScrollReveal>
           </div>
         </div>
+
+        <CurvedDivider />
       </section>
 
-      {/* Why HashPay */}
-      <section className="py-24 bg-card/50">
+      {/* Final CTA - Partner Section */}
+      <section className="py-32 bg-gradient-to-br from-card via-background to-card relative">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center space-y-4 mb-16">
-            <h2 className="text-4xl sm:text-5xl font-heading font-bold">Why HashPay</h2>
-            <p className="text-xl text-muted-foreground font-body max-w-2xl mx-auto">
-              Enterprise-grade infrastructure built for Africa
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <FeatureCard
-              icon={Zap}
-              title="Instant Settlement"
-              description="Complete transactions in under 1 minute with real-time processing and confirmation."
-            />
-            <FeatureCard
-              icon={Clock}
-              title="Always On"
-              description="24/7 operations ensuring your business never stops, regardless of banking hours."
-            />
-            <FeatureCard
-              icon={Shield}
-              title="Regulated Compliance"
-              description="Built under U.S. MSB standards with full AML/CFT and OFAC adherence."
-            />
-            <FeatureCard
-              icon={Globe}
-              title="Built for Africa"
-              description="Optimized infrastructure designed specifically for Sub-Saharan regional requirements."
-            />
-            <FeatureCard
-              icon={Vault}
-              title="Custody & Preservation"
-              description="Institutions can park currency in stablecoins to maintain value and hedge inflation."
-            />
-            <FeatureCard
-              icon={Network}
-              title="Modular Access"
-              description="Use on-ramp, off-ramp, or custody services independently or combined."
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* Compliance */}
-      <section className="py-24">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center space-y-8">
-            <h2 className="text-4xl sm:text-5xl font-heading font-bold">
-              Regulation × Transparency × <span className="text-gradient">Trust</span>
-            </h2>
-            <p className="text-xl text-muted-foreground font-body leading-relaxed">
-              HashPay operates under U.S. Money Services registration and partners with licensed entities 
-              to uphold AML/CFT, OFAC, and FinCEN standards.
-            </p>
+          <GlassPanel className="max-w-5xl mx-auto p-16 text-center space-y-10">
+            <ScrollReveal>
+              <h2 className="text-5xl sm:text-6xl font-heading font-bold">
+                Partner with <span className="text-gradient">HashPay</span>
+              </h2>
+            </ScrollReveal>
             
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-8">
-              {["Compliance", "Audit", "Encryption", "24/7 Monitoring"].map((badge, idx) => (
-                <Card key={idx} className="p-6 bg-card border-border hover:border-primary/50 transition-colors">
-                  <div className="text-center">
-                    <Shield className="w-8 h-8 text-primary mx-auto mb-2" />
-                    <p className="font-body font-semibold text-sm">{badge}</p>
-                  </div>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+            <ScrollReveal delay={0.2}>
+              <p className="text-2xl text-foreground/90 font-body max-w-3xl mx-auto leading-relaxed">
+                Connect your institution to compliant stablecoin infrastructure for instant 
+                global settlement.
+              </p>
+            </ScrollReveal>
 
-      {/* Use Cases */}
-      <section className="py-24 bg-card/50">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center space-y-4 mb-16">
-            <h2 className="text-4xl sm:text-5xl font-heading font-bold">Built For Your Needs</h2>
-            <p className="text-xl text-muted-foreground font-body max-w-2xl mx-auto">
-              Flexible infrastructure serving diverse financial use cases
-            </p>
-          </div>
+            <motion.div 
+              className="flex flex-col sm:flex-row gap-6 justify-center pt-4"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+            >
+              <RippleButton size="lg" className="text-xl px-16 py-8">
+                Contact Sales
+                <ArrowRight className="w-6 h-6" />
+              </RippleButton>
+              <RippleButton size="lg" className="text-xl px-16 py-8 bg-transparent border-2 border-primary text-primary hover:bg-primary/10">
+                Request Demo
+                <ArrowRight className="w-6 h-6" />
+              </RippleButton>
+            </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <UseCaseCard
-              icon={Users}
-              title="Fintechs & PSPs"
-              description="Embed our rails into your apps for seamless digital payments and settlements."
-            />
-            <UseCaseCard
-              icon={Heart}
-              title="NGOs & Foundations"
-              description="Enable transparent, instant aid distribution with full audit trails."
-            />
-            <UseCaseCard
-              icon={Briefcase}
-              title="Corporates"
-              description="Move treasury efficiently across borders with minimal friction and maximum speed."
-            />
-            <UseCaseCard
-              icon={Building2}
-              title="Banks & FX Desks"
-              description="Park or deploy liquidity in stablecoins to retain value and hedge currency risk."
-            />
-            <UseCaseCard
-              icon={TrendingUp}
-              title="Liquidity Partners"
-              description="Access deep stablecoin rails and institutional-grade settlement infrastructure."
-            />
-            <UseCaseCard
-              icon={Network}
-              title="Payment Processors"
-              description="Integrate instant settlement capabilities into your existing payment flows."
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* About Snippet */}
-      <section className="py-24">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center space-y-6">
-            <h2 className="text-4xl sm:text-5xl font-heading font-bold">About HashPay</h2>
-            <p className="text-xl text-muted-foreground font-body leading-relaxed">
-              HashPay LLC is a U.S.-based financial technology company founded in 2025. 
-              We build compliant stablecoin infrastructure enabling instant conversion, settlement, 
-              and custody for Sub-Saharan economies.
-            </p>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-8">
-              {["Speed", "Security", "Compliance", "Transparency"].map((value, idx) => (
-                <div key={idx} className="space-y-2">
-                  <div className="text-3xl font-mono font-bold text-gradient">•</div>
-                  <p className="font-heading font-semibold">{value}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Contact CTA */}
-      <section className="py-24 bg-gradient-to-br from-primary/10 via-background to-background">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <Card className="max-w-4xl mx-auto p-12 bg-card border-border text-center space-y-8">
-            <h2 className="text-4xl sm:text-5xl font-heading font-bold">
-              Ready to Build on <span className="text-gradient">HashPay?</span>
-            </h2>
-            <p className="text-xl text-muted-foreground font-body max-w-2xl mx-auto">
-              Connect with our team to discuss your infrastructure needs and get started today.
-            </p>
-            <Button size="lg" className="gradient-gold text-navy-deep hover:opacity-90 text-lg px-12 py-6 font-semibold">
-              Contact Sales Team
-              <ArrowRight className="ml-2 w-5 h-5" />
-            </Button>
-            <p className="text-sm text-muted-foreground">
-              <a href="mailto:admin@hashpayremit.com" className="hover:text-primary transition-colors">
+            <motion.div 
+              className="pt-8 text-muted-foreground font-body"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+            >
+              <a href="mailto:admin@hashpayremit.com" className="hover:text-primary transition-colors text-lg">
                 admin@hashpayremit.com
               </a>
-              {" • "}
-              Burnsville, MN Office
-            </p>
-          </Card>
+              <span className="mx-3">•</span>
+              <span className="text-lg">Burnsville, MN</span>
+            </motion.div>
+          </GlassPanel>
         </div>
       </section>
 
