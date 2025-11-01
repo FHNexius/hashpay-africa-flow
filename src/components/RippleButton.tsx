@@ -8,9 +8,10 @@ interface RippleButtonProps {
   className?: string;
   onClick?: () => void;
   size?: "default" | "sm" | "lg";
+  type?: "button" | "submit" | "reset";
 }
 
-const RippleButton = ({ children, className, onClick, size = "lg" }: RippleButtonProps) => {
+const RippleButton = ({ children, className, onClick, size = "lg", type = "button" }: RippleButtonProps) => {
   const [ripples, setRipples] = useState<{ x: number; y: number; id: number }[]>([]);
 
   const addRipple = (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -31,6 +32,7 @@ const RippleButton = ({ children, className, onClick, size = "lg" }: RippleButto
 
   return (
     <Button
+      type={type}
       size={size}
       onClick={addRipple}
       className={cn(

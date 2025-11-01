@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import RippleButton from "./RippleButton";
+import hashpayLogo from "@/assets/hashpay-logo.png";
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -38,22 +39,14 @@ const Navigation = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-3 group">
-            <motion.div 
-              className="w-12 h-12 rounded-xl bg-gradient-gold flex items-center justify-center relative overflow-hidden"
-              whileHover={{ scale: 1.1, rotate: 5 }}
+          <Link to="/" className="flex items-center group">
+            <motion.img
+              src={hashpayLogo}
+              alt="HashPay"
+              className="h-10"
+              whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.3 }}
-            >
-              <motion.div
-                className="absolute inset-0 bg-gradient-to-br from-primary/50 to-transparent"
-                animate={{ rotate: 360 }}
-                transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
-              />
-              <span className="text-navy-deep font-heading font-bold text-2xl relative z-10">H</span>
-            </motion.div>
-            <span className="text-2xl font-heading font-bold group-hover:text-primary transition-colors">
-              HashPay
-            </span>
+            />
           </Link>
 
           {/* Desktop Navigation */}

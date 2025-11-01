@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Mail, MapPin } from "lucide-react";
 import { motion } from "framer-motion";
+import hashpayLogo from "@/assets/hashpay-logo.png";
 
 const Footer = () => {
   return (
@@ -24,16 +25,13 @@ const Footer = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <div className="flex items-center space-x-3">
-              <motion.div 
-                className="w-12 h-12 rounded-xl bg-gradient-gold flex items-center justify-center"
-                whileHover={{ rotate: 360 }}
-                transition={{ duration: 0.6 }}
-              >
-                <span className="text-navy-deep font-heading font-bold text-2xl">H</span>
-              </motion.div>
-              <span className="text-2xl font-heading font-bold">HashPay</span>
-            </div>
+            <motion.img
+              src={hashpayLogo}
+              alt="HashPay"
+              className="h-10"
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.3 }}
+            />
             <p className="text-sm text-muted-foreground font-body leading-relaxed">
               Stablecoin infrastructure for Sub-Saharan Africa
             </p>
