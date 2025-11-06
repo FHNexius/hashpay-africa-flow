@@ -116,11 +116,11 @@ const Index = () => {
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.8 }}
             >
-              <RippleButton size="lg" className="text-lg px-12 py-8 bg-primary text-primary-foreground hover:bg-primary/90">
+              <RippleButton size="lg" className="text-lg px-12 py-8 bg-primary text-white hover:bg-primary/90">
                 Contact Sales
                 <ArrowRight className="w-5 h-5" />
               </RippleButton>
-              <RippleButton size="lg" className="text-lg px-12 py-8 bg-transparent border-2 border-charcoal text-charcoal hover:bg-charcoal hover:text-white">
+              <RippleButton size="lg" className="text-lg px-12 py-8 bg-white text-foreground border-2 border-white hover:bg-white/90">
                 View Platform
               </RippleButton>
             </motion.div>
@@ -198,13 +198,13 @@ const Index = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.4 }}
             >
-              <div className="flex items-center space-x-2 bg-primary/10 border border-primary/20 px-6 py-3 rounded-full">
+               <div className="flex items-center space-x-2 bg-white border border-primary/30 px-6 py-3 rounded-full shadow-sm">
                 <CheckCircle2 className="w-5 h-5 text-primary" />
-                <span className="font-body font-semibold">Licensed FX Bureau — Ethiopia (2024)</span>
+                <span className="font-body font-semibold text-foreground">Licensed FX Bureau — Ethiopia (2024)</span>
               </div>
-              <div className="flex items-center space-x-2 bg-primary/10 border border-primary/20 px-6 py-3 rounded-full">
+              <div className="flex items-center space-x-2 bg-white border border-primary/30 px-6 py-3 rounded-full shadow-sm">
                 <CheckCircle2 className="w-5 h-5 text-primary" />
-                <span className="font-body font-semibold">MSB-Compliant Infrastructure — USA</span>
+                <span className="font-body font-semibold text-foreground">MSB-Compliant Infrastructure — USA</span>
               </div>
             </motion.div>
           </div>
@@ -263,7 +263,7 @@ const Index = () => {
 
             <ScrollReveal direction="right">
               <motion.div
-                className="p-4 bg-card border border-border rounded-2xl shadow-lg overflow-hidden"
+                className="p-4 bg-white border border-border rounded-2xl shadow-xl overflow-hidden"
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.3 }}
               >
@@ -306,7 +306,7 @@ const Index = () => {
             ].map((feature, idx) => (
               <motion.div
                 key={idx}
-                className="p-8 bg-card border border-border rounded-2xl hover:border-primary/50 hover:shadow-lg transition-all"
+                className="p-8 bg-secondary border border-border rounded-2xl hover:border-primary/50 hover:shadow-lg transition-all"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -314,13 +314,13 @@ const Index = () => {
                 whileHover={{ y: -8 }}
               >
                 <motion.div
-                  className="w-16 h-16 rounded-2xl bg-gradient-orange flex items-center justify-center mb-6"
+                  className="w-16 h-16 rounded-2xl bg-primary flex items-center justify-center mb-6"
                   whileHover={{ rotate: 360 }}
                   transition={{ duration: 0.6 }}
                 >
                   <feature.icon className="w-8 h-8 text-white" />
                 </motion.div>
-                <h3 className="text-2xl font-heading font-bold mb-4 text-charcoal">{feature.title}</h3>
+                <h3 className="text-2xl font-heading font-bold mb-4 text-foreground">{feature.title}</h3>
                 <p className="text-muted-foreground font-body leading-relaxed">{feature.desc}</p>
               </motion.div>
             ))}
@@ -357,7 +357,7 @@ const Index = () => {
               ].map((badge, idx) => (
                 <motion.div
                   key={idx}
-                  className="p-6 bg-card border border-border rounded-xl text-center hover:border-primary/50 transition-all"
+                  className="p-6 bg-white border border-border rounded-xl text-center hover:border-primary/50 transition-all shadow-sm"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -465,9 +465,9 @@ const Index = () => {
       {/* Final CTA */}
       <section className="py-32 bg-white relative">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-5xl mx-auto p-16 bg-card border border-border rounded-3xl text-center space-y-10 shadow-lg">
+          <div className="max-w-5xl mx-auto p-16 bg-secondary border border-border rounded-3xl text-center space-y-10 shadow-xl">
             <ScrollReveal>
-              <h2 className="text-5xl sm:text-6xl font-heading font-bold text-charcoal">
+              <h2 className="text-5xl sm:text-6xl font-heading font-bold text-foreground">
                 Partner with <span className="text-gradient">HashPay</span>
               </h2>
             </ScrollReveal>
@@ -486,11 +486,11 @@ const Index = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.4 }}
             >
-              <RippleButton size="lg" className="text-xl px-16 py-8 bg-primary text-primary-foreground hover:bg-primary/90">
+              <RippleButton size="lg" className="text-xl px-16 py-8 bg-primary text-white hover:bg-primary/90">
                 Contact Sales
                 <ArrowRight className="w-6 h-6" />
               </RippleButton>
-              <RippleButton size="lg" className="text-xl px-16 py-8 bg-transparent border-2 border-charcoal text-charcoal hover:bg-charcoal hover:text-white">
+              <RippleButton size="lg" className="text-xl px-16 py-8 bg-white text-foreground border-2 border-border hover:bg-white/90">
                 Request Demo
                 <ArrowRight className="w-6 h-6" />
               </RippleButton>

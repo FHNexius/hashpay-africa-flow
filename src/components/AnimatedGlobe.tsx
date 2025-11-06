@@ -41,7 +41,7 @@ const AnimatedGlobe = () => {
     }
 
     const animate = () => {
-      ctx.fillStyle = "rgba(10, 19, 37, 0.1)";
+      ctx.fillStyle = "rgba(255, 255, 255, 0.05)";
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
       // Draw connections
@@ -52,7 +52,7 @@ const AnimatedGlobe = () => {
           const dist = Math.sqrt(dx * dx + dy * dy);
 
           if (dist < 150) {
-            ctx.strokeStyle = `rgba(253, 198, 57, ${0.2 * (1 - dist / 150)})`;
+            ctx.strokeStyle = `rgba(255, 106, 0, ${0.15 * (1 - dist / 150)})`;
             ctx.lineWidth = 1;
             ctx.beginPath();
             ctx.moveTo(p1.x, p1.y);
@@ -70,7 +70,7 @@ const AnimatedGlobe = () => {
         if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
         if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
 
-        ctx.fillStyle = `rgba(253, 198, 57, ${p.opacity})`;
+        ctx.fillStyle = `rgba(255, 106, 0, ${p.opacity * 0.6})`;
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
         ctx.fill();
