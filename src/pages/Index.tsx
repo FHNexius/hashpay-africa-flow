@@ -239,7 +239,7 @@ const Index = () => {
 
       {/* Final CTA */}
       <section className="py-32 bg-background relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-background via-secondary/30 to-background" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-secondary/60 to-background" />
         <FloatingOrbs />
         
         <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
