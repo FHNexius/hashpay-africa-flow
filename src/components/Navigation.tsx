@@ -4,17 +4,33 @@ import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import RippleButton from "./RippleButton";
 import ThemeToggle from "./ThemeToggle";
-import hashpayLogo from "@/assets/hashpay-logo.png";
+import hashpayLogoLight from "@/assets/hashpay-logo.png";
+import hashpayLogoDark from "@/assets/hashpay-logo-dark.png";
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isDark, setIsDark] = useState(false);
   const location = useLocation();
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
     };
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    
+    // Check for dark mode
+    const checkDarkMode = () => {
+      setIsDark(document.documentElement.classList.contains("dark"));
+    };
+    checkDarkMode();
+    
+    // Listen for theme changes
+    const observer = new MutationObserver(checkDarkMode);
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+    
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      observer.disconnect();
+    };
   }, []);
   const navLinks = [{
     name: "Home",
@@ -39,13 +55,21 @@ const Navigation = () => {
   }} className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled ? "glass-panel border-b border-border/50" : "bg-transparent"}`}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
-          {/* Logo */}
-          <Link to="/" className="flex items-center group">
-            <motion.img src={hashpayLogo} alt="HashPay" whileHover={{
-            scale: 1.05
-          }} transition={{
-            duration: 0.3
-          }} className="h-40" />
+          {/* Logo with Theme-based Swap */}
+          <Link to="/" className="flex items-center group relative">
+            <AnimatePresence mode="wait">
+              <motion.img 
+                key={isDark ? "dark" : "light"}
+                src={isDark ? hashpayLogoDark : hashpayLogoLight} 
+                alt="HashPay" 
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.3, ease: "easeInOut" }}
+                whileHover={{ scale: 1.05 }}
+                className="h-40" 
+              />
+            </AnimatePresence>
           </Link>
 
           {/* Desktop Navigation */}
