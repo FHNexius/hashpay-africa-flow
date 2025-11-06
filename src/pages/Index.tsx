@@ -86,7 +86,7 @@ const Index = () => {
                 </motion.div>
               </div>
               
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-heading font-bold leading-[1.1] text-foreground mb-6 xl:text-7xl">
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-heading font-bold leading-[1.1] text-foreground mb-6 xl:text-6xl">
                 Institutional Stablecoin Infrastructure for{" "}
                 <span className="relative inline-block">
                   <span className="text-gradient animate-gradient">Africa</span>
