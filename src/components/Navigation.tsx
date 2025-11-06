@@ -33,17 +33,17 @@ const Navigation = () => {
     };
   }, []);
   const navLinks = [{
-    name: "Home",
-    path: "/"
+    name: "Platform",
+    path: "/platform"
   }, {
-    name: "About",
-    path: "/about"
+    name: "Solutions",
+    path: "/solutions"
   }, {
-    name: "Compliance",
-    path: "/compliance"
+    name: "Developers",
+    path: "/developers"
   }, {
-    name: "Contact",
-    path: "/contact"
+    name: "Security & Compliance",
+    path: "/security-compliance"
   }];
   return <motion.nav initial={{
     y: -100
@@ -89,15 +89,17 @@ const Navigation = () => {
             }} />
               </Link>)}
             
-            <Link to="/developers">
-              <RippleButton size="default" className="px-6 bg-card text-foreground border border-border hover:bg-card/90">
-                Developers
+            <Link to="/contact">
+              <RippleButton size="default" className="px-6 border border-border bg-background/50 hover:bg-background/80">
+                Request Demo
               </RippleButton>
             </Link>
             
-            <RippleButton size="default" className="px-6 bg-primary text-primary-foreground hover:bg-primary/90">
-              Contact Sales
-            </RippleButton>
+            <Link to="/contact">
+              <RippleButton size="default" className="px-6 bg-primary text-primary-foreground hover:bg-primary/90">
+                Contact Sales
+              </RippleButton>
+            </Link>
             
             <ThemeToggle />
           </div>
@@ -178,14 +180,16 @@ const Navigation = () => {
               duration: 0.3,
               delay: navLinks.length * 0.05
             }} className="pt-2">
-                  <Link to="/developers" onClick={() => setIsMobileMenuOpen(false)} className="block mb-3">
-                    <RippleButton size="default" className="w-full bg-card text-foreground border border-border hover:bg-card/90">
-                      Developers
+                  <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)} className="block mb-3">
+                    <RippleButton size="default" className="w-full border border-border bg-background/50">
+                      Request Demo
                     </RippleButton>
                   </Link>
-                  <RippleButton size="default" className="w-full mb-3 bg-primary text-primary-foreground hover:bg-primary/90">
-                    Contact Sales
-                  </RippleButton>
+                  <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)} className="block mb-3">
+                    <RippleButton size="default" className="w-full bg-primary text-primary-foreground hover:bg-primary/90">
+                      Contact Sales
+                    </RippleButton>
+                  </Link>
                   <div className="flex justify-center">
                     <ThemeToggle />
                   </div>

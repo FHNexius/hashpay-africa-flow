@@ -5,10 +5,13 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import Index from "./pages/Index";
-import About from "./pages/About";
-import Compliance from "./pages/Compliance";
-import Contact from "./pages/Contact";
+import Platform from "./pages/Platform";
+import Solutions from "./pages/Solutions";
+import SecurityCompliance from "./pages/SecurityCompliance";
 import Developers from "./pages/Developers";
+import Contact from "./pages/Contact";
+import Privacy from "./pages/Privacy";
+import Terms from "./pages/Terms";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -33,10 +36,13 @@ const App = () => (
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Index />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/compliance" element={<Compliance />} />
-          <Route path="/contact" element={<Contact />} />
+          <Route path="/platform" element={<Platform />} />
+          <Route path="/solutions" element={<Solutions />} />
+          <Route path="/security-compliance" element={<SecurityCompliance />} />
           <Route path="/developers" element={<Developers />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/legal/privacy" element={<Privacy />} />
+          <Route path="/legal/terms" element={<Terms />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

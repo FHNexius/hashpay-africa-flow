@@ -8,7 +8,7 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Base colors - Light Mode */
+    /* Base colors */
     --background: 0 0% 100%;
     --foreground: 0 0% 10%;
 
@@ -18,116 +18,108 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 10%;
 
-    /* Primary Blue (#0057FF) */
+    /* Primary Blue: #0057FF */
     --primary: 221 100% 50%;
     --primary-foreground: 0 0% 100%;
 
-    /* Secondary Blue (#0A3FCC) */
-    --secondary: 222 92% 42%;
+    /* Secondary Blue: #0A3FCC */
+    --secondary: 221 92% 42%;
     --secondary-foreground: 0 0% 100%;
 
-    /* Accent Yellow (#FFD400) */
-    --accent: 50 100% 50%;
+    --muted: 210 14% 97%;
+    --muted-foreground: 0 0% 45%;
+
+    --accent: 210 14% 97%;
     --accent-foreground: 0 0% 10%;
 
-    --muted: 210 20% 97%;
-    --muted-foreground: 0 0% 40%;
-
     --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 100%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
+    /* Border gray: #E5E7EB */
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
     --ring: 221 100% 50%;
 
     --radius: 1rem;
 
-    /* Custom tokens - HashPay Premium Brand */
-    --text-dark: 0 0% 10%;
-    --gray-bg: 210 33% 97%;
-    --border-gray: 220 13% 91%;
-    --blue-primary: 221 100% 50%;
-    --blue-secondary: 222 92% 42%;
-    --blue-hover: 222 100% 40%;
-    --yellow-accent: 50 100% 50%;
-    --yellow-glow: 50 100% 60%;
+    /* Accent yellow: #FFD400 */
+    --yellow-500: 48 100% 50%;
+    --blue-500: 221 100% 50%;
+    --blue-secondary: 221 92% 42%;
+
+    /* Text dark: #1A1A1A */
+    --text-900: 0 0% 10%;
     
+    /* Light BG: #F6F8FB */
+    --bg-50: 210 17% 98%;
+
     /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(221 100% 50%) 0%, hsl(222 92% 42%) 100%);
-    --gradient-hero: linear-gradient(135deg, hsl(221 100% 50%) 0%, hsl(222 92% 42%) 100%);
-    --gradient-accent: linear-gradient(135deg, hsl(50 100% 50%) 0%, hsl(50 100% 60%) 100%);
-    --gradient-subtle: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(210 33% 97%) 100%);
-    --gradient-glass: linear-gradient(135deg, rgba(0, 87, 255, 0.05) 0%, rgba(0, 87, 255, 0.02) 100%);
-    
-    /* Shadows & Effects */
+    --gradient-primary: linear-gradient(135deg, hsl(221, 100%, 50%) 0%, hsl(221, 92%, 42%) 100%);
+    --gradient-hero: linear-gradient(135deg, #0057FF 0%, #0A3FCC 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(0, 0%, 100%) 0%, hsl(210, 17%, 98%) 100%);
+
+    /* Shadows */
+    --shadow-elegant: 0 4px 12px rgba(0, 0, 0, 0.06);
     --shadow-card: 0 4px 12px rgba(0, 0, 0, 0.06);
-    --shadow-blue-glow: 0 0 40px hsl(221 100% 50% / 0.25);
-    --shadow-blue-intense: 0 4px 20px hsl(221 100% 50% / 0.3);
-    --shadow-depth: 0 12px 48px hsl(0 0% 0% / 0.1);
-    --blur-glass: blur(24px);
-    
-    /* Transitions - Smooth animated mode switching */
+    --shadow-glow: 0 2px 8px rgba(0, 87, 255, 0.15);
+
+    /* Transitions */
     --transition-smooth: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border-color 0.3s ease-in-out, opacity 0.3s ease-in-out;
-    --transition-transform: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .dark {
-    /* Base colors - Dark Mode (#0D1117) */
-    --background: 215 28% 7%;
+    /* Background: #0D1117 */
+    --background: 217 33% 7%;
     --foreground: 210 20% 98%;
 
-    /* Card/Surface (#161B22) */
-    --card: 215 19% 11%;
+    /* Surface/Card: #161B22 */
+    --card: 216 28% 11%;
     --card-foreground: 210 20% 98%;
 
-    --popover: 215 19% 11%;
+    --popover: 216 28% 11%;
     --popover-foreground: 210 20% 98%;
 
-    /* Accent Blue for Dark Mode (#3B82F6) */
+    /* Accent Blue: #3B82F6 */
     --primary: 217 91% 60%;
     --primary-foreground: 0 0% 100%;
 
-    /* Secondary Blue */
-    --secondary: 222 92% 42%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 216 28% 11%;
+    --secondary-foreground: 210 20% 98%;
 
-    /* Accent Yellow (#FFD400) */
-    --accent: 50 100% 50%;
-    --accent-foreground: 0 0% 10%;
+    --muted: 223 25% 18%;
+    --muted-foreground: 215 20% 65%;
 
-    --muted: 215 14% 22%;
-    --muted-foreground: 218 11% 65%;
+    --accent: 223 25% 18%;
+    --accent-foreground: 210 20% 98%;
 
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 100%;
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 210 20% 98%;
 
-    /* Divider (#2E3440) */
-    --border: 220 13% 21%;
-    --input: 215 14% 22%;
+    /* Divider: #2E3440 */
+    --border: 218 27% 18%;
+    --input: 218 27% 18%;
     --ring: 217 91% 60%;
+
+    /* Accent Yellow: #FFD400 */
+    --yellow-500: 48 100% 50%;
+    --blue-500: 217 91% 60%;
+    --blue-secondary: 221 92% 42%;
+
+    /* Text Primary: #F9FAFB */
+    --text-50: 210 20% 98%;
     
-    /* Custom tokens - Dark Mode Premium */
-    --text-dark: 210 20% 98%;
-    --gray-bg: 215 14% 22%;
-    --border-gray: 220 13% 21%;
-    --blue-primary: 217 91% 60%;
-    --blue-secondary: 222 92% 50%;
-    --blue-hover: 217 91% 70%;
-    --yellow-accent: 50 100% 50%;
-    --yellow-glow: 50 100% 60%;
-    
-    /* Dark Mode Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(222 92% 42%) 0%, hsl(222 100% 25%) 100%);
-    --gradient-hero: linear-gradient(135deg, hsl(222 92% 42%) 0%, hsl(222 100% 25%) 100%);
-    --gradient-accent: linear-gradient(135deg, hsl(50 100% 50%) 0%, hsl(50 100% 60%) 100%);
-    --gradient-subtle: linear-gradient(180deg, hsl(215 28% 7%) 0%, hsl(215 19% 9%) 100%);
-    --gradient-glass: linear-gradient(135deg, rgba(59, 130, 246, 0.08) 0%, rgba(59, 130, 246, 0.03) 100%);
-    
-    /* Dark Mode Shadows with Blue Glow */
+    /* Text Secondary: #A3A9B7 */
+    --text-300: 215 20% 65%;
+
+    /* Dark mode gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(221, 92%, 42%) 0%, hsl(221, 100%, 25%) 100%);
+    --gradient-hero: linear-gradient(135deg, #0A3FCC 0%, #001F80 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(217, 33%, 7%) 0%, hsl(216, 28%, 11%) 100%);
+
+    /* Dark mode shadows */
+    --shadow-elegant: 0 2px 8px rgba(0, 87, 255, 0.15);
     --shadow-card: 0 2px 8px rgba(0, 87, 255, 0.15);
-    --shadow-blue-glow: 0 0 40px hsl(217 91% 60% / 0.35);
-    --shadow-blue-intense: 0 4px 24px hsl(217 91% 60% / 0.4);
-    --shadow-depth: 0 12px 48px hsl(217 91% 60% / 0.2);
+    --shadow-glow: 0 0 20px rgba(0, 87, 255, 0.2);
   }
 }
 

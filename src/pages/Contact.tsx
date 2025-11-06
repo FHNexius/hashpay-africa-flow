@@ -1,137 +1,214 @@
 import { useState } from "react";
-import { Mail, MapPin, Send, Clock } from "lucide-react";
-import { motion } from "framer-motion";
-import Navigation from "@/components/Navigation";
-import Footer from "@/components/Footer";
-import GlassPanel from "@/components/GlassPanel";
-import RippleButton from "@/components/RippleButton";
-import ScrollReveal from "@/components/ScrollReveal";
-import CurvedDivider from "@/components/CurvedDivider";
+import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
+import { Mail, MapPin, Phone } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 const Contact = () => {
   const { toast } = useToast();
   const [formData, setFormData] = useState({
     name: "",
+    company: "",
     email: "",
-    organization: "",
-    message: "",
+    useCase: "",
+    message: ""
   });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Create mailto link
+    const mailtoLink = `mailto:admin@hashpayremit.com?subject=Contact from ${encodeURIComponent(formData.name)} - ${encodeURIComponent(formData.company)}&body=${encodeURIComponent(
+      `Name: ${formData.name}\nCompany: ${formData.company}\nEmail: ${formData.email}\nUse Case: ${formData.useCase}\n\nMessage:\n${formData.message}`
+    )}`;
+    
+    window.location.href = mailtoLink;
+    
     toast({
-      title: "Message Received",
-      description: "Thank you for contacting HashPay. We'll get back to you within 24 hours.",
+      title: "Opening email client",
+      description: "Your default email client will open with the message pre-filled.",
     });
-    setFormData({ name: "", email: "", organization: "", message: "" });
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-background">
       <Navigation />
       
-      <section className="pt-40 pb-20 relative overflow-hidden particle-bg">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div 
-            className="max-w-5xl mx-auto text-center space-y-8"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <h1 className="text-6xl sm:text-7xl font-heading font-bold leading-tight">
-              Let's Build{" "}
-              <span className="text-gradient animate-gradient">Together</span>
+      {/* Hero Section */}
+      <section className="relative pt-32 pb-20 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent" />
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-3xl mx-auto text-center mb-16">
+            <h1 className="text-5xl font-bold mb-6 text-foreground">
+              Get in Touch
             </h1>
-            <p className="text-2xl text-foreground/90 font-body leading-relaxed">
-              Connect with our team to discuss your infrastructure needs and explore how 
-              HashPay can power your financial operations.
+            <p className="text-xl text-muted-foreground">
+              Ready to integrate HashPay's stablecoin infrastructure? 
+              Let's discuss how we can support your use case.
             </p>
-          </motion.div>
+          </div>
         </div>
-        <CurvedDivider />
       </section>
 
-      <section className="py-24 bg-card">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 max-w-7xl mx-auto">
-            <ScrollReveal direction="left">
-              <GlassPanel hover={false} className="p-10">
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="space-y-2">
-                    <label htmlFor="name" className="text-sm font-body font-medium">Full Name *</label>
-                    <Input id="name" name="name" value={formData.name} onChange={handleChange} required className="bg-background/50 border-border" placeholder="John Doe" />
-                  </div>
-                  <div className="space-y-2">
-                    <label htmlFor="email" className="text-sm font-body font-medium">Business Email *</label>
-                    <Input id="email" name="email" type="email" value={formData.email} onChange={handleChange} required className="bg-background/50 border-border" placeholder="john@company.com" />
-                  </div>
-                  <div className="space-y-2">
-                    <label htmlFor="organization" className="text-sm font-body font-medium">Organization *</label>
-                    <Input id="organization" name="organization" value={formData.organization} onChange={handleChange} required className="bg-background/50 border-border" placeholder="Your Company" />
-                  </div>
-                  <div className="space-y-2">
-                    <label htmlFor="message" className="text-sm font-body font-medium">Message *</label>
-                    <Textarea id="message" name="message" value={formData.message} onChange={handleChange} required className="bg-background/50 border-border min-h-[150px]" placeholder="Tell us about your infrastructure needs..." />
-                  </div>
-                  <RippleButton type="submit" size="lg" className="w-full">
-                    Send Message
-                    <Send className="w-4 h-4" />
-                  </RippleButton>
-                </form>
-              </GlassPanel>
-            </ScrollReveal>
-
-            <ScrollReveal direction="right">
-              <div className="space-y-8">
+      {/* Contact Form & Info */}
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+            {/* Contact Form */}
+            <div className="bg-card border border-border rounded-2xl p-8">
+              <h2 className="text-2xl font-bold mb-6 text-foreground">
+                Send us a message
+              </h2>
+              <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                  <h2 className="text-4xl font-heading font-bold mb-6">Get in Touch</h2>
-                  <p className="text-lg text-foreground/90 font-body leading-relaxed">
-                    Whether you're a fintech looking to integrate stablecoin rails, a bank exploring 
-                    custody solutions, or an organization seeking compliant payment infrastructure — 
-                    we're here to help.
-                  </p>
+                  <label htmlFor="name" className="block text-sm font-medium mb-2 text-foreground">
+                    Name *
+                  </label>
+                  <Input
+                    id="name"
+                    required
+                    value={formData.name}
+                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                    placeholder="Your name"
+                  />
                 </div>
 
-                <GlassPanel hover={false} className="space-y-6">
-                  <div className="flex items-start space-x-4">
-                    <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <Mail className="w-7 h-7 text-primary" />
+                <div>
+                  <label htmlFor="company" className="block text-sm font-medium mb-2 text-foreground">
+                    Company *
+                  </label>
+                  <Input
+                    id="company"
+                    required
+                    value={formData.company}
+                    onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+                    placeholder="Company name"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium mb-2 text-foreground">
+                    Email *
+                  </label>
+                  <Input
+                    id="email"
+                    type="email"
+                    required
+                    value={formData.email}
+                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                    placeholder="your@email.com"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="useCase" className="block text-sm font-medium mb-2 text-foreground">
+                    Use Case *
+                  </label>
+                  <Input
+                    id="useCase"
+                    required
+                    value={formData.useCase}
+                    onChange={(e) => setFormData({ ...formData, useCase: e.target.value })}
+                    placeholder="e.g., Cross-border payments, Treasury management"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="message" className="block text-sm font-medium mb-2 text-foreground">
+                    Message *
+                  </label>
+                  <Textarea
+                    id="message"
+                    required
+                    value={formData.message}
+                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                    placeholder="Tell us about your requirements..."
+                    rows={6}
+                  />
+                </div>
+
+                <Button type="submit" size="lg" className="w-full">
+                  Send Message
+                </Button>
+              </form>
+            </div>
+
+            {/* Contact Information */}
+            <div className="space-y-8">
+              <div>
+                <h2 className="text-2xl font-bold mb-6 text-foreground">
+                  Contact Information
+                </h2>
+                <div className="space-y-6">
+                  <div className="flex items-start gap-4">
+                    <div className="p-3 bg-primary/10 rounded-lg">
+                      <Mail className="w-6 h-6 text-primary" />
                     </div>
-                    <div className="space-y-1">
-                      <h3 className="text-xl font-heading font-semibold">Email</h3>
-                      <a href="mailto:admin@hashpayremit.com" className="text-muted-foreground hover:text-primary transition-colors font-body">
-                        admin@hashpayremit.com
-                      </a>
+                    <div>
+                      <h3 className="font-semibold mb-1 text-foreground">Email</h3>
+                      <p className="text-muted-foreground">admin@hashpayremit.com</p>
+                      <p className="text-sm text-muted-foreground mt-1">
+                        For general inquiries and support
+                      </p>
                     </div>
                   </div>
-                  <div className="flex items-start space-x-4">
-                    <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <MapPin className="w-7 h-7 text-primary" />
+
+                  <div className="flex items-start gap-4">
+                    <div className="p-3 bg-primary/10 rounded-lg">
+                      <MapPin className="w-6 h-6 text-primary" />
                     </div>
-                    <div className="space-y-1">
-                      <h3 className="text-xl font-heading font-semibold">Office</h3>
-                      <p className="text-muted-foreground font-body">Burnsville, MN<br />United States</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start space-x-4">
-                    <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <Clock className="w-7 h-7 text-primary" />
-                    </div>
-                    <div className="space-y-1">
-                      <h3 className="text-xl font-heading font-semibold">Response Time</h3>
-                      <p className="text-muted-foreground font-body">Within 24 hours</p>
+                    <div>
+                      <h3 className="font-semibold mb-1 text-foreground">Location</h3>
+                      <p className="text-muted-foreground">Addis Ababa, Ethiopia</p>
+                      <p className="text-sm text-muted-foreground mt-1">
+                        Licensed FX Bureau in Ethiopia
+                      </p>
                     </div>
                   </div>
-                </GlassPanel>
+
+                  <div className="flex items-start gap-4">
+                    <div className="p-3 bg-primary/10 rounded-lg">
+                      <Phone className="w-6 h-6 text-primary" />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold mb-1 text-foreground">Business Hours</h3>
+                      <p className="text-muted-foreground">24/7 Operations</p>
+                      <p className="text-sm text-muted-foreground mt-1">
+                        Always-on infrastructure support
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </ScrollReveal>
+
+              {/* Additional Info Cards */}
+              <div className="bg-card border border-border rounded-2xl p-8">
+                <h3 className="text-xl font-bold mb-4 text-foreground">
+                  Partnership Inquiries
+                </h3>
+                <p className="text-muted-foreground mb-4">
+                  Interested in becoming a liquidity partner or integrating HashPay into your platform?
+                </p>
+                <Button variant="outline" className="w-full">
+                  Schedule Partnership Call
+                </Button>
+              </div>
+
+              <div className="bg-card border border-border rounded-2xl p-8">
+                <h3 className="text-xl font-bold mb-4 text-foreground">
+                  Developer Support
+                </h3>
+                <p className="text-muted-foreground mb-4">
+                  Technical questions about our API or integration support?
+                </p>
+                <Button variant="outline" className="w-full" onClick={() => window.location.href = '/developers'}>
+                  Visit Developer Portal
+                </Button>
+              </div>
+            </div>
           </div>
         </div>
       </section>
