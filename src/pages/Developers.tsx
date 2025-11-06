@@ -293,7 +293,7 @@ print(lock)`,
             </div>
 
             <h1 className="text-5xl sm:text-6xl font-heading font-bold">
-              HashPay Developer Portal
+              <span className="text-gradient animate-gradient">HashPay</span> Developer Portal
             </h1>
 
             <p className="text-xl text-muted-foreground font-body max-w-3xl mx-auto">
