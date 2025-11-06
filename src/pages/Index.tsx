@@ -116,13 +116,13 @@ const Index = () => {
               transition={{ duration: 0.8, delay: 0.8 }}
             >
               <Link to="/contact">
-                <RippleButton size="lg" className="text-lg px-12 py-8 bg-primary text-white hover:bg-primary/90">
+                <RippleButton size="lg" className="text-lg px-12 py-8 bg-primary text-primary-foreground hover:bg-primary/90">
                   Contact Sales
                   <ArrowRight className="w-5 h-5" />
                 </RippleButton>
               </Link>
               <Link to="/developers">
-                <RippleButton size="lg" className="text-lg px-12 py-8 bg-white text-foreground border-2 border-white hover:bg-white/90">
+                <RippleButton size="lg" className="text-lg px-12 py-8 bg-card text-foreground border-2 border-border hover:bg-card/90">
                   View Platform
                 </RippleButton>
               </Link>
@@ -134,7 +134,7 @@ const Index = () => {
       </section>
 
       {/* How It Works */}
-      <section className="py-32 bg-white relative">
+      <section className="py-32 bg-background relative">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal>
             <div className="text-center space-y-6 mb-20">
@@ -201,11 +201,11 @@ const Index = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.4 }}
             >
-               <div className="flex items-center space-x-2 bg-white border border-primary/30 px-6 py-3 rounded-full shadow-sm">
+               <div className="flex items-center space-x-2 bg-card border border-primary/30 px-6 py-3 rounded-full shadow-sm">
                 <CheckCircle2 className="w-5 h-5 text-primary" />
                 <span className="font-body font-semibold text-foreground">Licensed FX Bureau — Ethiopia (2024)</span>
               </div>
-              <div className="flex items-center space-x-2 bg-white border border-primary/30 px-6 py-3 rounded-full shadow-sm">
+              <div className="flex items-center space-x-2 bg-card border border-primary/30 px-6 py-3 rounded-full shadow-sm">
                 <CheckCircle2 className="w-5 h-5 text-primary" />
                 <span className="font-body font-semibold text-foreground">MSB-Compliant Infrastructure — USA</span>
               </div>
@@ -272,7 +272,7 @@ const Index = () => {
       </section>
 
       {/* Why Institutions Choose HashPay */}
-      <section className="py-32 bg-white relative">
+      <section className="py-32 bg-background relative">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal>
             <div className="text-center space-y-6 mb-20">
@@ -309,7 +309,7 @@ const Index = () => {
                   whileHover={{ rotate: 360 }}
                   transition={{ duration: 0.6 }}
                 >
-                  <feature.icon className="w-8 h-8 text-white" />
+                  <feature.icon className="w-8 h-8 text-primary-foreground" />
                 </motion.div>
                 <h3 className="text-2xl font-heading font-bold mb-4 text-foreground">{feature.title}</h3>
                 <p className="text-muted-foreground font-body leading-relaxed">{feature.desc}</p>
@@ -348,7 +348,7 @@ const Index = () => {
               ].map((badge, idx) => (
                 <motion.div
                   key={idx}
-                  className="p-6 bg-white border border-border rounded-xl text-center hover:border-primary/50 transition-all shadow-sm"
+                  className="p-6 bg-card border border-border rounded-xl text-center hover:border-primary/50 transition-all shadow-sm"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -379,7 +379,7 @@ const Index = () => {
       </section>
 
       {/* Use Cases */}
-      <section className="py-32 bg-white relative">
+      <section className="py-32 bg-background relative">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal>
             <div className="text-center space-y-6 mb-20">
@@ -454,7 +454,7 @@ const Index = () => {
       </section>
 
       {/* Final CTA */}
-      <section className="py-32 bg-white relative">
+      <section className="py-32 bg-background relative">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mx-auto p-16 bg-secondary border border-border rounded-3xl text-center space-y-10 shadow-xl">
             <ScrollReveal>
@@ -478,13 +478,13 @@ const Index = () => {
               transition={{ duration: 0.6, delay: 0.4 }}
             >
               <Link to="/contact">
-                <RippleButton size="lg" className="text-xl px-16 py-8 bg-primary text-white hover:bg-primary/90">
+                <RippleButton size="lg" className="text-xl px-16 py-8 bg-primary text-primary-foreground hover:bg-primary/90">
                   Contact Sales
                   <ArrowRight className="w-6 h-6" />
                 </RippleButton>
               </Link>
               <Link to="/contact">
-                <RippleButton size="lg" className="text-xl px-16 py-8 bg-white text-foreground border-2 border-border hover:bg-white/90">
+                <RippleButton size="lg" className="text-xl px-16 py-8 bg-card text-foreground border-2 border-border hover:bg-card/90">
                   Request Demo
                   <ArrowRight className="w-6 h-6" />
                 </RippleButton>
@@ -509,10 +509,10 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-border bg-white relative overflow-hidden">
-        {/* Animated orange line */}
+      <footer className="border-t border-border bg-background relative overflow-hidden">
+        {/* Animated blue accent line */}
         <motion.div
-          className="absolute top-0 left-0 h-0.5 bg-gradient-orange"
+          className="absolute top-0 left-0 h-0.5 bg-gradient-primary"
           initial={{ width: 0 }}
           whileInView={{ width: "100%" }}
           viewport={{ once: true }}

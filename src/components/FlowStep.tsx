@@ -41,9 +41,9 @@ const FlowStep = ({ number, title, description, icon: Icon, delay }: FlowStepPro
           <motion.div
             animate={{ 
               boxShadow: [
-                "0 0 20px rgba(255, 221, 0, 0.3)",
-                "0 0 40px rgba(255, 221, 0, 0.5)",
-                "0 0 20px rgba(255, 221, 0, 0.3)"
+                "0 0 20px rgba(10, 78, 255, 0.3)",
+                "0 0 40px rgba(10, 78, 255, 0.5)",
+                "0 0 20px rgba(10, 78, 255, 0.3)"
               ]
             }}
             transition={{ duration: 2, repeat: Infinity }}

@@ -36,8 +36,8 @@ const RippleButton = ({ children, className, onClick, size = "lg", type = "butto
       size={size}
       onClick={addRipple}
       className={cn(
-        "gradient-gold text-navy-deep font-semibold relative overflow-hidden group",
-        "hover:shadow-glow-intense transition-all duration-300",
+        "relative overflow-hidden group font-semibold",
+        "hover:shadow-lg transition-all duration-300 hover:scale-105",
         className
       )}
     >

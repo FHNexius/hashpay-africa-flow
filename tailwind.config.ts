@@ -54,15 +54,14 @@ export default {
         },
         navy: {
           deep: "hsl(var(--charcoal))",
-          card: "hsl(var(--charcoal-light))",
         },
         yellow: {
-          DEFAULT: "hsl(var(--yellow))",
+          DEFAULT: "hsl(var(--yellow-accent))",
           glow: "hsl(var(--yellow-glow))",
         },
         blue: {
-          DEFAULT: "hsl(var(--blue))",
-          dark: "hsl(var(--blue-dark))",
+          DEFAULT: "hsl(var(--blue-primary))",
+          hover: "hsl(var(--blue-hover))",
         },
       },
       borderRadius: {

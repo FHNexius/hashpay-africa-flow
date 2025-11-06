@@ -66,12 +66,12 @@ const Navigation = () => {
               </Link>)}
             
             <Link to="/developers">
-              <RippleButton size="default" className="px-6 bg-secondary text-secondary-foreground hover:bg-secondary/90">
+              <RippleButton size="default" className="px-6 bg-card text-foreground border border-border hover:bg-card/90">
                 Developers
               </RippleButton>
             </Link>
             
-            <RippleButton size="default" className="px-6">
+            <RippleButton size="default" className="px-6 bg-primary text-primary-foreground hover:bg-primary/90">
               Contact Sales
             </RippleButton>
             
@@ -155,11 +155,11 @@ const Navigation = () => {
               delay: navLinks.length * 0.05
             }} className="pt-2">
                   <Link to="/developers" onClick={() => setIsMobileMenuOpen(false)} className="block mb-3">
-                    <RippleButton size="default" className="w-full bg-secondary text-secondary-foreground hover:bg-secondary/90">
+                    <RippleButton size="default" className="w-full bg-card text-foreground border border-border hover:bg-card/90">
                       Developers
                     </RippleButton>
                   </Link>
-                  <RippleButton size="default" className="w-full mb-3">
+                  <RippleButton size="default" className="w-full mb-3 bg-primary text-primary-foreground hover:bg-primary/90">
                     Contact Sales
                   </RippleButton>
                   <div className="flex justify-center">
