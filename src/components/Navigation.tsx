@@ -25,6 +25,9 @@ const Navigation = () => {
     name: "Compliance",
     path: "/compliance"
   }, {
+    name: "Developers",
+    path: "/developers"
+  }, {
     name: "Contact",
     path: "/contact"
   }];
