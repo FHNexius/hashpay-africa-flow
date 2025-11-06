@@ -23,7 +23,7 @@ const GlassPanel = ({ children, className, delay = 0, hover = true }: GlassPanel
         className
       )}
     >
-      <div className="absolute inset-0 bg-gradient-gold-radial opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
       <div className="relative z-10">{children}</div>
     </motion.div>
   );

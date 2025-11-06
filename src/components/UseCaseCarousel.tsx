@@ -66,9 +66,9 @@ const UseCaseCarousel = ({ useCases }: UseCaseCarouselProps) => {
                   <motion.div
                     whileHover={{ rotate: 360 }}
                     transition={{ duration: 0.6 }}
-                    className="w-24 h-24 rounded-2xl bg-gradient-gold flex items-center justify-center"
+                    className="w-24 h-24 rounded-2xl gradient-accent flex items-center justify-center"
                   >
-                    <useCase.icon className="w-12 h-12 text-navy-deep" />
+                    <useCase.icon className="w-12 h-12 text-primary" />
                   </motion.div>
 
                   <div className="space-y-4">
@@ -81,7 +81,7 @@ const UseCaseCarousel = ({ useCases }: UseCaseCarouselProps) => {
 
                 {/* Bottom accent line */}
                 <motion.div
-                  className="h-1 bg-gradient-gold rounded-full"
+                  className="h-1 gradient-accent rounded-full"
                   initial={{ scaleX: 0 }}
                   whileInView={{ scaleX: 1 }}
                   viewport={{ once: true }}

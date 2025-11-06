@@ -59,7 +59,7 @@ const AnimatedCounter = ({
           <motion.div
             animate={{ scale: [1, 1.2, 1] }}
             transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-            className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-gold mx-auto"
+            className="inline-flex items-center justify-center w-16 h-16 rounded-full gradient-accent mx-auto"
           >
             {icon}
           </motion.div>

@@ -54,10 +54,12 @@ export default {
         },
         yellow: {
           DEFAULT: "hsl(var(--yellow-accent))",
+          accent: "hsl(var(--yellow-accent))",
           glow: "hsl(var(--yellow-glow))",
         },
         blue: {
           DEFAULT: "hsl(var(--blue-primary))",
+          primary: "hsl(var(--blue-primary))",
           secondary: "hsl(var(--blue-secondary))",
           hover: "hsl(var(--blue-hover))",
         },

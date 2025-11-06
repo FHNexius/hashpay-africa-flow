@@ -43,17 +43,17 @@ const Compliance = () => {
             transition={{ duration: 0.8 }}
           >
             <motion.div
-              className="inline-flex items-center justify-center w-24 h-24 rounded-2xl bg-gradient-gold mx-auto mb-6"
+              className="inline-flex items-center justify-center w-24 h-24 rounded-2xl gradient-accent mx-auto mb-6"
               animate={{ 
                 boxShadow: [
-                  "0 0 40px rgba(253, 198, 57, 0.4)",
-                  "0 0 60px rgba(253, 198, 57, 0.6)",
-                  "0 0 40px rgba(253, 198, 57, 0.4)",
+                  "0 0 40px rgba(255, 215, 0, 0.4)",
+                  "0 0 60px rgba(255, 215, 0, 0.6)",
+                  "0 0 40px rgba(255, 215, 0, 0.4)",
                 ]
               }}
               transition={{ duration: 3, repeat: Infinity }}
             >
-              <Shield className="w-12 h-12 text-navy-deep" />
+              <Shield className="w-12 h-12 text-primary" />
             </motion.div>
 
             <h1 className="text-6xl sm:text-7xl font-heading font-bold leading-tight">
@@ -184,10 +184,10 @@ const Compliance = () => {
                 <GlassPanel key={idx} delay={idx * 0.15} hover={false}>
                   <div className="flex flex-col md:flex-row items-start gap-6">
                     <motion.div
-                      className="w-20 h-20 rounded-xl bg-gradient-gold flex items-center justify-center flex-shrink-0"
+                      className="w-20 h-20 rounded-xl gradient-accent flex items-center justify-center flex-shrink-0"
                       whileHover={{ scale: 1.1 }}
                     >
-                      <span className="text-3xl font-mono font-bold text-navy-deep">{step.num}</span>
+                      <span className="text-3xl font-mono font-bold text-primary">{step.num}</span>
                     </motion.div>
                     <div className="space-y-2 flex-1">
                       <h3 className="text-2xl font-heading font-semibold">{step.title}</h3>

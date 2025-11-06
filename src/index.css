@@ -43,18 +43,24 @@ All colors MUST be HSL.
     --radius: 1rem;
 
     /* Accent yellow: #FFD400 */
-    --yellow-500: 48 100% 50%;
-    --blue-500: 221 100% 50%;
-    --blue-secondary: 221 92% 42%;
-
-    /* Text dark: #1A1A1A */
-    --text-900: 0 0% 10%;
+    --yellow-accent: 48 100% 50%;
+    --yellow-glow: 48 100% 60%;
     
-    /* Light BG: #F6F8FB */
-    --bg-50: 210 17% 98%;
+    --blue-primary: 221 100% 50%;
+    --blue-secondary: 221 92% 42%;
+    --blue-hover: 221 100% 55%;
+
+    /* Text colors */
+    --text-primary: 0 0% 10%;
+    --text-secondary: 0 0% 45%;
+    
+    /* Backgrounds */
+    --bg-light: 210 17% 98%;
+    --bg-surface: 0 0% 100%;
 
     /* Gradients */
     --gradient-primary: linear-gradient(135deg, hsl(221, 100%, 50%) 0%, hsl(221, 92%, 42%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(48, 100%, 50%) 0%, hsl(45, 100%, 60%) 100%);
     --gradient-hero: linear-gradient(135deg, #0057FF 0%, #0A3FCC 100%);
     --gradient-subtle: linear-gradient(180deg, hsl(0, 0%, 100%) 0%, hsl(210, 17%, 98%) 100%);
 
@@ -101,19 +107,25 @@ All colors MUST be HSL.
     --ring: 217 91% 60%;
 
     /* Accent Yellow: #FFD400 */
-    --yellow-500: 48 100% 50%;
-    --blue-500: 217 91% 60%;
-    --blue-secondary: 221 92% 42%;
-
-    /* Text Primary: #F9FAFB */
-    --text-50: 210 20% 98%;
+    --yellow-accent: 48 100% 50%;
+    --yellow-glow: 48 100% 65%;
     
-    /* Text Secondary: #A3A9B7 */
-    --text-300: 215 20% 65%;
+    --blue-primary: 217 91% 60%;
+    --blue-secondary: 221 92% 42%;
+    --blue-hover: 217 91% 65%;
+
+    /* Text colors */
+    --text-primary: 210 20% 98%;
+    --text-secondary: 215 20% 65%;
+    
+    /* Backgrounds */
+    --bg-dark: 217 33% 7%;
+    --bg-surface-dark: 216 28% 11%;
 
     /* Dark mode gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(221, 92%, 42%) 0%, hsl(221, 100%, 25%) 100%);
-    --gradient-hero: linear-gradient(135deg, #0A3FCC 0%, #001F80 100%);
+    --gradient-primary: linear-gradient(135deg, hsl(217, 91%, 60%) 0%, hsl(221, 92%, 42%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(48, 100%, 50%) 0%, hsl(45, 100%, 65%) 100%);
+    --gradient-hero: linear-gradient(135deg, #3B82F6 0%, #0A3FCC 100%);
     --gradient-subtle: linear-gradient(180deg, hsl(217, 33%, 7%) 0%, hsl(216, 28%, 11%) 100%);
 
     /* Dark mode shadows */
@@ -156,6 +168,10 @@ All colors MUST be HSL.
   
   .gradient-primary {
     background: var(--gradient-primary);
+  }
+  
+  .gradient-accent {
+    background: var(--gradient-accent);
   }
   
   .text-gradient {

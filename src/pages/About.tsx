@@ -88,11 +88,11 @@ const About = () => {
                   whileHover={{ y: -8 }}
                 >
                   <motion.div
-                    className="w-20 h-20 rounded-2xl bg-gradient-gold flex items-center justify-center mx-auto"
+                    className="w-20 h-20 rounded-2xl gradient-accent flex items-center justify-center mx-auto"
                     whileHover={{ rotate: 360, scale: 1.1 }}
                     transition={{ duration: 0.6 }}
                   >
-                    <value.icon className="w-10 h-10 text-navy-deep" />
+                    <value.icon className="w-10 h-10 text-primary" />
                   </motion.div>
                   <h3 className="text-2xl font-heading font-bold">{value.title}</h3>
                   <p className="text-muted-foreground font-body text-sm leading-relaxed">
