@@ -115,13 +115,17 @@ const Index = () => {
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.8 }}
             >
-              <RippleButton size="lg" className="text-lg px-12 py-8 bg-primary text-white hover:bg-primary/90">
-                Contact Sales
-                <ArrowRight className="w-5 h-5" />
-              </RippleButton>
-              <RippleButton size="lg" className="text-lg px-12 py-8 bg-white text-foreground border-2 border-white hover:bg-white/90">
-                View Platform
-              </RippleButton>
+              <Link to="/contact">
+                <RippleButton size="lg" className="text-lg px-12 py-8 bg-primary text-white hover:bg-primary/90">
+                  Contact Sales
+                  <ArrowRight className="w-5 h-5" />
+                </RippleButton>
+              </Link>
+              <Link to="/developers">
+                <RippleButton size="lg" className="text-lg px-12 py-8 bg-white text-foreground border-2 border-white hover:bg-white/90">
+                  View Platform
+                </RippleButton>
+              </Link>
             </motion.div>
           </motion.div>
         </div>
@@ -253,10 +257,12 @@ const Index = () => {
                   ))}
                 </div>
 
-                <RippleButton className="mt-8 bg-primary text-primary-foreground hover:bg-primary/90">
-                  Request Platform Access
-                  <ArrowRight className="w-5 h-5" />
-                </RippleButton>
+                <Link to="/contact">
+                  <RippleButton className="mt-8 bg-primary text-primary-foreground hover:bg-primary/90">
+                    Request Platform Access
+                    <ArrowRight className="w-5 h-5" />
+                  </RippleButton>
+                </Link>
               </div>
             </ScrollReveal>
           </div>
@@ -471,14 +477,18 @@ const Index = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.4 }}
             >
-              <RippleButton size="lg" className="text-xl px-16 py-8 bg-primary text-white hover:bg-primary/90">
-                Contact Sales
-                <ArrowRight className="w-6 h-6" />
-              </RippleButton>
-              <RippleButton size="lg" className="text-xl px-16 py-8 bg-white text-foreground border-2 border-border hover:bg-white/90">
-                Request Demo
-                <ArrowRight className="w-6 h-6" />
-              </RippleButton>
+              <Link to="/contact">
+                <RippleButton size="lg" className="text-xl px-16 py-8 bg-primary text-white hover:bg-primary/90">
+                  Contact Sales
+                  <ArrowRight className="w-6 h-6" />
+                </RippleButton>
+              </Link>
+              <Link to="/contact">
+                <RippleButton size="lg" className="text-xl px-16 py-8 bg-white text-foreground border-2 border-border hover:bg-white/90">
+                  Request Demo
+                  <ArrowRight className="w-6 h-6" />
+                </RippleButton>
+              </Link>
             </motion.div>
 
             <motion.div 
