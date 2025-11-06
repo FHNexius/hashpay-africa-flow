@@ -116,7 +116,7 @@ const Terms = () => {
             <h2 className="text-2xl font-bold mb-4 text-foreground">11. Dispute Resolution</h2>
             <p className="text-muted-foreground">
               Disputes shall be resolved through good faith negotiation. If unresolved, disputes 
-              will be subject to arbitration under Ethiopian law in Addis Ababa.
+              will be subject to arbitration under applicable law.
             </p>
           </section>
 
@@ -136,7 +136,7 @@ const Terms = () => {
             <p className="text-muted-foreground mt-4">
               <strong>HashPay LLC</strong><br />
               Email: admin@hashpayremit.com<br />
-              Location: Addis Ababa, Ethiopia
+              Operating in Ethiopia & Sub-Saharan Africa
             </p>
           </section>
         </div>

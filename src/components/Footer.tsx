@@ -161,7 +161,7 @@ const Footer = () => {
               <li className="flex items-start space-x-3">
                 <MapPin className="w-4 h-4 mt-0.5 text-primary flex-shrink-0" />
                 <span className="text-sm text-muted-foreground font-body">
-                  Addis Ababa, Ethiopia
+                  Operating in Ethiopia & Sub-Saharan Africa
                 </span>
               </li>
             </ul>

@@ -477,7 +477,7 @@ const Index = () => {
                   </a>
                 </li>
                 <li className="text-sm text-muted-foreground font-body">
-                  Addis Ababa, Ethiopia
+                  Operating in Ethiopia & Sub-Saharan Africa
                 </li>
               </ul>
               

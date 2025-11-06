@@ -161,8 +161,8 @@ const Contact = () => {
                       <MapPin className="w-6 h-6 text-primary" />
                     </div>
                     <div>
-                      <h3 className="font-semibold mb-1 text-foreground">Location</h3>
-                      <p className="text-muted-foreground">Addis Ababa, Ethiopia</p>
+                      <h3 className="font-semibold mb-1 text-foreground">Operating Region</h3>
+                      <p className="text-muted-foreground">Ethiopia & Sub-Saharan Africa</p>
                       <p className="text-sm text-muted-foreground mt-1">
                         Licensed FX Bureau in Ethiopia
                       </p>

@@ -105,7 +105,7 @@ const Privacy = () => {
             <p className="text-muted-foreground mt-4">
               <strong>HashPay LLC</strong><br />
               Email: admin@hashpayremit.com<br />
-              Location: Addis Ababa, Ethiopia
+              Operating in Ethiopia & Sub-Saharan Africa
             </p>
           </section>
         </div>
