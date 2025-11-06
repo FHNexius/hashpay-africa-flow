@@ -143,45 +143,6 @@ const Index = () => {
         <CurvedDivider />
       </section>
 
-      {/* Stats Section */}
-      <section className="py-20 bg-background relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-secondary/50 to-background" />
-        
-        <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
-            {[
-              { value: "$50M+", label: "Monthly Volume", icon: TrendingUp },
-              { value: "100+", label: "Institutions", icon: Building2 },
-              { value: "15+", label: "Countries", icon: Globe },
-              { value: "99.9%", label: "Uptime", icon: Zap }
-            ].map((stat, idx) => (
-              <motion.div
-                key={idx}
-                className="relative group"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: idx * 0.1 }}
-              >
-                <div className="card-premium p-8 rounded-2xl text-center h-full">
-                  <motion.div
-                    className="w-14 h-14 mx-auto mb-4 rounded-xl bg-gradient-to-br from-primary/20 to-yellow-accent/20 flex items-center justify-center"
-                    whileHover={{ rotate: 360, scale: 1.1 }}
-                    transition={{ duration: 0.6 }}
-                  >
-                    <stat.icon className="w-7 h-7 text-primary" />
-                  </motion.div>
-                  <div className="text-5xl font-heading font-bold text-gradient mb-3">{stat.value}</div>
-                  <div className="text-sm text-muted-foreground font-body font-medium">{stat.label}</div>
-                  
-                  {/* Gradient overlay on hover */}
-                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/5 to-yellow-accent/5 opacity-0 group-hover:opacity-100 transition-opacity -z-10" />
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* How It Works */}
       <section className="py-24 bg-secondary relative overflow-hidden">
@@ -219,41 +180,38 @@ const Index = () => {
             </div>
           </ScrollReveal>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {[
-              { icon: Zap, title: "Instant Settlement", desc: "T+0 settlement with real-time confirmation", color: "from-blue-500/20 to-blue-600/20" },
-              { icon: Shield, title: "Licensed & Compliant", desc: "Regulated FX Bureau + AML/CFT aligned", color: "from-green-500/20 to-emerald-600/20" },
-              { icon: Vault, title: "Institutional Custody", desc: "Fireblocks MPC wallets with multi-tier security", color: "from-purple-500/20 to-violet-600/20" },
-              { icon: Globe, title: "Built for Africa", desc: "Optimized for Sub-Saharan corridors", color: "from-orange-500/20 to-amber-600/20" },
-              { icon: Network, title: "Unified API", desc: "Event-sourced ledger and reconciliation", color: "from-cyan-500/20 to-teal-600/20" },
-              { icon: Lock, title: "Bank-Grade Security", desc: "24/7 monitoring and encryption", color: "from-red-500/20 to-rose-600/20" }
+              { icon: Zap, title: "Instant Settlement", desc: "T+0 settlement with real-time confirmation" },
+              { icon: Shield, title: "Licensed & Compliant", desc: "Regulated FX Bureau + AML/CFT aligned" },
+              { icon: Vault, title: "Institutional Custody", desc: "Fireblocks MPC wallets with multi-tier security" },
+              { icon: Globe, title: "Built for Africa", desc: "Optimized for Sub-Saharan corridors" },
+              { icon: Network, title: "Unified API", desc: "Event-sourced ledger and reconciliation" },
+              { icon: Lock, title: "Bank-Grade Security", desc: "24/7 monitoring and encryption" }
             ].map((feature, idx) => (
               <motion.div
                 key={idx}
-                className="relative group"
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: idx * 0.08 }}
+                transition={{ duration: 0.4, delay: idx * 0.05 }}
               >
-                <div className="card-premium p-8 rounded-2xl h-full relative overflow-hidden">
-                  {/* Icon with gradient background */}
-                  <div className="relative mb-6">
-                    <motion.div
-                      className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${feature.color} flex items-center justify-center relative z-10`}
-                      whileHover={{ scale: 1.1, rotate: 5 }}
-                      transition={{ duration: 0.3 }}
-                    >
-                      <feature.icon className="w-8 h-8 text-primary" />
-                    </motion.div>
-                    <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity" />
+                <div className="group p-6 bg-card border-2 border-border rounded-xl hover:border-primary/40 transition-all duration-300 h-full">
+                  <div className="flex items-start gap-4">
+                    <div className="flex-shrink-0">
+                      <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                        <feature.icon className="w-6 h-6 text-primary" strokeWidth={2.5} />
+                      </div>
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <h3 className="text-lg font-heading font-bold mb-2 text-foreground group-hover:text-primary transition-colors">
+                        {feature.title}
+                      </h3>
+                      <p className="text-sm text-muted-foreground font-body leading-relaxed">
+                        {feature.desc}
+                      </p>
+                    </div>
                   </div>
-                  
-                  <h3 className="text-2xl font-heading font-bold mb-3 text-foreground group-hover:text-primary transition-colors">{feature.title}</h3>
-                  <p className="text-muted-foreground font-body leading-relaxed">{feature.desc}</p>
-                  
-                  {/* Bottom gradient line */}
-                  <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-yellow-accent to-primary opacity-0 group-hover:opacity-100 transition-opacity" />
                 </div>
               </motion.div>
             ))}
