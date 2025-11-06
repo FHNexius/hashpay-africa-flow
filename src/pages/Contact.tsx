@@ -38,14 +38,14 @@ const Contact = () => {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 overflow-hidden">
+      <section className="relative pt-24 sm:pt-32 pb-16 sm:pb-20 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent" />
         <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-3xl mx-auto text-center mb-16">
-            <h1 className="text-5xl font-bold mb-6 text-foreground">
+          <div className="max-w-3xl mx-auto text-center mb-12 sm:mb-16">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 text-foreground">
               Get in Touch
             </h1>
-            <p className="text-xl text-muted-foreground">
+            <p className="text-base sm:text-lg md:text-xl text-muted-foreground">
               Ready to integrate HashPay's stablecoin infrastructure? 
               Let's discuss how we can support your use case.
             </p>
@@ -54,12 +54,12 @@ const Contact = () => {
       </section>
 
       {/* Contact Form & Info */}
-      <section className="py-20 bg-background">
+      <section className="py-12 sm:py-16 md:py-20 bg-background">
         <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 max-w-6xl mx-auto">
             {/* Contact Form */}
-            <div className="bg-card border border-border rounded-2xl p-8">
-              <h2 className="text-2xl font-bold mb-6 text-foreground">
+            <div className="bg-card border border-border rounded-xl sm:rounded-2xl p-6 sm:p-8">
+              <h2 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-foreground">
                 Send us a message
               </h2>
               <form onSubmit={handleSubmit} className="space-y-6">
@@ -130,16 +130,16 @@ const Contact = () => {
                   />
                 </div>
 
-                <Button type="submit" size="lg" className="w-full">
+                <Button type="submit" size="lg" className="w-full py-6 text-base">
                   Send Message
                 </Button>
               </form>
             </div>
 
             {/* Contact Information */}
-            <div className="space-y-8">
+            <div className="space-y-6 sm:space-y-8">
               <div>
-                <h2 className="text-2xl font-bold mb-6 text-foreground">
+                <h2 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-foreground">
                   Contact Information
                 </h2>
                 <div className="space-y-6">
@@ -185,26 +185,26 @@ const Contact = () => {
               </div>
 
               {/* Additional Info Cards */}
-              <div className="bg-card border border-border rounded-2xl p-8">
-                <h3 className="text-xl font-bold mb-4 text-foreground">
+              <div className="bg-card border border-border rounded-xl sm:rounded-2xl p-6 sm:p-8">
+                <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-foreground">
                   Partnership Inquiries
                 </h3>
-                <p className="text-muted-foreground mb-4">
+                <p className="text-sm sm:text-base text-muted-foreground mb-4">
                   Interested in becoming a liquidity partner or integrating HashPay into your platform?
                 </p>
-                <Button variant="outline" className="w-full">
+                <Button variant="outline" className="w-full py-6 text-base">
                   Schedule Partnership Call
                 </Button>
               </div>
 
-              <div className="bg-card border border-border rounded-2xl p-8">
-                <h3 className="text-xl font-bold mb-4 text-foreground">
+              <div className="bg-card border border-border rounded-xl sm:rounded-2xl p-6 sm:p-8">
+                <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-foreground">
                   Developer Support
                 </h3>
-                <p className="text-muted-foreground mb-4">
+                <p className="text-sm sm:text-base text-muted-foreground mb-4">
                   Technical questions about our API or integration support?
                 </p>
-                <Button variant="outline" className="w-full" onClick={() => window.location.href = '/developers'}>
+                <Button variant="outline" className="w-full py-6 text-base" onClick={() => window.location.href = '/developers'}>
                   Visit Developer Portal
                 </Button>
               </div>

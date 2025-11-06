@@ -86,7 +86,7 @@ const Index = () => {
                 </motion.div>
               </div>
               
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-heading font-bold leading-[1.1] text-foreground mb-6 xl:text-6xl">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-bold leading-[1.1] text-foreground mb-6 px-4">
                 Institutional Stablecoin Infrastructure for{" "}
                 <span className="relative inline-block">
                   <span className="text-gradient animate-gradient">Africa</span>
@@ -111,11 +111,11 @@ const Index = () => {
           }} transition={{
             duration: 0.7,
             delay: 0.4
-          }} className="text-xl sm:text-2xl text-muted-foreground font-body max-w-4xl mx-auto leading-relaxed">
+          }} className="text-lg sm:text-xl md:text-2xl text-muted-foreground font-body max-w-4xl mx-auto leading-relaxed px-4">
               Connect global liquidity to African markets with instant settlement, full compliance, and institutional-grade infrastructure.
             </motion.p>
 
-            <motion.div className="flex flex-col sm:flex-row gap-4 justify-center pt-6" initial={{
+            <motion.div className="flex flex-col sm:flex-row gap-4 justify-center pt-6 px-4 w-full sm:w-auto" initial={{
             y: 20,
             opacity: 0
           }} animate={{
@@ -125,21 +125,21 @@ const Index = () => {
             duration: 0.7,
             delay: 0.6
           }}>
-              <Link to="/contact">
-                <RippleButton size="lg" variant="default" className="text-lg px-12 py-7 shadow-primary">
+              <Link to="/contact" className="w-full sm:w-auto">
+                <RippleButton size="lg" variant="default" className="w-full sm:w-auto text-base sm:text-lg px-8 sm:px-12 py-6 sm:py-7 shadow-primary">
                   Contact Sales
                   <ArrowRight className="w-5 h-5" />
                 </RippleButton>
               </Link>
-              <Link to="/platform">
-                <RippleButton size="lg" variant="outline" className="text-lg px-12 py-7 border-2">
+              <Link to="/platform" className="w-full sm:w-auto">
+                <RippleButton size="lg" variant="outline" className="w-full sm:w-auto text-base sm:text-lg px-8 sm:px-12 py-6 sm:py-7 border-2">
                   Explore Platform
                 </RippleButton>
               </Link>
             </motion.div>
 
             {/* Enhanced Trust Badges */}
-            <motion.div className="flex flex-wrap justify-center gap-4 pt-8" initial={{
+            <motion.div className="flex flex-wrap justify-center gap-3 sm:gap-4 pt-8 px-4" initial={{
             opacity: 0
           }} animate={{
             opacity: 1
@@ -159,17 +159,17 @@ const Index = () => {
               icon: CheckCircle2,
               label: "AML/CFT",
               sub: "Compliant"
-            }].map((badge, idx) => <motion.div key={idx} className="glass-panel px-6 py-4 rounded-2xl group cursor-default" whileHover={{
+            }].map((badge, idx) => <motion.div key={idx} className="glass-panel px-4 sm:px-6 py-3 sm:py-4 rounded-xl sm:rounded-2xl group cursor-default" whileHover={{
               scale: 1.05
             }} transition={{
               duration: 0.2
             }}>
-                  <div className="flex items-center space-x-3">
-                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                      <badge.icon className="w-5 h-5 text-primary" />
+                  <div className="flex items-center space-x-2 sm:space-x-3">
+                    <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors flex-shrink-0">
+                      <badge.icon className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />
                     </div>
                     <div className="text-left">
-                      <div className="text-sm font-semibold text-foreground">{badge.label}</div>
+                      <div className="text-xs sm:text-sm font-semibold text-foreground">{badge.label}</div>
                       <div className="text-xs text-muted-foreground">{badge.sub}</div>
                     </div>
                   </div>
@@ -186,17 +186,17 @@ const Index = () => {
       <section className="py-24 bg-secondary relative overflow-hidden">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal>
-            <div className="text-center space-y-4 mb-16">
-              <h2 className="text-4xl sm:text-5xl font-heading font-bold text-foreground">
+            <div className="text-center space-y-4 mb-12 sm:mb-16 px-4">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-foreground">
                 How It Works
               </h2>
-              <p className="text-lg text-muted-foreground font-body max-w-2xl mx-auto">
+              <p className="text-base sm:text-lg text-muted-foreground font-body max-w-2xl mx-auto">
                 Three seamless steps from fiat to stablecoin
               </p>
             </div>
           </ScrollReveal>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 max-w-6xl mx-auto px-4">
             <FlowStep number="01" title="Connect" description="Secure API or banking integration with automated compliance." icon={Link2} delay={0} />
             <FlowStep number="02" title="Convert" description="Real-time fiat ↔ stablecoin with 120s rate lock." icon={Network} delay={0.1} />
             <FlowStep number="03" title="Settle" description="Instant payouts or custody in Fireblocks MPC wallets." icon={Vault} delay={0.2} />
@@ -208,17 +208,17 @@ const Index = () => {
       <section className="py-24 bg-background relative">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal>
-            <div className="text-center space-y-4 mb-16">
-              <h2 className="text-4xl sm:text-5xl font-heading font-bold text-foreground">
+            <div className="text-center space-y-4 mb-12 sm:mb-16 px-4">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-foreground">
                 Why Choose <span className="text-gradient">HashPay</span>
               </h2>
-              <p className="text-lg text-muted-foreground font-body max-w-2xl mx-auto">
+              <p className="text-base sm:text-lg text-muted-foreground font-body max-w-2xl mx-auto">
                 Enterprise infrastructure for African markets
               </p>
             </div>
           </ScrollReveal>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 max-w-6xl mx-auto px-4">
             {[{
             icon: Zap,
             title: "Instant Settlement",
@@ -281,11 +281,11 @@ const Index = () => {
       <section className="py-24 bg-secondary relative">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal>
-            <div className="text-center space-y-4 mb-12">
-              <h2 className="text-4xl sm:text-5xl font-heading font-bold text-foreground">
+            <div className="text-center space-y-4 mb-12 px-4">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-foreground">
                 Who We Serve
               </h2>
-              <p className="text-lg text-muted-foreground font-body max-w-2xl mx-auto">
+              <p className="text-base sm:text-lg text-muted-foreground font-body max-w-2xl mx-auto">
                 Flexible infrastructure for diverse financial needs
               </p>
             </div>
@@ -312,7 +312,7 @@ const Index = () => {
         }} transition={{
           duration: 0.7
         }}>
-            <div className="relative p-16 rounded-3xl overflow-hidden">
+            <div className="relative p-8 sm:p-12 md:p-16 rounded-2xl sm:rounded-3xl overflow-hidden">
               {/* Gradient background */}
               <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background to-yellow-accent/10" />
               <div className="absolute inset-0 backdrop-blur-sm" />
@@ -331,31 +331,31 @@ const Index = () => {
                 }} transition={{
                   duration: 0.5
                 }}>
-                    <h2 className="text-5xl sm:text-6xl font-heading font-bold text-foreground">
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-foreground">
                       Ready to <span className="text-gradient">Transform</span> Your Payment Infrastructure?
                     </h2>
                   </motion.div>
                   
-                  <p className="text-xl text-muted-foreground font-body max-w-3xl mx-auto leading-relaxed">
+                  <p className="text-base sm:text-lg md:text-xl text-muted-foreground font-body max-w-3xl mx-auto leading-relaxed px-4">
                     Join leading financial institutions building on compliant stablecoin rails
                   </p>
                 </div>
 
-                <div className="flex flex-col sm:flex-row gap-5 justify-center pt-6">
-                  <Link to="/contact">
-                    <RippleButton size="lg" variant="default" className="text-lg px-14 py-7 shadow-primary">
+                <div className="flex flex-col sm:flex-row gap-4 sm:gap-5 justify-center pt-6 px-4 w-full sm:w-auto">
+                  <Link to="/contact" className="w-full sm:w-auto">
+                    <RippleButton size="lg" variant="default" className="w-full sm:w-auto text-base sm:text-lg px-10 sm:px-14 py-6 sm:py-7 shadow-primary">
                       Contact Sales
                       <ArrowRight className="w-5 h-5" />
                     </RippleButton>
                   </Link>
-                  <Link to="/platform">
-                    <RippleButton size="lg" variant="outline" className="text-lg px-14 py-7 border-2">
+                  <Link to="/platform" className="w-full sm:w-auto">
+                    <RippleButton size="lg" variant="outline" className="w-full sm:w-auto text-base sm:text-lg px-10 sm:px-14 py-6 sm:py-7 border-2">
                       Explore Platform
                     </RippleButton>
                   </Link>
                 </div>
 
-                <div className="pt-8 flex items-center justify-center gap-8 text-sm">
+                <div className="pt-8 flex flex-wrap items-center justify-center gap-4 sm:gap-8 text-sm px-4">
                   <div className="flex items-center gap-2 text-muted-foreground">
                     <CheckCircle2 className="w-5 h-5 text-primary" />
                     <span>No setup fees</span>

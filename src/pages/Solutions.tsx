@@ -98,14 +98,14 @@ const Solutions = () => {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 overflow-hidden">
+      <section className="relative pt-24 sm:pt-32 pb-16 sm:pb-20 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent" />
         <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-3xl mx-auto text-center mb-16">
-            <h1 className="text-5xl font-bold mb-6 text-foreground">
+          <div className="max-w-3xl mx-auto text-center mb-12 sm:mb-16">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 text-foreground">
               Solutions for Every Use Case
             </h1>
-            <p className="text-xl text-muted-foreground">
+            <p className="text-base sm:text-lg md:text-xl text-muted-foreground">
               From banks to fintechs, corporates to payment processors — HashPay's infrastructure 
               adapts to your specific needs.
             </p>
@@ -114,72 +114,72 @@ const Solutions = () => {
       </section>
 
       {/* Solutions Tabs */}
-      <section className="py-20 bg-background">
+      <section className="py-12 sm:py-16 md:py-20 bg-background">
         <div className="container mx-auto px-4">
           <Tabs defaultValue="banks" className="max-w-6xl mx-auto">
-            <TabsList className="grid grid-cols-2 md:grid-cols-5 w-full mb-12">
+            <TabsList className="grid grid-cols-2 md:grid-cols-5 w-full mb-8 sm:mb-12 h-auto gap-2">
               {solutions.map((solution) => (
-                <TabsTrigger key={solution.id} value={solution.id} className="flex items-center gap-2">
-                  <solution.icon className="w-4 h-4" />
-                  <span className="hidden sm:inline">{solution.label}</span>
+                <TabsTrigger key={solution.id} value={solution.id} className="flex items-center justify-center gap-2 py-3 px-2 text-xs sm:text-sm">
+                  <solution.icon className="w-4 h-4 flex-shrink-0" />
+                  <span className="hidden sm:inline truncate">{solution.label}</span>
                 </TabsTrigger>
               ))}
             </TabsList>
 
             {solutions.map((solution) => (
               <TabsContent key={solution.id} value={solution.id}>
-                <div className="bg-card border border-border rounded-2xl p-12">
-                  <div className="flex items-start gap-4 mb-6">
-                    <div className="p-3 bg-primary/10 rounded-lg">
-                      <solution.icon className="w-8 h-8 text-primary" />
+                <div className="bg-card border border-border rounded-xl sm:rounded-2xl p-6 sm:p-8 md:p-12">
+                  <div className="flex flex-col sm:flex-row items-start gap-4 mb-6">
+                    <div className="p-3 bg-primary/10 rounded-lg flex-shrink-0">
+                      <solution.icon className="w-6 h-6 sm:w-8 sm:h-8 text-primary" />
                     </div>
                     <div>
-                      <h2 className="text-3xl font-bold mb-3 text-foreground">
+                      <h2 className="text-2xl sm:text-3xl font-bold mb-2 sm:mb-3 text-foreground">
                         {solution.title}
                       </h2>
-                      <p className="text-xl text-muted-foreground">
+                      <p className="text-base sm:text-lg md:text-xl text-muted-foreground">
                         {solution.description}
                       </p>
                     </div>
                   </div>
 
-                  <div className="grid md:grid-cols-2 gap-8 my-12">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 my-8 sm:my-12">
                     <div>
-                      <h3 className="text-xl font-bold mb-4 text-foreground">Key Benefits</h3>
-                      <ul className="space-y-3">
+                      <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-foreground">Key Benefits</h3>
+                      <ul className="space-y-2 sm:space-y-3">
                         {solution.benefits.map((benefit, idx) => (
                           <li key={idx} className="flex items-center gap-3">
-                            <div className="w-2 h-2 bg-primary rounded-full" />
-                            <span className="text-foreground">{benefit}</span>
+                            <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0" />
+                            <span className="text-sm sm:text-base text-foreground">{benefit}</span>
                           </li>
                         ))}
                       </ul>
                     </div>
 
                     <div>
-                      <h3 className="text-xl font-bold mb-4 text-foreground">Integration</h3>
-                      <p className="text-muted-foreground mb-6">
+                      <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-foreground">Integration</h3>
+                      <p className="text-sm sm:text-base text-muted-foreground mb-4 sm:mb-6">
                         {solution.integration}
                       </p>
-                      <Button size="lg" className="w-full md:w-auto">
+                      <Button size="lg" className="w-full md:w-auto py-6 text-base">
                         {solution.cta}
                       </Button>
                     </div>
                   </div>
 
-                  <div className="pt-8 border-t border-border">
-                    <div className="flex items-center gap-4 text-sm text-muted-foreground">
+                  <div className="pt-6 sm:pt-8 border-t border-border">
+                    <div className="flex flex-wrap items-center gap-3 sm:gap-4 text-xs sm:text-sm text-muted-foreground">
                       <span className="flex items-center gap-2">
-                        <div className="w-2 h-2 bg-green-500 rounded-full" />
-                        Licensed & Compliant
+                        <div className="w-2 h-2 bg-green-500 rounded-full flex-shrink-0" />
+                        <span>Licensed & Compliant</span>
                       </span>
                       <span className="flex items-center gap-2">
-                        <div className="w-2 h-2 bg-green-500 rounded-full" />
-                        24/7 Operations
+                        <div className="w-2 h-2 bg-green-500 rounded-full flex-shrink-0" />
+                        <span>24/7 Operations</span>
                       </span>
                       <span className="flex items-center gap-2">
-                        <div className="w-2 h-2 bg-green-500 rounded-full" />
-                        T+0 Settlement
+                        <div className="w-2 h-2 bg-green-500 rounded-full flex-shrink-0" />
+                        <span>T+0 Settlement</span>
                       </span>
                     </div>
                   </div>

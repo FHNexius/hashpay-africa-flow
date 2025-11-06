@@ -92,14 +92,14 @@ const Platform = () => {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 overflow-hidden">
+      <section className="relative pt-24 sm:pt-32 pb-16 sm:pb-20 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent" />
         <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-3xl mx-auto text-center mb-16">
-            <h1 className="text-5xl font-bold mb-6 text-foreground">
+          <div className="max-w-3xl mx-auto text-center mb-12 sm:mb-16">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 text-foreground">
               Platform Architecture
             </h1>
-            <p className="text-xl text-muted-foreground">
+            <p className="text-base sm:text-lg md:text-xl text-muted-foreground">
               Licensed stablecoin FX infrastructure built for institutional performance. 
               Modular, event-sourced, and compliance-ready from day one.
             </p>
@@ -108,18 +108,18 @@ const Platform = () => {
       </section>
 
       {/* Modules Grid */}
-      <section className="py-20 bg-muted/30">
+      <section className="py-12 sm:py-16 md:py-20 bg-muted/30">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-6xl mx-auto">
             {modules.map((module, index) => (
               <div
                 key={index}
-                className="bg-card border border-border rounded-2xl p-8 hover:shadow-lg transition-shadow"
+                className="bg-card border border-border rounded-xl sm:rounded-2xl p-6 sm:p-8 hover:shadow-lg transition-shadow"
               >
-                <h3 className="text-2xl font-bold mb-3 text-foreground">
+                <h3 className="text-xl sm:text-2xl font-bold mb-3 text-foreground">
                   {module.title}
                 </h3>
-                <p className="text-muted-foreground mb-6">
+                <p className="text-sm sm:text-base text-muted-foreground mb-4 sm:mb-6">
                   {module.description}
                 </p>
                 <ul className="space-y-3">
@@ -137,15 +137,15 @@ const Platform = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-background">
+      <section className="py-12 sm:py-16 md:py-20 bg-background">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-6 text-foreground">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 text-foreground">
             Ready to integrate?
           </h2>
-          <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground mb-6 sm:mb-8 max-w-2xl mx-auto">
             Get started with HashPay's institutional infrastructure today.
           </p>
-          <Button size="lg" className="text-lg px-8">
+          <Button size="lg" className="text-base sm:text-lg px-6 sm:px-8 py-6 w-full sm:w-auto">
             Request Platform Access
           </Button>
         </div>

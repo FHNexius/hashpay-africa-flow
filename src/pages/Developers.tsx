@@ -276,13 +276,13 @@ print(lock)`,
       <Navigation />
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 overflow-hidden">
+      <section className="relative pt-24 sm:pt-32 pb-16 sm:pb-20 overflow-hidden">
         {/* Animated gradient background */}
         <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background to-yellow-accent/10" />
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/50 to-background" />
         
         <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div className="max-w-4xl mx-auto text-center space-y-8" initial={{
+          <motion.div className="max-w-4xl mx-auto text-center space-y-6 sm:space-y-8" initial={{
           opacity: 0,
           y: 20
         }} animate={{
@@ -291,22 +291,22 @@ print(lock)`,
         }} transition={{
           duration: 0.6
         }}>
-            <div className="inline-flex items-center space-x-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20">
+            <div className="inline-flex items-center space-x-2 px-3 sm:px-4 py-2 rounded-full bg-primary/10 border border-primary/20">
               <Code2 className="w-4 h-4 text-primary" />
-              <span className="text-sm font-mono text-primary font-semibold">API Sandbox Available</span>
+              <span className="text-xs sm:text-sm font-mono text-primary font-semibold">API Sandbox Available</span>
             </div>
 
-            <h1 className="text-5xl sm:text-6xl font-heading font-bold text-foreground">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-foreground px-4">
               HashPay Developer Portal
             </h1>
 
-            <p className="text-xl text-muted-foreground font-body max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl text-muted-foreground font-body max-w-3xl mx-auto px-4">
               Integrate with Africa&apos;s licensed stablecoin FX infrastructure.
               REST APIs, webhooks, and real-time settlement endpoints for on-ramp,
               off-ramp, and custody operations.
             </p>
 
-            <Button size="lg" className="text-lg px-8">
+            <Button size="lg" className="text-base sm:text-lg px-6 sm:px-8 py-6 w-full sm:w-auto mx-4 sm:mx-0">
               Request Early API Access
             </Button>
           </motion.div>
@@ -314,11 +314,11 @@ print(lock)`,
       </section>
 
       {/* Developer Portal Content */}
-      <section className="py-20">
+      <section className="py-12 sm:py-16 md:py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex gap-12 max-w-7xl mx-auto">
+          <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 max-w-7xl mx-auto">
             {/* Sidebar */}
-            <aside className="hidden lg:block w-64 flex-shrink-0 sticky top-24 h-fit">
+            <aside className="hidden lg:block w-64 flex-shrink-0 lg:sticky lg:top-24 h-fit">
               <nav className="space-y-2">
                 {sidebarItems.map(item => <button key={item.id} onClick={() => !item.comingSoon && setActiveSection(item.id)} disabled={item.comingSoon} className={`w-full flex items-center justify-between px-4 py-3 rounded-lg transition-all ${activeSection === item.id ? "bg-primary text-primary-foreground font-medium" : item.comingSoon ? "text-muted-foreground cursor-not-allowed opacity-50" : "text-foreground hover:bg-secondary"}`}>
                     <div className="flex items-center space-x-3">

@@ -52,7 +52,11 @@ const Navigation = () => {
   }} transition={{
     duration: 0.6,
     ease: "easeOut"
-  }} className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled ? "glass-panel border-b border-border/50" : "bg-transparent"}`}>
+  }} className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+    isScrolled || isMobileMenuOpen 
+      ? "bg-background border-b border-border shadow-md backdrop-blur-lg" 
+      : "bg-transparent"
+  }`}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo with Theme-based Swap */}
@@ -90,13 +94,13 @@ const Navigation = () => {
               </Link>)}
             
             <Link to="/contact">
-              <RippleButton size="default" className="px-6 border border-border bg-background/50 hover:bg-background/80">
+              <RippleButton size="default" className="px-6 py-5 border border-border bg-background/50 hover:bg-background/80">
                 Request Demo
               </RippleButton>
             </Link>
             
             <Link to="/contact">
-              <RippleButton size="default" className="px-6 bg-primary text-primary-foreground hover:bg-primary/90">
+              <RippleButton size="default" className="px-6 py-5 bg-primary text-primary-foreground hover:bg-primary/90">
                 Contact Sales
               </RippleButton>
             </Link>
@@ -153,8 +157,8 @@ const Navigation = () => {
           height: 0
         }} transition={{
           duration: 0.3
-        }} className="md:hidden overflow-hidden">
-              <div className="py-4 space-y-3 border-t border-border/30">
+        }} className="md:hidden overflow-hidden bg-background">
+              <div className="py-6 px-2 space-y-3 border-t border-border/30">
                 {navLinks.map((link, idx) => <motion.div key={link.path} initial={{
               opacity: 0,
               x: -20
@@ -179,18 +183,18 @@ const Navigation = () => {
             }} transition={{
               duration: 0.3,
               delay: navLinks.length * 0.05
-            }} className="pt-2">
-                  <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)} className="block mb-3">
-                    <RippleButton size="default" className="w-full border border-border bg-background/50">
+            }} className="pt-4 space-y-3">
+                  <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)} className="block">
+                    <RippleButton size="default" className="w-full py-6 border border-border bg-background/50 text-base">
                       Request Demo
                     </RippleButton>
                   </Link>
-                  <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)} className="block mb-3">
-                    <RippleButton size="default" className="w-full bg-primary text-primary-foreground hover:bg-primary/90">
+                  <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)} className="block">
+                    <RippleButton size="default" className="w-full py-6 bg-primary text-primary-foreground hover:bg-primary/90 text-base">
                       Contact Sales
                     </RippleButton>
                   </Link>
-                  <div className="flex justify-center">
+                  <div className="flex justify-center pt-2">
                     <ThemeToggle />
                   </div>
                 </motion.div>
