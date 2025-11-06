@@ -45,7 +45,7 @@ const Navigation = () => {
             scale: 1.05
           }} transition={{
             duration: 0.3
-          }} className="h-52" />
+          }} className="h-40" />
           </Link>
 
           {/* Desktop Navigation */}
