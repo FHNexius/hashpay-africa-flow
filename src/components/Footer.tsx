@@ -50,7 +50,7 @@ const Footer = () => {
               alt="HashPay" 
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.3 }}
-              className="h-32"
+              className="h-10"
             />
             <p className="text-sm text-muted-foreground font-body leading-relaxed">
               Licensed stablecoin infrastructure for Sub-Saharan Africa

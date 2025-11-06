@@ -349,7 +349,7 @@ const Index = () => {
           }} transition={{
             duration: 0.6
           }}>
-              <img src={hashpayLogo} alt="HashPay" className="h-32" />
+              <img src={hashpayLogo} alt="HashPay" className="h-10" />
               <p className="text-sm text-muted-foreground font-body leading-relaxed">
                 Stablecoin infrastructure for Sub-Saharan Africa
               </p>
