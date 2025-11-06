@@ -276,8 +276,12 @@ print(lock)`,
       <Navigation />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 bg-gradient-to-b from-secondary to-background">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative pt-32 pb-20 overflow-hidden">
+        {/* Animated gradient background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background to-yellow-accent/10" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/50 to-background" />
+        
+        <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div className="max-w-4xl mx-auto text-center space-y-8" initial={{
           opacity: 0,
           y: 20
@@ -292,8 +296,8 @@ print(lock)`,
               <span className="text-sm font-mono text-primary font-semibold">API Sandbox Available</span>
             </div>
 
-            <h1 className="text-5xl sm:text-6xl font-heading font-bold">
-              <span className="text-gradient animate-gradient">HashPay</span> Developer Portal
+            <h1 className="text-5xl sm:text-6xl font-heading font-bold text-foreground">
+              HashPay Developer Portal
             </h1>
 
             <p className="text-xl text-muted-foreground font-body max-w-3xl mx-auto">
