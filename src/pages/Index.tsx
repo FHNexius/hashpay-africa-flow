@@ -17,27 +17,23 @@ const Index = () => {
   const useCases = [{
     icon: Building2,
     title: "Banks & FX Desks",
-    description: "Park reserves in stablecoins to hedge volatility and retain value. Access institutional-grade custody and instant liquidity."
+    description: "Hedge and hold reserves in stablecoins; regulated FX with institutional custody, compliance, and treasury tools."
   }, {
     icon: Users,
     title: "Fintechs & PSPs",
-    description: "Integrate our rails to enable stablecoin settlement. Embed compliant infrastructure directly into your platform."
+    description: "Embed compliant stablecoin settlement with SDKs, webhooks, sandbox access, and reduced time-to-market."
   }, {
     icon: Briefcase,
-    title: "Corporates & Enterprises",
-    description: "Manage cross-border treasury in real time with seamless stablecoin conversions and 24/7 availability."
-  }, {
-    icon: Heart,
-    title: "NGOs & Aid Organizations",
-    description: "Disburse funds instantly and transparently with full audit trails and compliance monitoring."
-  }, {
-    icon: TrendingUp,
-    title: "Liquidity Partners",
-    description: "Provide or access stablecoin liquidity seamlessly through our unified infrastructure layer."
+    title: "Corporates & NGOs",
+    description: "24/7 cross-border settlement with audit trails, multi-sig controls, and compliance reporting."
   }, {
     icon: Network,
     title: "Payment Processors",
-    description: "Enable instant cross-border settlements with minimal fees and maximum speed for your merchants."
+    description: "Instant merchant FX and payouts with batched processing, automated reconciliation, and competitive rates."
+  }, {
+    icon: TrendingUp,
+    title: "Liquidity Partners",
+    description: "Provide or access stablecoin liquidity programmatically through institutional infrastructure."
   }];
   return <div className="min-h-screen">
       <Navigation />
@@ -80,9 +76,8 @@ const Index = () => {
             duration: 0.8,
             delay: 0.4
           }} className="text-xl text-muted-foreground font-body max-w-4xl mx-auto leading-relaxed sm:text-xl">
-              HashPay provides licensed, compliant, and instant stablecoin on-ramp, off-ramp, and custody 
-              infrastructure — connecting global liquidity with regulated African markets for real-time 
-              settlement and FX conversion.
+              HashPay provides licensed, compliant on-ramp, off-ramp, and custody rails — starting in Ethiopia — 
+              connecting global liquidity to regulated African markets with real-time FX conversion and instant settlement.
             </motion.p>
 
             {/* Badges */}
@@ -131,7 +126,7 @@ const Index = () => {
                   <ArrowRight className="w-5 h-5" />
                 </RippleButton>
               </Link>
-              <Link to="/developers">
+              <Link to="/platform">
                 <RippleButton size="lg" className="text-lg px-12 py-8 bg-card text-foreground border-2 border-border hover:bg-card/90">
                   View Platform
                 </RippleButton>
@@ -158,9 +153,9 @@ const Index = () => {
           </ScrollReveal>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-            <FlowStep number="01" title="Connect" description="Secure API or bank integration with automated compliance verification." icon={Link2} delay={0} />
-            <FlowStep number="02" title="Convert" description="Live fiat ↔ stablecoin FX engine with 120-second rate lock and real-time reconciliation." icon={Network} delay={0.2} />
-            <FlowStep number="03" title="Settle & Custody" description="Instant payouts or reserve parking in Fireblocks MPC custody." icon={Vault} delay={0.4} />
+            <FlowStep number="01" title="Connect" description="Secure API or direct banking integration with automated compliance verification." icon={Link2} delay={0} />
+            <FlowStep number="02" title="Convert" description="Real-time fiat ↔ stablecoin exchange via FX engine with 120-second rate lock and built-in KYC/AML." icon={Network} delay={0.2} />
+            <FlowStep number="03" title="Settle & Custody" description="Instant payouts or value-preserving custody in Fireblocks MPC wallets." icon={Vault} delay={0.4} />
           </div>
         </div>
 
@@ -179,10 +174,8 @@ const Index = () => {
             
             <ScrollReveal delay={0.2}>
               <p className="text-xl text-muted-foreground font-body leading-relaxed">
-                HashPay operates under a licensed FX Bureau framework in Ethiopia, authorized by 
-                the National Bank of Ethiopia (NBE). Our infrastructure meets both NBE and U.S. MSB 
-                regulatory standards — delivering compliant, transparent, and instant stablecoin-to-fiat 
-                conversion across regulated corridors.
+                HashPay operates under a licensed FX Bureau framework in Ethiopia (NBE). Our infrastructure 
+                aligns with AML/CFT, OFAC, and MSB standards for compliant, audit-ready conversion.
               </p>
             </ScrollReveal>
 
@@ -434,8 +427,8 @@ const Index = () => {
                 
                 <div className="space-y-6">
                   <p className="text-xl text-muted-foreground font-body leading-relaxed">
-                    Founded in 2025, HashPay LLC is a U.S.-based financial technology company 
-                    operating regulated stablecoin FX infrastructure across Africa — beginning with Ethiopia.
+                    Founded in 2025, HashPay LLC operates regulated stablecoin FX infrastructure 
+                    across Africa — beginning with Ethiopia.
                   </p>
                   <p className="text-xl text-muted-foreground font-body leading-relaxed">
                     We connect traditional finance and blockchain liquidity through secure, 
@@ -532,8 +525,6 @@ const Index = () => {
               <a href="mailto:admin@hashpayremit.com" className="hover:text-primary transition-colors text-lg">
                 admin@hashpayremit.com
               </a>
-              <span className="mx-3">•</span>
-              <span className="text-lg">Burnsville, MN</span>
             </motion.div>
           </div>
         </div>
@@ -589,11 +580,14 @@ const Index = () => {
               <h3 className="font-heading font-semibold mb-6 text-lg text-foreground">Company</h3>
               <ul className="space-y-3">
                 {[{
-                name: "About",
-                path: "/about"
+                name: "Platform",
+                path: "/platform"
               }, {
-                name: "Compliance",
-                path: "/compliance"
+                name: "Solutions",
+                path: "/solutions"
+              }, {
+                name: "Security & Compliance",
+                path: "/security-compliance"
               }, {
                 name: "Contact",
                 path: "/contact"
@@ -620,8 +614,22 @@ const Index = () => {
           }}>
               <h3 className="font-heading font-semibold mb-6 text-lg text-foreground">Services</h3>
               <ul className="space-y-3">
-                {["On-Ramp", "Off-Ramp", "Custody", "Liquidity"].map(service => <li key={service} className="text-sm text-muted-foreground font-body">
-                    {service}
+                {[{
+                name: "On-Ramp",
+                path: "/platform"
+              }, {
+                name: "Off-Ramp",
+                path: "/platform"
+              }, {
+                name: "Custody",
+                path: "/platform"
+              }, {
+                name: "FX Engine",
+                path: "/platform"
+              }].map(link => <li key={link.path}>
+                    <Link to={link.path} className="text-sm text-muted-foreground hover:text-primary transition-colors font-body">
+                      {link.name}
+                    </Link>
                   </li>)}
               </ul>
             </motion.div>
@@ -643,19 +651,59 @@ const Index = () => {
               <ul className="space-y-3">
                 <li>
                   <Link to="/developers" className="text-sm text-muted-foreground hover:text-primary transition-colors font-body">
-                    API Docs
+                    API Documentation
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/developers" className="text-sm text-muted-foreground hover:text-primary transition-colors font-body">
+                    Sandbox Access
                   </Link>
                 </li>
                 <li className="text-sm text-muted-foreground/50 font-body">
                   Changelog <span className="text-xs">(Coming Soon)</span>
                 </li>
               </ul>
+            </motion.div>
+
+            {/* Contact */}
+            <motion.div initial={{
+            opacity: 0,
+            y: 20
+          }} whileInView={{
+            opacity: 1,
+            y: 0
+          }} viewport={{
+            once: true
+          }} transition={{
+            duration: 0.6,
+            delay: 0.4
+          }}>
+              <h3 className="font-heading font-semibold mb-6 text-lg text-foreground">Contact</h3>
+              <ul className="space-y-3">
+                <li>
+                  <a href="mailto:admin@hashpayremit.com" className="text-sm text-muted-foreground hover:text-primary transition-colors font-body">
+                    admin@hashpayremit.com
+                  </a>
+                </li>
+                <li className="text-sm text-muted-foreground font-body">
+                  Addis Ababa, Ethiopia
+                </li>
+              </ul>
               
               <div className="mt-6 pt-6 border-t border-border">
-                <p className="text-sm text-muted-foreground font-body mb-3">Contact</p>
-                <a href="mailto:admin@hashpayremit.com" className="text-sm text-primary hover:text-primary/80 transition-colors font-body">
-                  admin@hashpayremit.com
-                </a>
+                <p className="text-sm text-muted-foreground font-body mb-3">Legal</p>
+                <ul className="space-y-2">
+                  <li>
+                    <Link to="/legal/privacy" className="text-xs text-muted-foreground hover:text-primary transition-colors font-body">
+                      Privacy Policy
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/legal/terms" className="text-xs text-muted-foreground hover:text-primary transition-colors font-body">
+                      Terms of Service
+                    </Link>
+                  </li>
+                </ul>
               </div>
             </motion.div>
           </div>
@@ -671,12 +719,9 @@ const Index = () => {
           duration: 0.6,
           delay: 0.4
         }}>
-            <div className="text-center space-y-2">
+            <div className="text-center">
               <p className="text-sm text-muted-foreground font-body">
-                © {new Date().getFullYear()} HashPay LLC — All rights reserved.
-              </p>
-              <p className="text-xs text-muted-foreground/70 font-body">
-                Burnsville, MN, United States
+                © {new Date().getFullYear()} HashPay LLC. All rights reserved.
               </p>
             </div>
           </motion.div>
