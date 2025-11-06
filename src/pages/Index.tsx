@@ -64,7 +64,7 @@ const Index = () => {
             duration: 0.8,
             delay: 0.2
           }}>
-              <h1 className="text-6xl sm:text-7xl font-heading font-bold leading-tight tracking-tight text-charcoal lg:text-6xl">
+              <h1 className="text-6xl sm:text-7xl font-heading font-bold leading-tight tracking-tight text-foreground lg:text-6xl">
                 The Stablecoin Infrastructure Powering{" "}
                 <span className="text-gradient animate-gradient">Sub-Saharan Africa</span>
               </h1>
@@ -148,7 +148,7 @@ const Index = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal>
             <div className="text-center space-y-6 mb-20">
-              <h2 className="text-5xl sm:text-6xl font-heading font-bold text-charcoal">
+              <h2 className="text-5xl sm:text-6xl font-heading font-bold text-foreground">
                 How It Works
               </h2>
               <p className="text-xl text-muted-foreground font-body max-w-3xl mx-auto leading-relaxed">
@@ -172,7 +172,7 @@ const Index = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center space-y-8">
             <ScrollReveal>
-              <h2 className="text-5xl sm:text-6xl font-heading font-bold text-charcoal">
+              <h2 className="text-5xl sm:text-6xl font-heading font-bold text-foreground">
                 Regulated <span className="text-gradient">FX Infrastructure</span>
               </h2>
             </ScrollReveal>
@@ -219,7 +219,7 @@ const Index = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center max-w-7xl mx-auto">
             <ScrollReveal direction="left">
               <div className="space-y-8">
-                <h2 className="text-5xl sm:text-6xl font-heading font-bold leading-tight text-charcoal">
+                <h2 className="text-5xl sm:text-6xl font-heading font-bold leading-tight text-foreground">
                   Built for Institutional{" "}
                   <span className="text-gradient">Performance</span>
                 </h2>
@@ -270,7 +270,7 @@ const Index = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal>
             <div className="text-center space-y-6 mb-20">
-              <h2 className="text-5xl sm:text-6xl font-heading font-bold text-charcoal">
+              <h2 className="text-5xl sm:text-6xl font-heading font-bold text-foreground">
                 Why Institutions Choose{" "}
                 <span className="text-gradient">HashPay</span>
               </h2>
@@ -341,7 +341,7 @@ const Index = () => {
           <div className="max-w-5xl mx-auto">
             <ScrollReveal>
               <div className="text-center space-y-8 mb-16">
-                <h2 className="text-5xl sm:text-6xl font-heading font-bold text-charcoal">
+                <h2 className="text-5xl sm:text-6xl font-heading font-bold text-foreground">
                   Built for Regulation. Backed by{" "}
                   <span className="text-gradient">Integrity</span>
                 </h2>
@@ -402,7 +402,7 @@ const Index = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal>
             <div className="text-center space-y-6 mb-20">
-              <h2 className="text-5xl sm:text-6xl font-heading font-bold text-charcoal">
+              <h2 className="text-5xl sm:text-6xl font-heading font-bold text-foreground">
                 Built For <span className="text-gradient">Your Needs</span>
               </h2>
               <p className="text-xl text-muted-foreground font-body max-w-3xl mx-auto">
@@ -427,7 +427,7 @@ const Index = () => {
 
             <ScrollReveal direction="right">
               <div className="space-y-8">
-                <h2 className="text-5xl sm:text-6xl font-heading font-bold leading-tight text-charcoal">
+                <h2 className="text-5xl sm:text-6xl font-heading font-bold leading-tight text-foreground">
                   The Vision Behind the{" "}
                   <span className="text-gradient">Infrastructure</span>
                 </h2>
@@ -465,7 +465,7 @@ const Index = () => {
                   }}>
                         •
                       </motion.div>
-                      <p className="font-heading font-semibold text-lg text-charcoal">{value}</p>
+                      <p className="font-heading font-semibold text-lg text-foreground">{value}</p>
                     </motion.div>)}
                 </div>
               </div>
@@ -586,7 +586,7 @@ const Index = () => {
             duration: 0.6,
             delay: 0.1
           }}>
-              <h3 className="font-heading font-semibold mb-6 text-lg text-charcoal">Company</h3>
+              <h3 className="font-heading font-semibold mb-6 text-lg text-foreground">Company</h3>
               <ul className="space-y-3">
                 {[{
                 name: "About",
@@ -618,7 +618,7 @@ const Index = () => {
             duration: 0.6,
             delay: 0.2
           }}>
-              <h3 className="font-heading font-semibold mb-6 text-lg text-charcoal">Services</h3>
+              <h3 className="font-heading font-semibold mb-6 text-lg text-foreground">Services</h3>
               <ul className="space-y-3">
                 {["On-Ramp", "Off-Ramp", "Custody", "Liquidity"].map(service => <li key={service} className="text-sm text-muted-foreground font-body">
                     {service}
@@ -639,7 +639,7 @@ const Index = () => {
             duration: 0.6,
             delay: 0.3
           }}>
-              <h3 className="font-heading font-semibold mb-6 text-lg text-charcoal">Developers</h3>
+              <h3 className="font-heading font-semibold mb-6 text-lg text-foreground">Developers</h3>
               <ul className="space-y-3">
                 <li>
                   <Link to="/developers" className="text-sm text-muted-foreground hover:text-primary transition-colors font-body">
