@@ -15,8 +15,6 @@ import AfricaMapNetwork from "@/components/AfricaMapNetwork";
 import CurvedDivider from "@/components/CurvedDivider";
 import FloatingOrbs from "@/components/FloatingOrbs";
 import DecorativeShapes from "@/components/DecorativeShapes";
-import StatsSection from "@/components/StatsSection";
-import TrustBadges from "@/components/TrustBadges";
 const Index = () => {
   const useCases = [{
     icon: Building2,
@@ -43,100 +41,46 @@ const Index = () => {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden particle-bg">
+      <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden particle-bg">
         <AnimatedGlobe />
         <FloatingOrbs />
         <DecorativeShapes />
         
-        <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 py-32">
-          <motion.div className="max-w-5xl mx-auto text-center space-y-12" initial={{
-          opacity: 0
-        }} animate={{
-          opacity: 1
-        }} transition={{
-          duration: 1
-        }}>
-            <motion.div initial={{
-            y: 50,
-            opacity: 0
-          }} animate={{
-            y: 0,
-            opacity: 1
-          }} transition={{
-            duration: 0.8,
-            delay: 0.2
-          }}>
-              <h1 className="text-6xl sm:text-7xl font-heading font-bold leading-tight tracking-tight text-foreground lg:text-6xl">
-                The Stablecoin Infrastructure Powering{" "}
+        <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 py-24">
+          <motion.div className="max-w-5xl mx-auto text-center space-y-8" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1 }}>
+            <motion.div initial={{ y: 30, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.6, delay: 0.2 }}>
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-heading font-bold leading-tight text-foreground">
+                Stablecoin Infrastructure for{" "}
                 <span className="text-gradient animate-gradient">Sub-Saharan Africa</span>
               </h1>
             </motion.div>
             
-            <motion.p initial={{
-            y: 30,
-            opacity: 0
-          }} animate={{
-            y: 0,
-            opacity: 1
-          }} transition={{
-            duration: 0.8,
-            delay: 0.4
-          }} className="text-xl text-muted-foreground font-body max-w-4xl mx-auto leading-relaxed sm:text-xl">
-              HashPay provides licensed, compliant on-ramp, off-ramp, and custody rails — starting in Ethiopia — 
-              connecting global liquidity to regulated African markets with real-time FX conversion and instant settlement.
+            <motion.p initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.6, delay: 0.3 }} className="text-lg sm:text-xl text-muted-foreground font-body max-w-3xl mx-auto">
+              Licensed FX rails connecting global liquidity to African markets with instant settlement and compliance.
             </motion.p>
 
-            {/* Badges */}
-            <motion.div className="flex flex-wrap justify-center gap-4 pt-8" initial={{
-            y: 30,
-            opacity: 0
-          }} animate={{
-            y: 0,
-            opacity: 1
-          }} transition={{
-            duration: 0.8,
-            delay: 0.6
-          }}>
-              {[{
-              icon: Zap,
-              label: "T+0 Settlement"
-            }, {
-              icon: Clock,
-              label: "24/7 Operations"
-            }, {
-              icon: Shield,
-              label: "Licensed & Regulated FX Bureau"
-            }].map((badge, idx) => <motion.div key={idx} className="flex items-center space-x-2 bg-card border border-border px-6 py-3 rounded-full" whileHover={{
-              scale: 1.05
-            }} transition={{
-              duration: 0.2
-            }}>
-                  <badge.icon className="w-5 h-5 text-primary" />
-                  <span className="font-body font-semibold text-foreground">{badge.label}</span>
-                </motion.div>)}
-            </motion.div>
-
-            <motion.div className="flex flex-col sm:flex-row gap-6 justify-center pt-8" initial={{
-            y: 30,
-            opacity: 0
-          }} animate={{
-            y: 0,
-            opacity: 1
-          }} transition={{
-            duration: 0.8,
-            delay: 0.8
-          }}>
+            <motion.div className="flex flex-col sm:flex-row gap-4 justify-center pt-4" initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.6, delay: 0.4 }}>
               <Link to="/contact">
-                <RippleButton size="lg" variant="default" className="text-lg px-12 py-8">
+                <RippleButton size="lg" variant="default" className="text-base px-10 py-6">
                   Contact Sales
                   <ArrowRight className="w-5 h-5" />
                 </RippleButton>
               </Link>
               <Link to="/platform">
-                <RippleButton size="lg" variant="outline" className="text-lg px-12 py-8">
+                <RippleButton size="lg" variant="outline" className="text-base px-10 py-6">
                   View Platform
                 </RippleButton>
               </Link>
+            </motion.div>
+
+            {/* Inline Trust Badges */}
+            <motion.div className="flex flex-wrap justify-center gap-3 pt-6" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.6, delay: 0.5 }}>
+              {[{ icon: Shield, label: "Licensed FX — Ethiopia" }, { icon: Lock, label: "SOC 2 Certified" }, { icon: CheckCircle2, label: "AML/CFT Compliant" }].map((badge, idx) => (
+                <div key={idx} className="flex items-center space-x-2 bg-card/50 border border-border px-4 py-2 rounded-full text-sm">
+                  <badge.icon className="w-4 h-4 text-primary" />
+                  <span className="font-body text-muted-foreground">{badge.label}</span>
+                </div>
+              ))}
             </motion.div>
           </motion.div>
         </div>
@@ -145,403 +89,149 @@ const Index = () => {
       </section>
 
       {/* Stats Section */}
-      <StatsSection />
-
-      {/* Trust Badges */}
-      <TrustBadges />
+      <section className="py-16 bg-background">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+            {[
+              { value: "$50M+", label: "Monthly Volume" },
+              { value: "100+", label: "Institutions" },
+              { value: "15+", label: "Countries" },
+              { value: "99.9%", label: "Uptime" }
+            ].map((stat, idx) => (
+              <motion.div
+                key={idx}
+                className="text-center p-6 bg-card border border-border rounded-xl hover:border-primary/30 transition-all"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: idx * 0.1 }}
+              >
+                <div className="text-4xl font-heading font-bold text-gradient mb-2">{stat.value}</div>
+                <div className="text-sm text-muted-foreground font-body">{stat.label}</div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* How It Works */}
-      <section className="py-32 bg-background relative overflow-hidden">
-        <DecorativeShapes />
+      <section className="py-24 bg-secondary relative overflow-hidden">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal>
-            <div className="text-center space-y-6 mb-20">
-              <h2 className="text-5xl sm:text-6xl font-heading font-bold text-foreground">
+            <div className="text-center space-y-4 mb-16">
+              <h2 className="text-4xl sm:text-5xl font-heading font-bold text-foreground">
                 How It Works
               </h2>
-              <p className="text-xl text-muted-foreground font-body max-w-3xl mx-auto leading-relaxed">
-                Three seamless steps connect traditional finance to stablecoin infrastructure
+              <p className="text-lg text-muted-foreground font-body max-w-2xl mx-auto">
+                Three seamless steps from fiat to stablecoin
               </p>
             </div>
           </ScrollReveal>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-            <FlowStep number="01" title="Connect" description="Secure API or direct banking integration with automated compliance verification." icon={Link2} delay={0} />
-            <FlowStep number="02" title="Convert" description="Real-time fiat ↔ stablecoin exchange via FX engine with 120-second rate lock and built-in KYC/AML." icon={Network} delay={0.2} />
-            <FlowStep number="03" title="Settle & Custody" description="Instant payouts or value-preserving custody in Fireblocks MPC wallets." icon={Vault} delay={0.4} />
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            <FlowStep number="01" title="Connect" description="Secure API or banking integration with automated compliance." icon={Link2} delay={0} />
+            <FlowStep number="02" title="Convert" description="Real-time fiat ↔ stablecoin with 120s rate lock." icon={Network} delay={0.1} />
+            <FlowStep number="03" title="Settle" description="Instant payouts or custody in Fireblocks MPC wallets." icon={Vault} delay={0.2} />
           </div>
         </div>
-
-        <CurvedDivider flip />
       </section>
 
-      {/* Regulated FX Infrastructure */}
-      <section className="py-32 bg-secondary relative">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center space-y-8">
-            <ScrollReveal>
-              <h2 className="text-5xl sm:text-6xl font-heading font-bold text-foreground">
-                Regulated <span className="text-gradient">FX Infrastructure</span>
-              </h2>
-            </ScrollReveal>
-            
-            <ScrollReveal delay={0.2}>
-              <p className="text-xl text-muted-foreground font-body leading-relaxed">
-                HashPay operates under a licensed FX Bureau framework in Ethiopia (NBE). Our infrastructure 
-                aligns with AML/CFT, OFAC, and MSB standards for compliant, audit-ready conversion.
-              </p>
-            </ScrollReveal>
-
-            <motion.div className="flex flex-col sm:flex-row gap-4 justify-center pt-6" initial={{
-            opacity: 0,
-            y: 20
-          }} whileInView={{
-            opacity: 1,
-            y: 0
-          }} viewport={{
-            once: true
-          }} transition={{
-            duration: 0.6,
-            delay: 0.4
-          }}>
-               <div className="flex items-center space-x-2 bg-card border border-primary/30 px-6 py-3 rounded-full shadow-sm">
-                <CheckCircle2 className="w-5 h-5 text-primary" />
-                <span className="font-body font-semibold text-foreground">Licensed FX Bureau — Ethiopia (2024)</span>
-              </div>
-              <div className="flex items-center space-x-2 bg-card border border-primary/30 px-6 py-3 rounded-full shadow-sm">
-                <CheckCircle2 className="w-5 h-5 text-primary" />
-                <span className="font-body font-semibold text-foreground">MSB-Compliant Infrastructure — USA</span>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-
-        <CurvedDivider />
-      </section>
-
-      {/* Built for Institutional Performance */}
-      <section className="py-32 relative overflow-hidden particle-bg">
-        <FloatingOrbs />
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center max-w-7xl mx-auto">
-            <ScrollReveal direction="left">
-              <div className="space-y-8">
-                <h2 className="text-5xl sm:text-6xl font-heading font-bold leading-tight text-foreground">
-                  Built for Institutional{" "}
-                  <span className="text-gradient">Performance</span>
-                </h2>
-                
-                <div className="space-y-6">
-                  {["Unified API infrastructure", "Event-sourced ledger and reconciliation engine", "Real-time FX pricing and risk scoring", "Bank-grade encryption and monitoring", "Smart liquidity routing", "Scalable cross-border corridors"].map((item, idx) => <motion.div key={idx} className="flex items-start space-x-4 group" initial={{
-                  opacity: 0,
-                  x: -20
-                }} whileInView={{
-                  opacity: 1,
-                  x: 0
-                }} viewport={{
-                  once: true
-                }} transition={{
-                  duration: 0.5,
-                  delay: idx * 0.1
-                }}>
-                      <motion.div whileHover={{
-                    scale: 1.2,
-                    rotate: 360
-                  }} transition={{
-                    duration: 0.5
-                  }}>
-                        <CheckCircle2 className="w-7 h-7 text-primary flex-shrink-0 mt-1" />
-                      </motion.div>
-                      <span className="text-lg font-body text-muted-foreground group-hover:text-foreground transition-colors">
-                        {item}
-                      </span>
-                    </motion.div>)}
-                </div>
-
-                <Link to="/contact">
-                  <RippleButton variant="default" className="mt-8">
-                    Request Platform Access
-                    <ArrowRight className="w-5 h-5" />
-                  </RippleButton>
-                </Link>
-              </div>
-            </ScrollReveal>
-          </div>
-        </div>
-
-        <CurvedDivider />
-      </section>
-
-      {/* Why Institutions Choose HashPay */}
-      <section className="py-32 bg-background relative">
+      {/* Key Features */}
+      <section className="py-24 bg-background relative">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal>
-            <div className="text-center space-y-6 mb-20">
-              <h2 className="text-5xl sm:text-6xl font-heading font-bold text-foreground">
-                Why Institutions Choose{" "}
-                <span className="text-gradient">HashPay</span>
+            <div className="text-center space-y-4 mb-16">
+              <h2 className="text-4xl sm:text-5xl font-heading font-bold text-foreground">
+                Why Choose <span className="text-gradient">HashPay</span>
               </h2>
-              <p className="text-xl text-muted-foreground font-body max-w-3xl mx-auto">
-                Enterprise-grade infrastructure built for African financial innovation
+              <p className="text-lg text-muted-foreground font-body max-w-2xl mx-auto">
+                Enterprise infrastructure for African markets
               </p>
             </div>
           </ScrollReveal>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-            {[{
-            icon: Zap,
-            title: "Instant Settlement",
-            desc: "T+0 settlement with real-time processing and confirmation on the same business day."
-          }, {
-            icon: Clock,
-            title: "24/7 Availability",
-            desc: "Never stop operating. Our infrastructure runs continuously regardless of banking hours."
-          }, {
-            icon: Shield,
-            title: "Regulated Compliance",
-            desc: "Licensed FX Bureau + AML/CFT aligned."
-          }, {
-            icon: Globe,
-            title: "Built for Africa",
-            desc: "Optimized for Sub-Saharan corridors."
-          }, {
-            icon: Vault,
-            title: "Institutional Custody",
-            desc: "Fireblocks MPC wallets with multi-tier security."
-          }, {
-            icon: Network,
-            title: "Modular Integration",
-            desc: "Use on-ramp, off-ramp, or custody independently."
-          }].map((feature, idx) => <motion.div key={idx} className="p-8 bg-secondary border border-border rounded-2xl hover:border-primary/50 hover:shadow-lg transition-all" initial={{
-            opacity: 0,
-            y: 20
-          }} whileInView={{
-            opacity: 1,
-            y: 0
-          }} viewport={{
-            once: true
-          }} transition={{
-            duration: 0.5,
-            delay: idx * 0.1
-          }} whileHover={{
-            y: -8
-          }}>
-                <motion.div className="w-16 h-16 rounded-2xl bg-primary flex items-center justify-center mb-6" whileHover={{
-              rotate: 360
-            }} transition={{
-              duration: 0.6
-            }}>
-                  <feature.icon className="w-8 h-8 text-primary-foreground" />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {[
+              { icon: Zap, title: "Instant Settlement", desc: "T+0 settlement with real-time confirmation" },
+              { icon: Shield, title: "Licensed & Compliant", desc: "Regulated FX Bureau + AML/CFT aligned" },
+              { icon: Vault, title: "Institutional Custody", desc: "Fireblocks MPC wallets with multi-tier security" },
+              { icon: Globe, title: "Built for Africa", desc: "Optimized for Sub-Saharan corridors" },
+              { icon: Network, title: "Unified API", desc: "Event-sourced ledger and reconciliation" },
+              { icon: Lock, title: "Bank-Grade Security", desc: "24/7 monitoring and encryption" }
+            ].map((feature, idx) => (
+              <motion.div
+                key={idx}
+                className="p-6 bg-card border border-border rounded-xl hover:border-primary/30 transition-all"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: idx * 0.05 }}
+                whileHover={{ y: -4 }}
+              >
+                <motion.div
+                  className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4"
+                  whileHover={{ rotate: 360 }}
+                  transition={{ duration: 0.5 }}
+                >
+                  <feature.icon className="w-6 h-6 text-primary" />
                 </motion.div>
-                <h3 className="text-2xl font-heading font-bold mb-4 text-foreground">{feature.title}</h3>
-                <p className="text-muted-foreground font-body leading-relaxed">{feature.desc}</p>
-              </motion.div>)}
+                <h3 className="text-xl font-heading font-bold mb-2 text-foreground">{feature.title}</h3>
+                <p className="text-sm text-muted-foreground font-body">{feature.desc}</p>
+              </motion.div>
+            ))}
           </div>
         </div>
-
-        <CurvedDivider flip />
-      </section>
-
-      {/* Compliance Section */}
-      <section className="py-32 relative overflow-hidden bg-secondary">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-5xl mx-auto">
-            <ScrollReveal>
-              <div className="text-center space-y-8 mb-16">
-                <h2 className="text-5xl sm:text-6xl font-heading font-bold text-foreground">
-                  Built for Regulation. Backed by{" "}
-                  <span className="text-gradient">Integrity</span>
-                </h2>
-                <p className="text-xl text-muted-foreground font-body leading-relaxed max-w-3xl mx-auto">
-                  HashPay operates under U.S. MSB registration and partners with licensed transmitters 
-                  to maintain AML/CFT, OFAC, and FinCEN standards. Every transaction is monitored, 
-                  logged, and audit-ready.
-                </p>
-              </div>
-            </ScrollReveal>
-
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16">
-              {[{
-              icon: Shield,
-              label: "Full Compliance"
-            }, {
-              icon: FileCheck,
-              label: "Audit Ready"
-            }, {
-              icon: Lock,
-              label: "Bank-Grade Encryption"
-            }, {
-              icon: Eye,
-              label: "24/7 Monitoring"
-            }].map((badge, idx) => <motion.div key={idx} className="p-6 bg-card border border-border rounded-xl text-center hover:border-primary/50 transition-all shadow-sm" initial={{
-              opacity: 0,
-              y: 20
-            }} whileInView={{
-              opacity: 1,
-              y: 0
-            }} viewport={{
-              once: true
-            }} transition={{
-              duration: 0.5,
-              delay: idx * 0.1
-            }} whileHover={{
-              scale: 1.05
-            }}>
-                  <motion.div animate={{
-                boxShadow: ["0 0 20px rgba(255, 106, 0, 0.2)", "0 0 40px rgba(255, 106, 0, 0.4)", "0 0 20px rgba(255, 106, 0, 0.2)"]
-              }} transition={{
-                duration: 3,
-                repeat: Infinity
-              }} className="w-16 h-16 mx-auto rounded-xl bg-primary/10 flex items-center justify-center mb-4">
-                    <badge.icon className="w-8 h-8 text-primary" />
-                  </motion.div>
-                  <p className="font-body font-semibold text-foreground">{badge.label}</p>
-                </motion.div>)}
-            </div>
-          </div>
-        </div>
-
-        <CurvedDivider />
       </section>
 
       {/* Use Cases */}
-      <section className="py-32 bg-background relative">
+      <section className="py-24 bg-secondary relative">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal>
-            <div className="text-center space-y-6 mb-20">
-              <h2 className="text-5xl sm:text-6xl font-heading font-bold text-foreground">
-                Built For <span className="text-gradient">Your Needs</span>
+            <div className="text-center space-y-4 mb-12">
+              <h2 className="text-4xl sm:text-5xl font-heading font-bold text-foreground">
+                Who We Serve
               </h2>
-              <p className="text-xl text-muted-foreground font-body max-w-3xl mx-auto">
-                Flexible infrastructure serving diverse financial use cases across the ecosystem
+              <p className="text-lg text-muted-foreground font-body max-w-2xl mx-auto">
+                Flexible infrastructure for diverse financial needs
               </p>
             </div>
           </ScrollReveal>
 
           <UseCaseCarousel useCases={useCases} />
         </div>
-
-        <CurvedDivider flip />
-      </section>
-
-      {/* Vision Section */}
-      <section className="py-32 relative overflow-hidden particle-bg">
-        <FloatingOrbs />
-        <DecorativeShapes />
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center max-w-7xl mx-auto">
-            <ScrollReveal direction="left">
-              <AfricaMapNetwork />
-            </ScrollReveal>
-
-            <ScrollReveal direction="right">
-              <div className="space-y-8">
-                <h2 className="text-5xl sm:text-6xl font-heading font-bold leading-tight text-foreground">
-                  The Vision Behind the{" "}
-                  <span className="text-gradient">Infrastructure</span>
-                </h2>
-                
-                <div className="space-y-6">
-                  <p className="text-xl text-muted-foreground font-body leading-relaxed">
-                    Founded in 2025, HashPay LLC operates regulated stablecoin FX infrastructure 
-                    across Africa — beginning with Ethiopia.
-                  </p>
-                  <p className="text-xl text-muted-foreground font-body leading-relaxed">
-                    We connect traditional finance and blockchain liquidity through secure, 
-                    compliant rails that move value instantly and transparently.
-                  </p>
-                </div>
-
-                <div className="grid grid-cols-3 gap-6 pt-8">
-                  {["Speed", "Compliance", "Transparency"].map((value, idx) => <motion.div key={idx} className="text-center space-y-2" initial={{
-                  opacity: 0,
-                  y: 20
-                }} whileInView={{
-                  opacity: 1,
-                  y: 0
-                }} viewport={{
-                  once: true
-                }} transition={{
-                  duration: 0.5,
-                  delay: idx * 0.1
-                }}>
-                      <motion.div className="text-5xl font-mono font-bold text-gradient" animate={{
-                    scale: [1, 1.1, 1]
-                  }} transition={{
-                    duration: 2,
-                    repeat: Infinity,
-                    delay: idx * 0.3
-                  }}>
-                        •
-                      </motion.div>
-                      <p className="font-heading font-semibold text-lg text-foreground">{value}</p>
-                    </motion.div>)}
-                </div>
-              </div>
-            </ScrollReveal>
-          </div>
-        </div>
-
-        <CurvedDivider />
       </section>
 
       {/* Final CTA */}
-      <section className="py-32 bg-background relative">
+      <section className="py-24 bg-background relative">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-5xl mx-auto p-16 bg-secondary border border-border rounded-3xl text-center space-y-10 shadow-xl">
-            <ScrollReveal>
-              <h2 className="text-5xl sm:text-6xl font-heading font-bold text-foreground">
-                Partner with <span className="text-gradient">HashPay</span>
-              </h2>
-            </ScrollReveal>
+          <div className="max-w-4xl mx-auto p-12 bg-gradient-to-br from-primary/5 to-secondary border border-primary/20 rounded-2xl text-center space-y-6">
+            <h2 className="text-4xl sm:text-5xl font-heading font-bold text-foreground">
+              Ready to Get Started?
+            </h2>
             
-            <ScrollReveal delay={0.2}>
-              <p className="text-2xl text-muted-foreground font-body max-w-3xl mx-auto leading-relaxed">
-                Connect your institution to compliant stablecoin infrastructure for instant 
-                global settlement.
-              </p>
-            </ScrollReveal>
+            <p className="text-lg text-muted-foreground font-body max-w-2xl mx-auto">
+              Connect your institution to compliant stablecoin infrastructure
+            </p>
 
-            <motion.div className="flex flex-col sm:flex-row gap-6 justify-center pt-4" initial={{
-            opacity: 0,
-            y: 20
-          }} whileInView={{
-            opacity: 1,
-            y: 0
-          }} viewport={{
-            once: true
-          }} transition={{
-            duration: 0.6,
-            delay: 0.4
-          }}>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
               <Link to="/contact">
-                <RippleButton size="lg" variant="default" className="text-xl px-16 py-8">
+                <RippleButton size="lg" variant="default" className="px-10 py-6">
                   Contact Sales
-                  <ArrowRight className="w-6 h-6" />
+                  <ArrowRight className="w-5 h-5" />
                 </RippleButton>
               </Link>
-              <Link to="/contact">
-                <RippleButton size="lg" variant="outline" className="text-xl px-16 py-8">
-                  Request Demo
-                  <ArrowRight className="w-6 h-6" />
+              <Link to="/platform">
+                <RippleButton size="lg" variant="outline" className="px-10 py-6">
+                  View Platform
                 </RippleButton>
               </Link>
-            </motion.div>
+            </div>
 
-            <motion.div className="pt-8 text-muted-foreground font-body" initial={{
-            opacity: 0
-          }} whileInView={{
-            opacity: 1
-          }} viewport={{
-            once: true
-          }} transition={{
-            duration: 0.6,
-            delay: 0.6
-          }}>
-              <a href="mailto:admin@hashpayremit.com" className="hover:text-primary transition-colors text-lg">
+            <div className="pt-4">
+              <a href="mailto:admin@hashpayremit.com" className="text-muted-foreground hover:text-primary transition-colors">
                 admin@hashpayremit.com
               </a>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>
