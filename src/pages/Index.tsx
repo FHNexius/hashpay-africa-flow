@@ -13,43 +13,33 @@ import FlowStep from "@/components/FlowStep";
 import UseCaseCarousel from "@/components/UseCaseCarousel";
 import AfricaMapNetwork from "@/components/AfricaMapNetwork";
 import CurvedDivider from "@/components/CurvedDivider";
-
 const Index = () => {
-  const useCases = [
-    {
-      icon: Building2,
-      title: "Banks & FX Desks",
-      description: "Park reserves in stablecoins to hedge volatility and retain value. Access institutional-grade custody and instant liquidity."
-    },
-    {
-      icon: Users,
-      title: "Fintechs & PSPs",
-      description: "Integrate our rails to enable stablecoin settlement. Embed compliant infrastructure directly into your platform."
-    },
-    {
-      icon: Briefcase,
-      title: "Corporates & Enterprises",
-      description: "Manage cross-border treasury in real time with seamless stablecoin conversions and 24/7 availability."
-    },
-    {
-      icon: Heart,
-      title: "NGOs & Aid Organizations",
-      description: "Disburse funds instantly and transparently with full audit trails and compliance monitoring."
-    },
-    {
-      icon: TrendingUp,
-      title: "Liquidity Partners",
-      description: "Provide or access stablecoin liquidity seamlessly through our unified infrastructure layer."
-    },
-    {
-      icon: Network,
-      title: "Payment Processors",
-      description: "Enable instant cross-border settlements with minimal fees and maximum speed for your merchants."
-    },
-  ];
-
-  return (
-    <div className="min-h-screen">
+  const useCases = [{
+    icon: Building2,
+    title: "Banks & FX Desks",
+    description: "Park reserves in stablecoins to hedge volatility and retain value. Access institutional-grade custody and instant liquidity."
+  }, {
+    icon: Users,
+    title: "Fintechs & PSPs",
+    description: "Integrate our rails to enable stablecoin settlement. Embed compliant infrastructure directly into your platform."
+  }, {
+    icon: Briefcase,
+    title: "Corporates & Enterprises",
+    description: "Manage cross-border treasury in real time with seamless stablecoin conversions and 24/7 availability."
+  }, {
+    icon: Heart,
+    title: "NGOs & Aid Organizations",
+    description: "Disburse funds instantly and transparently with full audit trails and compliance monitoring."
+  }, {
+    icon: TrendingUp,
+    title: "Liquidity Partners",
+    description: "Provide or access stablecoin liquidity seamlessly through our unified infrastructure layer."
+  }, {
+    icon: Network,
+    title: "Payment Processors",
+    description: "Enable instant cross-border settlements with minimal fees and maximum speed for your merchants."
+  }];
+  return <div className="min-h-screen">
       <Navigation />
 
       {/* Hero Section */}
@@ -57,64 +47,84 @@ const Index = () => {
         <AnimatedGlobe />
         
         <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 py-32">
-          <motion.div 
-            className="max-w-5xl mx-auto text-center space-y-12"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1 }}
-          >
-            <motion.div
-              initial={{ y: 50, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-            >
-              <h1 className="text-6xl sm:text-7xl lg:text-8xl font-heading font-bold leading-tight tracking-tight text-charcoal">
+          <motion.div className="max-w-5xl mx-auto text-center space-y-12" initial={{
+          opacity: 0
+        }} animate={{
+          opacity: 1
+        }} transition={{
+          duration: 1
+        }}>
+            <motion.div initial={{
+            y: 50,
+            opacity: 0
+          }} animate={{
+            y: 0,
+            opacity: 1
+          }} transition={{
+            duration: 0.8,
+            delay: 0.2
+          }}>
+              <h1 className="text-6xl sm:text-7xl font-heading font-bold leading-tight tracking-tight text-charcoal lg:text-6xl">
                 The Stablecoin Infrastructure Powering{" "}
                 <span className="text-gradient animate-gradient">Sub-Saharan Africa</span>
               </h1>
             </motion.div>
             
-            <motion.p 
-              className="text-xl sm:text-2xl text-muted-foreground font-body max-w-4xl mx-auto leading-relaxed"
-              initial={{ y: 30, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-            >
+            <motion.p initial={{
+            y: 30,
+            opacity: 0
+          }} animate={{
+            y: 0,
+            opacity: 1
+          }} transition={{
+            duration: 0.8,
+            delay: 0.4
+          }} className="text-xl text-muted-foreground font-body max-w-4xl mx-auto leading-relaxed sm:text-xl">
               HashPay provides licensed, compliant, and instant stablecoin on-ramp, off-ramp, and custody 
               infrastructure — connecting global liquidity with regulated African markets for real-time 
               settlement and FX conversion.
             </motion.p>
 
             {/* Badges */}
-            <motion.div 
-              className="flex flex-wrap justify-center gap-4 pt-8"
-              initial={{ y: 30, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-            >
-              {[
-                { icon: Zap, label: "T+0 Settlement" },
-                { icon: Clock, label: "24/7 Operations" },
-                { icon: Shield, label: "Licensed & Regulated FX Bureau" }
-              ].map((badge, idx) => (
-                <motion.div
-                  key={idx}
-                  className="flex items-center space-x-2 bg-card border border-border px-6 py-3 rounded-full"
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ duration: 0.2 }}
-                >
+            <motion.div className="flex flex-wrap justify-center gap-4 pt-8" initial={{
+            y: 30,
+            opacity: 0
+          }} animate={{
+            y: 0,
+            opacity: 1
+          }} transition={{
+            duration: 0.8,
+            delay: 0.6
+          }}>
+              {[{
+              icon: Zap,
+              label: "T+0 Settlement"
+            }, {
+              icon: Clock,
+              label: "24/7 Operations"
+            }, {
+              icon: Shield,
+              label: "Licensed & Regulated FX Bureau"
+            }].map((badge, idx) => <motion.div key={idx} className="flex items-center space-x-2 bg-card border border-border px-6 py-3 rounded-full" whileHover={{
+              scale: 1.05
+            }} transition={{
+              duration: 0.2
+            }}>
                   <badge.icon className="w-5 h-5 text-primary" />
                   <span className="font-body font-semibold text-foreground">{badge.label}</span>
-                </motion.div>
-              ))}
+                </motion.div>)}
             </motion.div>
 
-            <motion.div 
-              className="flex flex-col sm:flex-row gap-6 justify-center pt-8"
-              initial={{ y: 30, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.8 }}
-            >
+            <motion.div className="flex flex-col sm:flex-row gap-6 justify-center pt-8" initial={{
+            y: 30,
+            opacity: 0
+          }} animate={{
+            y: 0,
+            opacity: 1
+          }} transition={{
+            duration: 0.8,
+            delay: 0.8
+          }}>
               <Link to="/contact">
                 <RippleButton size="lg" className="text-lg px-12 py-8 bg-primary text-primary-foreground hover:bg-primary/90">
                   Contact Sales
@@ -148,27 +158,9 @@ const Index = () => {
           </ScrollReveal>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-            <FlowStep
-              number="01"
-              title="Connect"
-              description="Secure API or bank integration with automated compliance verification."
-              icon={Link2}
-              delay={0}
-            />
-            <FlowStep
-              number="02"
-              title="Convert"
-              description="Live fiat ↔ stablecoin FX engine with 120-second rate lock and real-time reconciliation."
-              icon={Network}
-              delay={0.2}
-            />
-            <FlowStep
-              number="03"
-              title="Settle & Custody"
-              description="Instant payouts or reserve parking in Fireblocks MPC custody."
-              icon={Vault}
-              delay={0.4}
-            />
+            <FlowStep number="01" title="Connect" description="Secure API or bank integration with automated compliance verification." icon={Link2} delay={0} />
+            <FlowStep number="02" title="Convert" description="Live fiat ↔ stablecoin FX engine with 120-second rate lock and real-time reconciliation." icon={Network} delay={0.2} />
+            <FlowStep number="03" title="Settle & Custody" description="Instant payouts or reserve parking in Fireblocks MPC custody." icon={Vault} delay={0.4} />
           </div>
         </div>
 
@@ -194,13 +186,18 @@ const Index = () => {
               </p>
             </ScrollReveal>
 
-            <motion.div 
-              className="flex flex-col sm:flex-row gap-4 justify-center pt-6"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-            >
+            <motion.div className="flex flex-col sm:flex-row gap-4 justify-center pt-6" initial={{
+            opacity: 0,
+            y: 20
+          }} whileInView={{
+            opacity: 1,
+            y: 0
+          }} viewport={{
+            once: true
+          }} transition={{
+            duration: 0.6,
+            delay: 0.4
+          }}>
                <div className="flex items-center space-x-2 bg-card border border-primary/30 px-6 py-3 rounded-full shadow-sm">
                 <CheckCircle2 className="w-5 h-5 text-primary" />
                 <span className="font-body font-semibold text-foreground">Licensed FX Bureau — Ethiopia (2024)</span>
@@ -228,33 +225,30 @@ const Index = () => {
                 </h2>
                 
                 <div className="space-y-6">
-                  {[
-                    "Unified API infrastructure",
-                    "Event-sourced ledger and reconciliation engine",
-                    "Real-time FX pricing and risk scoring",
-                    "Bank-grade encryption and monitoring",
-                    "Smart liquidity routing",
-                    "Scalable cross-border corridors",
-                  ].map((item, idx) => (
-                    <motion.div
-                      key={idx}
-                      className="flex items-start space-x-4 group"
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.5, delay: idx * 0.1 }}
-                    >
-                      <motion.div
-                        whileHover={{ scale: 1.2, rotate: 360 }}
-                        transition={{ duration: 0.5 }}
-                      >
+                  {["Unified API infrastructure", "Event-sourced ledger and reconciliation engine", "Real-time FX pricing and risk scoring", "Bank-grade encryption and monitoring", "Smart liquidity routing", "Scalable cross-border corridors"].map((item, idx) => <motion.div key={idx} className="flex items-start space-x-4 group" initial={{
+                  opacity: 0,
+                  x: -20
+                }} whileInView={{
+                  opacity: 1,
+                  x: 0
+                }} viewport={{
+                  once: true
+                }} transition={{
+                  duration: 0.5,
+                  delay: idx * 0.1
+                }}>
+                      <motion.div whileHover={{
+                    scale: 1.2,
+                    rotate: 360
+                  }} transition={{
+                    duration: 0.5
+                  }}>
                         <CheckCircle2 className="w-7 h-7 text-primary flex-shrink-0 mt-1" />
                       </motion.div>
                       <span className="text-lg font-body text-muted-foreground group-hover:text-foreground transition-colors">
                         {item}
                       </span>
-                    </motion.div>
-                  ))}
+                    </motion.div>)}
                 </div>
 
                 <Link to="/contact">
@@ -287,34 +281,54 @@ const Index = () => {
           </ScrollReveal>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-            {[
-              { icon: Zap, title: "Instant Settlement", desc: "T+0 settlement with real-time processing and confirmation on the same business day." },
-              { icon: Clock, title: "24/7 Availability", desc: "Never stop operating. Our infrastructure runs continuously regardless of banking hours." },
-              { icon: Shield, title: "Regulated Compliance", desc: "Licensed FX Bureau + AML/CFT aligned." },
-              { icon: Globe, title: "Built for Africa", desc: "Optimized for Sub-Saharan corridors." },
-              { icon: Vault, title: "Institutional Custody", desc: "Fireblocks MPC wallets with multi-tier security." },
-              { icon: Network, title: "Modular Integration", desc: "Use on-ramp, off-ramp, or custody independently." },
-            ].map((feature, idx) => (
-              <motion.div
-                key={idx}
-                className="p-8 bg-secondary border border-border rounded-2xl hover:border-primary/50 hover:shadow-lg transition-all"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: idx * 0.1 }}
-                whileHover={{ y: -8 }}
-              >
-                <motion.div
-                  className="w-16 h-16 rounded-2xl bg-primary flex items-center justify-center mb-6"
-                  whileHover={{ rotate: 360 }}
-                  transition={{ duration: 0.6 }}
-                >
+            {[{
+            icon: Zap,
+            title: "Instant Settlement",
+            desc: "T+0 settlement with real-time processing and confirmation on the same business day."
+          }, {
+            icon: Clock,
+            title: "24/7 Availability",
+            desc: "Never stop operating. Our infrastructure runs continuously regardless of banking hours."
+          }, {
+            icon: Shield,
+            title: "Regulated Compliance",
+            desc: "Licensed FX Bureau + AML/CFT aligned."
+          }, {
+            icon: Globe,
+            title: "Built for Africa",
+            desc: "Optimized for Sub-Saharan corridors."
+          }, {
+            icon: Vault,
+            title: "Institutional Custody",
+            desc: "Fireblocks MPC wallets with multi-tier security."
+          }, {
+            icon: Network,
+            title: "Modular Integration",
+            desc: "Use on-ramp, off-ramp, or custody independently."
+          }].map((feature, idx) => <motion.div key={idx} className="p-8 bg-secondary border border-border rounded-2xl hover:border-primary/50 hover:shadow-lg transition-all" initial={{
+            opacity: 0,
+            y: 20
+          }} whileInView={{
+            opacity: 1,
+            y: 0
+          }} viewport={{
+            once: true
+          }} transition={{
+            duration: 0.5,
+            delay: idx * 0.1
+          }} whileHover={{
+            y: -8
+          }}>
+                <motion.div className="w-16 h-16 rounded-2xl bg-primary flex items-center justify-center mb-6" whileHover={{
+              rotate: 360
+            }} transition={{
+              duration: 0.6
+            }}>
                   <feature.icon className="w-8 h-8 text-primary-foreground" />
                 </motion.div>
                 <h3 className="text-2xl font-heading font-bold mb-4 text-foreground">{feature.title}</h3>
                 <p className="text-muted-foreground font-body leading-relaxed">{feature.desc}</p>
-              </motion.div>
-            ))}
+              </motion.div>)}
           </div>
         </div>
 
@@ -340,37 +354,42 @@ const Index = () => {
             </ScrollReveal>
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16">
-              {[
-                { icon: Shield, label: "Full Compliance" },
-                { icon: FileCheck, label: "Audit Ready" },
-                { icon: Lock, label: "Bank-Grade Encryption" },
-                { icon: Eye, label: "24/7 Monitoring" },
-              ].map((badge, idx) => (
-                <motion.div
-                  key={idx}
-                  className="p-6 bg-card border border-border rounded-xl text-center hover:border-primary/50 transition-all shadow-sm"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: idx * 0.1 }}
-                  whileHover={{ scale: 1.05 }}
-                >
-                  <motion.div
-                    animate={{ 
-                      boxShadow: [
-                        "0 0 20px rgba(255, 106, 0, 0.2)",
-                        "0 0 40px rgba(255, 106, 0, 0.4)",
-                        "0 0 20px rgba(255, 106, 0, 0.2)"
-                      ]
-                    }}
-                    transition={{ duration: 3, repeat: Infinity }}
-                    className="w-16 h-16 mx-auto rounded-xl bg-primary/10 flex items-center justify-center mb-4"
-                  >
+              {[{
+              icon: Shield,
+              label: "Full Compliance"
+            }, {
+              icon: FileCheck,
+              label: "Audit Ready"
+            }, {
+              icon: Lock,
+              label: "Bank-Grade Encryption"
+            }, {
+              icon: Eye,
+              label: "24/7 Monitoring"
+            }].map((badge, idx) => <motion.div key={idx} className="p-6 bg-card border border-border rounded-xl text-center hover:border-primary/50 transition-all shadow-sm" initial={{
+              opacity: 0,
+              y: 20
+            }} whileInView={{
+              opacity: 1,
+              y: 0
+            }} viewport={{
+              once: true
+            }} transition={{
+              duration: 0.5,
+              delay: idx * 0.1
+            }} whileHover={{
+              scale: 1.05
+            }}>
+                  <motion.div animate={{
+                boxShadow: ["0 0 20px rgba(255, 106, 0, 0.2)", "0 0 40px rgba(255, 106, 0, 0.4)", "0 0 20px rgba(255, 106, 0, 0.2)"]
+              }} transition={{
+                duration: 3,
+                repeat: Infinity
+              }} className="w-16 h-16 mx-auto rounded-xl bg-primary/10 flex items-center justify-center mb-4">
                     <badge.icon className="w-8 h-8 text-primary" />
                   </motion.div>
                   <p className="font-body font-semibold text-foreground">{badge.label}</p>
-                </motion.div>
-              ))}
+                </motion.div>)}
             </div>
           </div>
         </div>
@@ -425,25 +444,29 @@ const Index = () => {
                 </div>
 
                 <div className="grid grid-cols-3 gap-6 pt-8">
-                  {["Speed", "Compliance", "Transparency"].map((value, idx) => (
-                    <motion.div
-                      key={idx}
-                      className="text-center space-y-2"
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.5, delay: idx * 0.1 }}
-                    >
-                      <motion.div
-                        className="text-5xl font-mono font-bold text-gradient"
-                        animate={{ scale: [1, 1.1, 1] }}
-                        transition={{ duration: 2, repeat: Infinity, delay: idx * 0.3 }}
-                      >
+                  {["Speed", "Compliance", "Transparency"].map((value, idx) => <motion.div key={idx} className="text-center space-y-2" initial={{
+                  opacity: 0,
+                  y: 20
+                }} whileInView={{
+                  opacity: 1,
+                  y: 0
+                }} viewport={{
+                  once: true
+                }} transition={{
+                  duration: 0.5,
+                  delay: idx * 0.1
+                }}>
+                      <motion.div className="text-5xl font-mono font-bold text-gradient" animate={{
+                    scale: [1, 1.1, 1]
+                  }} transition={{
+                    duration: 2,
+                    repeat: Infinity,
+                    delay: idx * 0.3
+                  }}>
                         •
                       </motion.div>
                       <p className="font-heading font-semibold text-lg text-charcoal">{value}</p>
-                    </motion.div>
-                  ))}
+                    </motion.div>)}
                 </div>
               </div>
             </ScrollReveal>
@@ -470,13 +493,18 @@ const Index = () => {
               </p>
             </ScrollReveal>
 
-            <motion.div 
-              className="flex flex-col sm:flex-row gap-6 justify-center pt-4"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-            >
+            <motion.div className="flex flex-col sm:flex-row gap-6 justify-center pt-4" initial={{
+            opacity: 0,
+            y: 20
+          }} whileInView={{
+            opacity: 1,
+            y: 0
+          }} viewport={{
+            once: true
+          }} transition={{
+            duration: 0.6,
+            delay: 0.4
+          }}>
               <Link to="/contact">
                 <RippleButton size="lg" className="text-xl px-16 py-8 bg-primary text-primary-foreground hover:bg-primary/90">
                   Contact Sales
@@ -491,13 +519,16 @@ const Index = () => {
               </Link>
             </motion.div>
 
-            <motion.div 
-              className="pt-8 text-muted-foreground font-body"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.6 }}
-            >
+            <motion.div className="pt-8 text-muted-foreground font-body" initial={{
+            opacity: 0
+          }} whileInView={{
+            opacity: 1
+          }} viewport={{
+            once: true
+          }} transition={{
+            duration: 0.6,
+            delay: 0.6
+          }}>
               <a href="mailto:admin@hashpayremit.com" className="hover:text-primary transition-colors text-lg">
                 admin@hashpayremit.com
               </a>
@@ -511,24 +542,31 @@ const Index = () => {
       {/* Footer */}
       <footer className="border-t border-border bg-background relative overflow-hidden">
         {/* Animated blue accent line */}
-        <motion.div
-          className="absolute top-0 left-0 h-0.5 bg-gradient-primary"
-          initial={{ width: 0 }}
-          whileInView={{ width: "100%" }}
-          viewport={{ once: true }}
-          transition={{ duration: 2, ease: "easeInOut" }}
-        />
+        <motion.div className="absolute top-0 left-0 h-0.5 bg-gradient-primary" initial={{
+        width: 0
+      }} whileInView={{
+        width: "100%"
+      }} viewport={{
+        once: true
+      }} transition={{
+        duration: 2,
+        ease: "easeInOut"
+      }} />
 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
             {/* Brand */}
-            <motion.div
-              className="space-y-6"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
+            <motion.div className="space-y-6" initial={{
+            opacity: 0,
+            y: 20
+          }} whileInView={{
+            opacity: 1,
+            y: 0
+          }} viewport={{
+            once: true
+          }} transition={{
+            duration: 0.6
+          }}>
               <img src={hashpayLogo} alt="HashPay" className="h-32" />
               <p className="text-sm text-muted-foreground font-body leading-relaxed">
                 Stablecoin infrastructure for Sub-Saharan Africa
@@ -536,62 +574,75 @@ const Index = () => {
             </motion.div>
 
             {/* Company */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-            >
+            <motion.div initial={{
+            opacity: 0,
+            y: 20
+          }} whileInView={{
+            opacity: 1,
+            y: 0
+          }} viewport={{
+            once: true
+          }} transition={{
+            duration: 0.6,
+            delay: 0.1
+          }}>
               <h3 className="font-heading font-semibold mb-6 text-lg text-charcoal">Company</h3>
               <ul className="space-y-3">
-                {[
-                  { name: "About", path: "/about" },
-                  { name: "Compliance", path: "/compliance" },
-                  { name: "Contact", path: "/contact" }
-                ].map((link) => (
-                  <li key={link.path}>
-                    <Link
-                      to={link.path}
-                      className="text-sm text-muted-foreground hover:text-primary transition-colors font-body"
-                    >
+                {[{
+                name: "About",
+                path: "/about"
+              }, {
+                name: "Compliance",
+                path: "/compliance"
+              }, {
+                name: "Contact",
+                path: "/contact"
+              }].map(link => <li key={link.path}>
+                    <Link to={link.path} className="text-sm text-muted-foreground hover:text-primary transition-colors font-body">
                       {link.name}
                     </Link>
-                  </li>
-                ))}
+                  </li>)}
               </ul>
             </motion.div>
 
             {/* Services */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-            >
+            <motion.div initial={{
+            opacity: 0,
+            y: 20
+          }} whileInView={{
+            opacity: 1,
+            y: 0
+          }} viewport={{
+            once: true
+          }} transition={{
+            duration: 0.6,
+            delay: 0.2
+          }}>
               <h3 className="font-heading font-semibold mb-6 text-lg text-charcoal">Services</h3>
               <ul className="space-y-3">
-                {["On-Ramp", "Off-Ramp", "Custody", "Liquidity"].map((service) => (
-                  <li key={service} className="text-sm text-muted-foreground font-body">
+                {["On-Ramp", "Off-Ramp", "Custody", "Liquidity"].map(service => <li key={service} className="text-sm text-muted-foreground font-body">
                     {service}
-                  </li>
-                ))}
+                  </li>)}
               </ul>
             </motion.div>
 
             {/* Developers */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-            >
+            <motion.div initial={{
+            opacity: 0,
+            y: 20
+          }} whileInView={{
+            opacity: 1,
+            y: 0
+          }} viewport={{
+            once: true
+          }} transition={{
+            duration: 0.6,
+            delay: 0.3
+          }}>
               <h3 className="font-heading font-semibold mb-6 text-lg text-charcoal">Developers</h3>
               <ul className="space-y-3">
                 <li>
-                  <Link
-                    to="/developers"
-                    className="text-sm text-muted-foreground hover:text-primary transition-colors font-body"
-                  >
+                  <Link to="/developers" className="text-sm text-muted-foreground hover:text-primary transition-colors font-body">
                     API Docs
                   </Link>
                 </li>
@@ -602,10 +653,7 @@ const Index = () => {
               
               <div className="mt-6 pt-6 border-t border-border">
                 <p className="text-sm text-muted-foreground font-body mb-3">Contact</p>
-                <a
-                  href="mailto:admin@hashpayremit.com"
-                  className="text-sm text-primary hover:text-primary/80 transition-colors font-body"
-                >
+                <a href="mailto:admin@hashpayremit.com" className="text-sm text-primary hover:text-primary/80 transition-colors font-body">
                   admin@hashpayremit.com
                 </a>
               </div>
@@ -613,13 +661,16 @@ const Index = () => {
           </div>
 
           {/* Bottom bar */}
-          <motion.div
-            className="mt-16 pt-8 border-t border-border"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-          >
+          <motion.div className="mt-16 pt-8 border-t border-border" initial={{
+          opacity: 0
+        }} whileInView={{
+          opacity: 1
+        }} viewport={{
+          once: true
+        }} transition={{
+          duration: 0.6,
+          delay: 0.4
+        }}>
             <div className="text-center space-y-2">
               <p className="text-sm text-muted-foreground font-body">
                 © {new Date().getFullYear()} HashPay LLC — All rights reserved.
@@ -631,8 +682,6 @@ const Index = () => {
           </motion.div>
         </div>
       </footer>
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
