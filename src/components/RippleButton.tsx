@@ -44,7 +44,7 @@ const RippleButton = ({ children, className, onClick, size = "lg", type = "butto
       {ripples.map((ripple) => (
         <motion.span
           key={ripple.id}
-          className="absolute rounded-full bg-white/30"
+          className="absolute rounded-full bg-primary-foreground/30"
           style={{
             left: ripple.x,
             top: ripple.y,

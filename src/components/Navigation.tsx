@@ -67,7 +67,7 @@ const Navigation = () => {
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.3, ease: "easeInOut" }}
                 whileHover={{ scale: 1.05 }}
-                className="h-40" 
+                className="h-12" 
               />
             </AnimatePresence>
           </Link>
