@@ -121,13 +121,13 @@ const Index = () => {
             delay: 0.8
           }}>
               <Link to="/contact">
-                <RippleButton size="lg" className="text-lg px-12 py-8 bg-primary text-primary-foreground hover:bg-primary/90">
+                <RippleButton size="lg" variant="default" className="text-lg px-12 py-8">
                   Contact Sales
                   <ArrowRight className="w-5 h-5" />
                 </RippleButton>
               </Link>
               <Link to="/platform">
-                <RippleButton size="lg" className="text-lg px-12 py-8 bg-card text-foreground border-2 border-border hover:bg-card/90">
+                <RippleButton size="lg" variant="outline" className="text-lg px-12 py-8">
                   View Platform
                 </RippleButton>
               </Link>
@@ -245,7 +245,7 @@ const Index = () => {
                 </div>
 
                 <Link to="/contact">
-                  <RippleButton className="mt-8 bg-primary text-primary-foreground hover:bg-primary/90">
+                  <RippleButton variant="default" className="mt-8">
                     Request Platform Access
                     <ArrowRight className="w-5 h-5" />
                   </RippleButton>
@@ -499,13 +499,13 @@ const Index = () => {
             delay: 0.4
           }}>
               <Link to="/contact">
-                <RippleButton size="lg" className="text-xl px-16 py-8 bg-primary text-primary-foreground hover:bg-primary/90">
+                <RippleButton size="lg" variant="default" className="text-xl px-16 py-8">
                   Contact Sales
                   <ArrowRight className="w-6 h-6" />
                 </RippleButton>
               </Link>
               <Link to="/contact">
-                <RippleButton size="lg" className="text-xl px-16 py-8 bg-card text-foreground border-2 border-border hover:bg-card/90">
+                <RippleButton size="lg" variant="outline" className="text-xl px-16 py-8">
                   Request Demo
                   <ArrowRight className="w-6 h-6" />
                 </RippleButton>
