@@ -87,7 +87,7 @@ const Index = () => {
               </div>
               
               <h1 className="text-5xl sm:text-6xl lg:text-7xl font-heading font-bold leading-[1.1] text-foreground mb-6 xl:text-7xl">
-                Stablecoin Rails for{" "}
+                Institutional Stablecoin Infrastructure for{" "}
                 <span className="relative inline-block">
                   <span className="text-gradient animate-gradient">Africa</span>
                   <motion.span className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-primary to-yellow-accent rounded-full" initial={{
