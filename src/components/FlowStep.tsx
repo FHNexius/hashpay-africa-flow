@@ -41,15 +41,15 @@ const FlowStep = ({ number, title, description, icon: Icon, delay }: FlowStepPro
           <motion.div
             animate={{ 
               boxShadow: [
-                "0 0 20px rgba(253, 198, 57, 0.3)",
-                "0 0 40px rgba(253, 198, 57, 0.5)",
-                "0 0 20px rgba(253, 198, 57, 0.3)"
+                "0 0 20px rgba(255, 221, 0, 0.3)",
+                "0 0 40px rgba(255, 221, 0, 0.5)",
+                "0 0 20px rgba(255, 221, 0, 0.3)"
               ]
             }}
             transition={{ duration: 2, repeat: Infinity }}
-            className="w-20 h-20 rounded-2xl bg-gradient-gold flex items-center justify-center"
+            className="w-20 h-20 rounded-2xl bg-primary flex items-center justify-center"
           >
-            <Icon className="w-10 h-10 text-navy-deep" />
+            <Icon className="w-10 h-10 text-primary-foreground" />
           </motion.div>
 
           <div className="space-y-3">

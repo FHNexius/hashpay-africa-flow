@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import RippleButton from "./RippleButton";
+import ThemeToggle from "./ThemeToggle";
 import hashpayLogo from "@/assets/hashpay-logo.png";
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -24,9 +25,6 @@ const Navigation = () => {
   }, {
     name: "Compliance",
     path: "/compliance"
-  }, {
-    name: "Developers",
-    path: "/developers"
   }, {
     name: "Contact",
     path: "/contact"
@@ -56,7 +54,7 @@ const Navigation = () => {
                 <span className={`text-sm font-body font-medium transition-colors ${location.pathname === link.path ? "text-primary" : "text-foreground/80 hover:text-foreground"}`}>
                   {link.name}
                 </span>
-                <motion.span className="absolute -bottom-1 left-0 h-0.5 bg-gradient-gold" initial={{
+                <motion.span className="absolute -bottom-1 left-0 h-0.5 bg-gradient-primary" initial={{
               width: 0
             }} animate={{
               width: location.pathname === link.path ? "100%" : 0
@@ -67,9 +65,17 @@ const Navigation = () => {
             }} />
               </Link>)}
             
+            <Link to="/developers">
+              <RippleButton size="default" className="px-6 bg-secondary text-secondary-foreground hover:bg-secondary/90">
+                Developers
+              </RippleButton>
+            </Link>
+            
             <RippleButton size="default" className="px-6">
               Contact Sales
             </RippleButton>
+            
+            <ThemeToggle />
           </div>
 
           {/* Mobile Menu Button */}
@@ -133,10 +139,11 @@ const Navigation = () => {
               duration: 0.3,
               delay: idx * 0.05
             }}>
-                    <Link to={link.path} onClick={() => setIsMobileMenuOpen(false)} className={`block py-3 px-4 rounded-lg text-base font-body font-medium transition-all ${location.pathname === link.path ? "bg-primary/10 text-primary" : "text-foreground/80 hover:bg-primary/5"}`}>
+                     <Link to={link.path} onClick={() => setIsMobileMenuOpen(false)} className={`block py-3 px-4 rounded-lg text-base font-body font-medium transition-all ${location.pathname === link.path ? "bg-primary/10 text-primary" : "text-foreground/80 hover:bg-primary/5"}`}>
                       {link.name}
                     </Link>
                   </motion.div>)}
+                
                 <motion.div initial={{
               opacity: 0,
               x: -20
@@ -147,9 +154,17 @@ const Navigation = () => {
               duration: 0.3,
               delay: navLinks.length * 0.05
             }} className="pt-2">
-                  <RippleButton size="default" className="w-full">
+                  <Link to="/developers" onClick={() => setIsMobileMenuOpen(false)} className="block mb-3">
+                    <RippleButton size="default" className="w-full bg-secondary text-secondary-foreground hover:bg-secondary/90">
+                      Developers
+                    </RippleButton>
+                  </Link>
+                  <RippleButton size="default" className="w-full mb-3">
                     Contact Sales
                   </RippleButton>
+                  <div className="flex justify-center">
+                    <ThemeToggle />
+                  </div>
                 </motion.div>
               </div>
             </motion.div>}

@@ -52,7 +52,7 @@ const AnimatedGlobe = () => {
           const dist = Math.sqrt(dx * dx + dy * dy);
 
           if (dist < 150) {
-            ctx.strokeStyle = `rgba(255, 106, 0, ${0.15 * (1 - dist / 150)})`;
+            ctx.strokeStyle = `rgba(255, 221, 0, ${0.15 * (1 - dist / 150)})`;
             ctx.lineWidth = 1;
             ctx.beginPath();
             ctx.moveTo(p1.x, p1.y);
@@ -70,7 +70,7 @@ const AnimatedGlobe = () => {
         if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
         if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
 
-        ctx.fillStyle = `rgba(255, 106, 0, ${p.opacity * 0.6})`;
+        ctx.fillStyle = `rgba(255, 221, 0, ${p.opacity * 0.6})`;
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
         ctx.fill();

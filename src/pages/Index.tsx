@@ -13,7 +13,6 @@ import FlowStep from "@/components/FlowStep";
 import UseCaseCarousel from "@/components/UseCaseCarousel";
 import AfricaMapNetwork from "@/components/AfricaMapNetwork";
 import CurvedDivider from "@/components/CurvedDivider";
-import dashboardMockup from "@/assets/dashboard-mockup.jpg";
 
 const Index = () => {
   const useCases = [
@@ -259,20 +258,6 @@ const Index = () => {
                   <ArrowRight className="w-5 h-5" />
                 </RippleButton>
               </div>
-            </ScrollReveal>
-
-            <ScrollReveal direction="right">
-              <motion.div
-                className="p-4 bg-white border border-border rounded-2xl shadow-xl overflow-hidden"
-                whileHover={{ scale: 1.02 }}
-                transition={{ duration: 0.3 }}
-              >
-                <img
-                  src={dashboardMockup}
-                  alt="HashPay Platform Dashboard"
-                  className="rounded-xl w-full"
-                />
-              </motion.div>
             </ScrollReveal>
           </div>
         </div>
