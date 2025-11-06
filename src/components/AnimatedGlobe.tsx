@@ -1,8 +1,25 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 
 const AnimatedGlobe = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const [isDark, setIsDark] = useState(false);
+
+  useEffect(() => {
+    // Check for dark mode
+    const checkDarkMode = () => {
+      setIsDark(document.documentElement.classList.contains("dark"));
+    };
+    checkDarkMode();
+    
+    // Listen for theme changes
+    const observer = new MutationObserver(checkDarkMode);
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+    
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -41,7 +58,8 @@ const AnimatedGlobe = () => {
     }
 
     const animate = () => {
-      ctx.fillStyle = "rgba(255, 255, 255, 0.05)";
+      // Use black background in dark mode, white in light mode
+      ctx.fillStyle = isDark ? "rgba(12, 20, 32, 0.05)" : "rgba(255, 255, 255, 0.05)";
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
       // Draw connections
@@ -85,7 +103,7 @@ const AnimatedGlobe = () => {
       cancelAnimationFrame(animationFrameId);
       window.removeEventListener("resize", resize);
     };
-  }, []);
+  }, [isDark]);
 
   return (
     <motion.canvas
