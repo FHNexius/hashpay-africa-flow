@@ -44,7 +44,9 @@ const Index = () => {
       <section className="relative min-h-[95vh] flex items-center justify-center overflow-hidden">
         {/* Animated Background */}
         <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-secondary">
-          <div className="absolute inset-0 opacity-30" style={{ backgroundImage: 'var(--gradient-mesh)' }} />
+          <div className="absolute inset-0 opacity-30" style={{
+          backgroundImage: 'var(--gradient-mesh)'
+        }} />
         </div>
         
         <AnimatedGlobe />
@@ -52,48 +54,77 @@ const Index = () => {
         <DecorativeShapes />
         
         <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 py-24">
-          <motion.div className="max-w-6xl mx-auto text-center space-y-10" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1 }}>
-            <motion.div initial={{ y: 30, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.7, delay: 0.2 }}>
+          <motion.div className="max-w-6xl mx-auto text-center space-y-10" initial={{
+          opacity: 0
+        }} animate={{
+          opacity: 1
+        }} transition={{
+          duration: 1
+        }}>
+            <motion.div initial={{
+            y: 30,
+            opacity: 0
+          }} animate={{
+            y: 0,
+            opacity: 1
+          }} transition={{
+            duration: 0.7,
+            delay: 0.2
+          }}>
               <div className="inline-block mb-6">
-                <motion.div 
-                  className="px-4 py-2 rounded-full bg-primary/10 border border-primary/20 backdrop-blur-sm"
-                  initial={{ scale: 0.9, opacity: 0 }}
-                  animate={{ scale: 1, opacity: 1 }}
-                  transition={{ duration: 0.5, delay: 0.1 }}
-                >
+                <motion.div className="px-4 py-2 rounded-full bg-primary/10 border border-primary/20 backdrop-blur-sm" initial={{
+                scale: 0.9,
+                opacity: 0
+              }} animate={{
+                scale: 1,
+                opacity: 1
+              }} transition={{
+                duration: 0.5,
+                delay: 0.1
+              }}>
                   <span className="text-sm font-semibold text-primary">Licensed & Regulated FX Infrastructure</span>
                 </motion.div>
               </div>
               
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-heading font-bold leading-[1.1] text-foreground mb-6">
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-heading font-bold leading-[1.1] text-foreground mb-6 xl:text-7xl">
                 Stablecoin Rails for{" "}
                 <span className="relative inline-block">
                   <span className="text-gradient animate-gradient">Africa</span>
-                  <motion.span
-                    className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-primary to-yellow-accent rounded-full"
-                    initial={{ scaleX: 0 }}
-                    animate={{ scaleX: 1 }}
-                    transition={{ duration: 0.8, delay: 0.8 }}
-                  />
+                  <motion.span className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-primary to-yellow-accent rounded-full" initial={{
+                  scaleX: 0
+                }} animate={{
+                  scaleX: 1
+                }} transition={{
+                  duration: 0.8,
+                  delay: 0.8
+                }} />
                 </span>
               </h1>
             </motion.div>
             
-            <motion.p 
-              initial={{ y: 20, opacity: 0 }} 
-              animate={{ y: 0, opacity: 1 }} 
-              transition={{ duration: 0.7, delay: 0.4 }} 
-              className="text-xl sm:text-2xl text-muted-foreground font-body max-w-4xl mx-auto leading-relaxed"
-            >
+            <motion.p initial={{
+            y: 20,
+            opacity: 0
+          }} animate={{
+            y: 0,
+            opacity: 1
+          }} transition={{
+            duration: 0.7,
+            delay: 0.4
+          }} className="text-xl sm:text-2xl text-muted-foreground font-body max-w-4xl mx-auto leading-relaxed">
               Connect global liquidity to African markets with instant settlement, full compliance, and institutional-grade infrastructure.
             </motion.p>
 
-            <motion.div 
-              className="flex flex-col sm:flex-row gap-4 justify-center pt-6" 
-              initial={{ y: 20, opacity: 0 }} 
-              animate={{ y: 0, opacity: 1 }} 
-              transition={{ duration: 0.7, delay: 0.6 }}
-            >
+            <motion.div className="flex flex-col sm:flex-row gap-4 justify-center pt-6" initial={{
+            y: 20,
+            opacity: 0
+          }} animate={{
+            y: 0,
+            opacity: 1
+          }} transition={{
+            duration: 0.7,
+            delay: 0.6
+          }}>
               <Link to="/contact">
                 <RippleButton size="lg" variant="default" className="text-lg px-12 py-7 shadow-primary">
                   Contact Sales
@@ -108,23 +139,31 @@ const Index = () => {
             </motion.div>
 
             {/* Enhanced Trust Badges */}
-            <motion.div 
-              className="flex flex-wrap justify-center gap-4 pt-8" 
-              initial={{ opacity: 0 }} 
-              animate={{ opacity: 1 }} 
-              transition={{ duration: 0.7, delay: 0.8 }}
-            >
-              {[
-                { icon: Shield, label: "Licensed FX Bureau", sub: "Ethiopia NBE" }, 
-                { icon: Lock, label: "SOC 2 Type II", sub: "Certified" }, 
-                { icon: CheckCircle2, label: "AML/CFT", sub: "Compliant" }
-              ].map((badge, idx) => (
-                <motion.div 
-                  key={idx} 
-                  className="glass-panel px-6 py-4 rounded-2xl group cursor-default"
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ duration: 0.2 }}
-                >
+            <motion.div className="flex flex-wrap justify-center gap-4 pt-8" initial={{
+            opacity: 0
+          }} animate={{
+            opacity: 1
+          }} transition={{
+            duration: 0.7,
+            delay: 0.8
+          }}>
+              {[{
+              icon: Shield,
+              label: "Licensed FX Bureau",
+              sub: "Ethiopia NBE"
+            }, {
+              icon: Lock,
+              label: "SOC 2 Type II",
+              sub: "Certified"
+            }, {
+              icon: CheckCircle2,
+              label: "AML/CFT",
+              sub: "Compliant"
+            }].map((badge, idx) => <motion.div key={idx} className="glass-panel px-6 py-4 rounded-2xl group cursor-default" whileHover={{
+              scale: 1.05
+            }} transition={{
+              duration: 0.2
+            }}>
                   <div className="flex items-center space-x-3">
                     <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
                       <badge.icon className="w-5 h-5 text-primary" />
@@ -134,8 +173,7 @@ const Index = () => {
                       <div className="text-xs text-muted-foreground">{badge.sub}</div>
                     </div>
                   </div>
-                </motion.div>
-              ))}
+                </motion.div>)}
             </motion.div>
           </motion.div>
         </div>
@@ -181,21 +219,42 @@ const Index = () => {
           </ScrollReveal>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-            {[
-              { icon: Zap, title: "Instant Settlement", desc: "T+0 settlement with real-time confirmation" },
-              { icon: Shield, title: "Licensed & Compliant", desc: "Regulated FX Bureau + AML/CFT aligned" },
-              { icon: Vault, title: "Institutional Custody", desc: "Fireblocks MPC wallets with multi-tier security" },
-              { icon: Globe, title: "Built for Africa", desc: "Optimized for Sub-Saharan corridors" },
-              { icon: Network, title: "Unified API", desc: "Event-sourced ledger and reconciliation" },
-              { icon: Lock, title: "Bank-Grade Security", desc: "24/7 monitoring and encryption" }
-            ].map((feature, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: idx * 0.05 }}
-              >
+            {[{
+            icon: Zap,
+            title: "Instant Settlement",
+            desc: "T+0 settlement with real-time confirmation"
+          }, {
+            icon: Shield,
+            title: "Licensed & Compliant",
+            desc: "Regulated FX Bureau + AML/CFT aligned"
+          }, {
+            icon: Vault,
+            title: "Institutional Custody",
+            desc: "Fireblocks MPC wallets with multi-tier security"
+          }, {
+            icon: Globe,
+            title: "Built for Africa",
+            desc: "Optimized for Sub-Saharan corridors"
+          }, {
+            icon: Network,
+            title: "Unified API",
+            desc: "Event-sourced ledger and reconciliation"
+          }, {
+            icon: Lock,
+            title: "Bank-Grade Security",
+            desc: "24/7 monitoring and encryption"
+          }].map((feature, idx) => <motion.div key={idx} initial={{
+            opacity: 0,
+            y: 20
+          }} whileInView={{
+            opacity: 1,
+            y: 0
+          }} viewport={{
+            once: true
+          }} transition={{
+            duration: 0.4,
+            delay: idx * 0.05
+          }}>
                 <div className="group p-6 bg-card border-2 border-border rounded-xl hover:border-primary/40 transition-all duration-300 h-full">
                   <div className="flex items-start gap-4">
                     <div className="flex-shrink-0">
@@ -213,8 +272,7 @@ const Index = () => {
                     </div>
                   </div>
                 </div>
-              </motion.div>
-            ))}
+              </motion.div>)}
           </div>
         </div>
       </section>
@@ -243,13 +301,17 @@ const Index = () => {
         <FloatingOrbs />
         
         <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div 
-            className="max-w-5xl mx-auto"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-          >
+          <motion.div className="max-w-5xl mx-auto" initial={{
+          opacity: 0,
+          y: 30
+        }} whileInView={{
+          opacity: 1,
+          y: 0
+        }} viewport={{
+          once: true
+        }} transition={{
+          duration: 0.7
+        }}>
             <div className="relative p-16 rounded-3xl overflow-hidden">
               {/* Gradient background */}
               <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background to-yellow-accent/10" />
@@ -262,11 +324,13 @@ const Index = () => {
               
               <div className="relative z-10 text-center space-y-8">
                 <div className="space-y-4">
-                  <motion.div
-                    initial={{ scale: 0.9 }}
-                    whileInView={{ scale: 1 }}
-                    transition={{ duration: 0.5 }}
-                  >
+                  <motion.div initial={{
+                  scale: 0.9
+                }} whileInView={{
+                  scale: 1
+                }} transition={{
+                  duration: 0.5
+                }}>
                     <h2 className="text-5xl sm:text-6xl font-heading font-bold text-foreground">
                       Ready to <span className="text-gradient">Transform</span> Your Payment Infrastructure?
                     </h2>
@@ -307,10 +371,7 @@ const Index = () => {
                 </div>
 
                 <div className="pt-6 border-t border-border/50">
-                  <a 
-                    href="mailto:admin@hashpayremit.com" 
-                    className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors font-medium"
-                  >
+                  <a href="mailto:admin@hashpayremit.com" className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors font-medium">
                     <span>Or email us at</span>
                     <span className="text-primary">admin@hashpayremit.com</span>
                   </a>
