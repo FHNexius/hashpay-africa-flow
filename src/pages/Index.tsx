@@ -41,45 +41,100 @@ const Index = () => {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden particle-bg">
+      <section className="relative min-h-[95vh] flex items-center justify-center overflow-hidden">
+        {/* Animated Background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-secondary">
+          <div className="absolute inset-0 opacity-30" style={{ backgroundImage: 'var(--gradient-mesh)' }} />
+        </div>
+        
         <AnimatedGlobe />
         <FloatingOrbs />
         <DecorativeShapes />
         
         <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 py-24">
-          <motion.div className="max-w-5xl mx-auto text-center space-y-8" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1 }}>
-            <motion.div initial={{ y: 30, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.6, delay: 0.2 }}>
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-heading font-bold leading-tight text-foreground">
-                Stablecoin Infrastructure for{" "}
-                <span className="text-gradient animate-gradient">Sub-Saharan Africa</span>
+          <motion.div className="max-w-6xl mx-auto text-center space-y-10" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1 }}>
+            <motion.div initial={{ y: 30, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.7, delay: 0.2 }}>
+              <div className="inline-block mb-6">
+                <motion.div 
+                  className="px-4 py-2 rounded-full bg-primary/10 border border-primary/20 backdrop-blur-sm"
+                  initial={{ scale: 0.9, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 0.1 }}
+                >
+                  <span className="text-sm font-semibold text-primary">Licensed & Regulated FX Infrastructure</span>
+                </motion.div>
+              </div>
+              
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-heading font-bold leading-[1.1] text-foreground mb-6">
+                Stablecoin Rails for{" "}
+                <span className="relative inline-block">
+                  <span className="text-gradient animate-gradient">Africa</span>
+                  <motion.span
+                    className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-primary to-yellow-accent rounded-full"
+                    initial={{ scaleX: 0 }}
+                    animate={{ scaleX: 1 }}
+                    transition={{ duration: 0.8, delay: 0.8 }}
+                  />
+                </span>
               </h1>
             </motion.div>
             
-            <motion.p initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.6, delay: 0.3 }} className="text-lg sm:text-xl text-muted-foreground font-body max-w-3xl mx-auto">
-              Licensed FX rails connecting global liquidity to African markets with instant settlement and compliance.
+            <motion.p 
+              initial={{ y: 20, opacity: 0 }} 
+              animate={{ y: 0, opacity: 1 }} 
+              transition={{ duration: 0.7, delay: 0.4 }} 
+              className="text-xl sm:text-2xl text-muted-foreground font-body max-w-4xl mx-auto leading-relaxed"
+            >
+              Connect global liquidity to African markets with instant settlement, full compliance, and institutional-grade infrastructure.
             </motion.p>
 
-            <motion.div className="flex flex-col sm:flex-row gap-4 justify-center pt-4" initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.6, delay: 0.4 }}>
+            <motion.div 
+              className="flex flex-col sm:flex-row gap-4 justify-center pt-6" 
+              initial={{ y: 20, opacity: 0 }} 
+              animate={{ y: 0, opacity: 1 }} 
+              transition={{ duration: 0.7, delay: 0.6 }}
+            >
               <Link to="/contact">
-                <RippleButton size="lg" variant="default" className="text-base px-10 py-6">
+                <RippleButton size="lg" variant="default" className="text-lg px-12 py-7 shadow-primary">
                   Contact Sales
                   <ArrowRight className="w-5 h-5" />
                 </RippleButton>
               </Link>
               <Link to="/platform">
-                <RippleButton size="lg" variant="outline" className="text-base px-10 py-6">
-                  View Platform
+                <RippleButton size="lg" variant="outline" className="text-lg px-12 py-7 border-2">
+                  Explore Platform
                 </RippleButton>
               </Link>
             </motion.div>
 
-            {/* Inline Trust Badges */}
-            <motion.div className="flex flex-wrap justify-center gap-3 pt-6" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.6, delay: 0.5 }}>
-              {[{ icon: Shield, label: "Licensed FX — Ethiopia" }, { icon: Lock, label: "SOC 2 Certified" }, { icon: CheckCircle2, label: "AML/CFT Compliant" }].map((badge, idx) => (
-                <div key={idx} className="flex items-center space-x-2 bg-card/50 border border-border px-4 py-2 rounded-full text-sm">
-                  <badge.icon className="w-4 h-4 text-primary" />
-                  <span className="font-body text-muted-foreground">{badge.label}</span>
-                </div>
+            {/* Enhanced Trust Badges */}
+            <motion.div 
+              className="flex flex-wrap justify-center gap-4 pt-8" 
+              initial={{ opacity: 0 }} 
+              animate={{ opacity: 1 }} 
+              transition={{ duration: 0.7, delay: 0.8 }}
+            >
+              {[
+                { icon: Shield, label: "Licensed FX Bureau", sub: "Ethiopia NBE" }, 
+                { icon: Lock, label: "SOC 2 Type II", sub: "Certified" }, 
+                { icon: CheckCircle2, label: "AML/CFT", sub: "Compliant" }
+              ].map((badge, idx) => (
+                <motion.div 
+                  key={idx} 
+                  className="glass-panel px-6 py-4 rounded-2xl group cursor-default"
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <div className="flex items-center space-x-3">
+                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                      <badge.icon className="w-5 h-5 text-primary" />
+                    </div>
+                    <div className="text-left">
+                      <div className="text-sm font-semibold text-foreground">{badge.label}</div>
+                      <div className="text-xs text-muted-foreground">{badge.sub}</div>
+                    </div>
+                  </div>
+                </motion.div>
               ))}
             </motion.div>
           </motion.div>
@@ -89,25 +144,39 @@ const Index = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-background">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+      <section className="py-20 bg-background relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-secondary/50 to-background" />
+        
+        <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
             {[
-              { value: "$50M+", label: "Monthly Volume" },
-              { value: "100+", label: "Institutions" },
-              { value: "15+", label: "Countries" },
-              { value: "99.9%", label: "Uptime" }
+              { value: "$50M+", label: "Monthly Volume", icon: TrendingUp },
+              { value: "100+", label: "Institutions", icon: Building2 },
+              { value: "15+", label: "Countries", icon: Globe },
+              { value: "99.9%", label: "Uptime", icon: Zap }
             ].map((stat, idx) => (
               <motion.div
                 key={idx}
-                className="text-center p-6 bg-card border border-border rounded-xl hover:border-primary/30 transition-all"
-                initial={{ opacity: 0, y: 20 }}
+                className="relative group"
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: idx * 0.1 }}
+                transition={{ duration: 0.5, delay: idx * 0.1 }}
               >
-                <div className="text-4xl font-heading font-bold text-gradient mb-2">{stat.value}</div>
-                <div className="text-sm text-muted-foreground font-body">{stat.label}</div>
+                <div className="card-premium p-8 rounded-2xl text-center h-full">
+                  <motion.div
+                    className="w-14 h-14 mx-auto mb-4 rounded-xl bg-gradient-to-br from-primary/20 to-yellow-accent/20 flex items-center justify-center"
+                    whileHover={{ rotate: 360, scale: 1.1 }}
+                    transition={{ duration: 0.6 }}
+                  >
+                    <stat.icon className="w-7 h-7 text-primary" />
+                  </motion.div>
+                  <div className="text-5xl font-heading font-bold text-gradient mb-3">{stat.value}</div>
+                  <div className="text-sm text-muted-foreground font-body font-medium">{stat.label}</div>
+                  
+                  {/* Gradient overlay on hover */}
+                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/5 to-yellow-accent/5 opacity-0 group-hover:opacity-100 transition-opacity -z-10" />
+                </div>
               </motion.div>
             ))}
           </div>
@@ -150,33 +219,42 @@ const Index = () => {
             </div>
           </ScrollReveal>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
             {[
-              { icon: Zap, title: "Instant Settlement", desc: "T+0 settlement with real-time confirmation" },
-              { icon: Shield, title: "Licensed & Compliant", desc: "Regulated FX Bureau + AML/CFT aligned" },
-              { icon: Vault, title: "Institutional Custody", desc: "Fireblocks MPC wallets with multi-tier security" },
-              { icon: Globe, title: "Built for Africa", desc: "Optimized for Sub-Saharan corridors" },
-              { icon: Network, title: "Unified API", desc: "Event-sourced ledger and reconciliation" },
-              { icon: Lock, title: "Bank-Grade Security", desc: "24/7 monitoring and encryption" }
+              { icon: Zap, title: "Instant Settlement", desc: "T+0 settlement with real-time confirmation", color: "from-blue-500/20 to-blue-600/20" },
+              { icon: Shield, title: "Licensed & Compliant", desc: "Regulated FX Bureau + AML/CFT aligned", color: "from-green-500/20 to-emerald-600/20" },
+              { icon: Vault, title: "Institutional Custody", desc: "Fireblocks MPC wallets with multi-tier security", color: "from-purple-500/20 to-violet-600/20" },
+              { icon: Globe, title: "Built for Africa", desc: "Optimized for Sub-Saharan corridors", color: "from-orange-500/20 to-amber-600/20" },
+              { icon: Network, title: "Unified API", desc: "Event-sourced ledger and reconciliation", color: "from-cyan-500/20 to-teal-600/20" },
+              { icon: Lock, title: "Bank-Grade Security", desc: "24/7 monitoring and encryption", color: "from-red-500/20 to-rose-600/20" }
             ].map((feature, idx) => (
               <motion.div
                 key={idx}
-                className="p-6 bg-card border border-border rounded-xl hover:border-primary/30 transition-all"
-                initial={{ opacity: 0, y: 20 }}
+                className="relative group"
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: idx * 0.05 }}
-                whileHover={{ y: -4 }}
+                transition={{ duration: 0.5, delay: idx * 0.08 }}
               >
-                <motion.div
-                  className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4"
-                  whileHover={{ rotate: 360 }}
-                  transition={{ duration: 0.5 }}
-                >
-                  <feature.icon className="w-6 h-6 text-primary" />
-                </motion.div>
-                <h3 className="text-xl font-heading font-bold mb-2 text-foreground">{feature.title}</h3>
-                <p className="text-sm text-muted-foreground font-body">{feature.desc}</p>
+                <div className="card-premium p-8 rounded-2xl h-full relative overflow-hidden">
+                  {/* Icon with gradient background */}
+                  <div className="relative mb-6">
+                    <motion.div
+                      className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${feature.color} flex items-center justify-center relative z-10`}
+                      whileHover={{ scale: 1.1, rotate: 5 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      <feature.icon className="w-8 h-8 text-primary" />
+                    </motion.div>
+                    <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity" />
+                  </div>
+                  
+                  <h3 className="text-2xl font-heading font-bold mb-3 text-foreground group-hover:text-primary transition-colors">{feature.title}</h3>
+                  <p className="text-muted-foreground font-body leading-relaxed">{feature.desc}</p>
+                  
+                  {/* Bottom gradient line */}
+                  <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-yellow-accent to-primary opacity-0 group-hover:opacity-100 transition-opacity" />
+                </div>
               </motion.div>
             ))}
           </div>
@@ -202,37 +280,86 @@ const Index = () => {
       </section>
 
       {/* Final CTA */}
-      <section className="py-24 bg-background relative">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto p-12 bg-gradient-to-br from-primary/5 to-secondary border border-primary/20 rounded-2xl text-center space-y-6">
-            <h2 className="text-4xl sm:text-5xl font-heading font-bold text-foreground">
-              Ready to Get Started?
-            </h2>
-            
-            <p className="text-lg text-muted-foreground font-body max-w-2xl mx-auto">
-              Connect your institution to compliant stablecoin infrastructure
-            </p>
+      <section className="py-32 bg-background relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-secondary/30 to-background" />
+        <FloatingOrbs />
+        
+        <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div 
+            className="max-w-5xl mx-auto"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+          >
+            <div className="relative p-16 rounded-3xl overflow-hidden">
+              {/* Gradient background */}
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background to-yellow-accent/10" />
+              <div className="absolute inset-0 backdrop-blur-sm" />
+              
+              {/* Border gradient */}
+              <div className="absolute inset-0 rounded-3xl p-[2px] bg-gradient-to-br from-primary via-yellow-accent to-primary">
+                <div className="h-full w-full bg-background rounded-3xl" />
+              </div>
+              
+              <div className="relative z-10 text-center space-y-8">
+                <div className="space-y-4">
+                  <motion.div
+                    initial={{ scale: 0.9 }}
+                    whileInView={{ scale: 1 }}
+                    transition={{ duration: 0.5 }}
+                  >
+                    <h2 className="text-5xl sm:text-6xl font-heading font-bold text-foreground">
+                      Ready to <span className="text-gradient">Transform</span> Your Payment Infrastructure?
+                    </h2>
+                  </motion.div>
+                  
+                  <p className="text-xl text-muted-foreground font-body max-w-3xl mx-auto leading-relaxed">
+                    Join leading financial institutions building on compliant stablecoin rails
+                  </p>
+                </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-              <Link to="/contact">
-                <RippleButton size="lg" variant="default" className="px-10 py-6">
-                  Contact Sales
-                  <ArrowRight className="w-5 h-5" />
-                </RippleButton>
-              </Link>
-              <Link to="/platform">
-                <RippleButton size="lg" variant="outline" className="px-10 py-6">
-                  View Platform
-                </RippleButton>
-              </Link>
-            </div>
+                <div className="flex flex-col sm:flex-row gap-5 justify-center pt-6">
+                  <Link to="/contact">
+                    <RippleButton size="lg" variant="default" className="text-lg px-14 py-7 shadow-primary">
+                      Contact Sales
+                      <ArrowRight className="w-5 h-5" />
+                    </RippleButton>
+                  </Link>
+                  <Link to="/platform">
+                    <RippleButton size="lg" variant="outline" className="text-lg px-14 py-7 border-2">
+                      Explore Platform
+                    </RippleButton>
+                  </Link>
+                </div>
 
-            <div className="pt-4">
-              <a href="mailto:admin@hashpayremit.com" className="text-muted-foreground hover:text-primary transition-colors">
-                admin@hashpayremit.com
-              </a>
+                <div className="pt-8 flex items-center justify-center gap-8 text-sm">
+                  <div className="flex items-center gap-2 text-muted-foreground">
+                    <CheckCircle2 className="w-5 h-5 text-primary" />
+                    <span>No setup fees</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-muted-foreground">
+                    <CheckCircle2 className="w-5 h-5 text-primary" />
+                    <span>Fast integration</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-muted-foreground">
+                    <CheckCircle2 className="w-5 h-5 text-primary" />
+                    <span>24/7 support</span>
+                  </div>
+                </div>
+
+                <div className="pt-6 border-t border-border/50">
+                  <a 
+                    href="mailto:admin@hashpayremit.com" 
+                    className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors font-medium"
+                  >
+                    <span>Or email us at</span>
+                    <span className="text-primary">admin@hashpayremit.com</span>
+                  </a>
+                </div>
+              </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
