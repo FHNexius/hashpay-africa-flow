@@ -13,6 +13,10 @@ import FlowStep from "@/components/FlowStep";
 import UseCaseCarousel from "@/components/UseCaseCarousel";
 import AfricaMapNetwork from "@/components/AfricaMapNetwork";
 import CurvedDivider from "@/components/CurvedDivider";
+import FloatingOrbs from "@/components/FloatingOrbs";
+import DecorativeShapes from "@/components/DecorativeShapes";
+import StatsSection from "@/components/StatsSection";
+import TrustBadges from "@/components/TrustBadges";
 const Index = () => {
   const useCases = [{
     icon: Building2,
@@ -41,6 +45,8 @@ const Index = () => {
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden particle-bg">
         <AnimatedGlobe />
+        <FloatingOrbs />
+        <DecorativeShapes />
         
         <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 py-32">
           <motion.div className="max-w-5xl mx-auto text-center space-y-12" initial={{
@@ -138,8 +144,15 @@ const Index = () => {
         <CurvedDivider />
       </section>
 
+      {/* Stats Section */}
+      <StatsSection />
+
+      {/* Trust Badges */}
+      <TrustBadges />
+
       {/* How It Works */}
-      <section className="py-32 bg-background relative">
+      <section className="py-32 bg-background relative overflow-hidden">
+        <DecorativeShapes />
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal>
             <div className="text-center space-y-6 mb-20">
@@ -208,6 +221,7 @@ const Index = () => {
 
       {/* Built for Institutional Performance */}
       <section className="py-32 relative overflow-hidden particle-bg">
+        <FloatingOrbs />
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center max-w-7xl mx-auto">
             <ScrollReveal direction="left">
@@ -412,6 +426,8 @@ const Index = () => {
 
       {/* Vision Section */}
       <section className="py-32 relative overflow-hidden particle-bg">
+        <FloatingOrbs />
+        <DecorativeShapes />
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center max-w-7xl mx-auto">
             <ScrollReveal direction="left">
