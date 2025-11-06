@@ -227,18 +227,20 @@ All colors MUST be HSL.
   }
   
   .particle-bg {
+    background-color: hsl(var(--background));
     background-image: 
       radial-gradient(circle at 20% 30%, hsl(50 100% 50% / 0.03) 0%, transparent 50%),
-      radial-gradient(circle at 80% 70%, hsl(222 100% 52% / 0.05) 0%, transparent 50%),
-      radial-gradient(circle at 50% 50%, hsl(var(--muted)) 0%, hsl(var(--background)) 100%);
+      radial-gradient(circle at 80% 70%, hsl(221 100% 50% / 0.05) 0%, transparent 50%),
+      radial-gradient(circle at 50% 50%, hsl(var(--muted) / 0.3) 0%, transparent 100%);
     transition: var(--transition-smooth);
   }
   
   .dark .particle-bg {
+    background-color: hsl(var(--background));
     background-image: 
       radial-gradient(circle at 20% 30%, hsl(50 100% 50% / 0.05) 0%, transparent 50%),
       radial-gradient(circle at 80% 70%, hsl(217 91% 60% / 0.08) 0%, transparent 50%),
-      radial-gradient(circle at 50% 50%, hsl(216 19% 9%) 0%, hsl(216 33% 7%) 100%);
+      radial-gradient(circle at 50% 50%, hsl(var(--card) / 0.3) 0%, transparent 100%);
   }
   
   .syntax-highlight {
