@@ -59,28 +59,28 @@ const Index = () => {
         }} animate={{
           opacity: 1
         }} transition={{
-          duration: 1
+          duration: 0.8
         }}>
             <motion.div initial={{
-            y: 30,
+            y: 20,
             opacity: 0
           }} animate={{
             y: 0,
             opacity: 1
           }} transition={{
-            duration: 0.7,
-            delay: 0.2
+            duration: 0.5,
+            delay: 0.1
           }}>
               <div className="inline-block mb-6">
-                <motion.div className="px-4 py-2 rounded-full bg-primary/10 border border-primary/20 backdrop-blur-sm" initial={{
-                scale: 0.9,
+                <motion.div className="px-4 py-2 rounded-full bg-primary/10 border border-primary/20" initial={{
+                scale: 0.95,
                 opacity: 0
               }} animate={{
                 scale: 1,
                 opacity: 1
               }} transition={{
-                duration: 0.5,
-                delay: 0.1
+                duration: 0.4,
+                delay: 0.05
               }}>
                   <span className="text-sm font-semibold text-primary">Licensed & Regulated FX Infrastructure</span>
                 </motion.div>
@@ -90,40 +90,45 @@ const Index = () => {
                 Institutional Stablecoin Infrastructure for{" "}
                 <span className="relative inline-block">
                   <span className="text-gradient animate-gradient">Africa</span>
-                  <motion.span className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-primary to-yellow-accent rounded-full" initial={{
-                  scaleX: 0
-                }} animate={{
-                  scaleX: 1
-                }} transition={{
-                  duration: 0.8,
-                  delay: 0.8
-                }} />
+                  <motion.span className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-primary to-yellow-accent rounded-full" 
+                    style={{ willChange: 'transform' }}
+                    initial={{
+                      scaleX: 0
+                    }} 
+                    animate={{
+                      scaleX: 1
+                    }} 
+                    transition={{
+                      duration: 0.6,
+                      delay: 0.5
+                    }} 
+                  />
                 </span>
               </h1>
             </motion.div>
             
             <motion.p initial={{
-            y: 20,
+            y: 15,
             opacity: 0
           }} animate={{
             y: 0,
             opacity: 1
           }} transition={{
-            duration: 0.7,
-            delay: 0.4
+            duration: 0.5,
+            delay: 0.2
           }} className="text-lg sm:text-xl md:text-2xl text-muted-foreground font-body max-w-4xl mx-auto leading-relaxed px-4">
               Connect global liquidity to African markets with instant settlement, full compliance, and institutional-grade infrastructure.
             </motion.p>
 
             <motion.div className="flex flex-col sm:flex-row gap-4 justify-center pt-6 px-4 w-full sm:w-auto" initial={{
-            y: 20,
+            y: 15,
             opacity: 0
           }} animate={{
             y: 0,
             opacity: 1
           }} transition={{
-            duration: 0.7,
-            delay: 0.6
+            duration: 0.5,
+            delay: 0.3
           }}>
               <Link to="/contact" className="w-full sm:w-auto">
                 <RippleButton size="lg" variant="default" className="w-full sm:w-auto text-base sm:text-lg px-8 sm:px-12 py-6 sm:py-7 shadow-primary">
@@ -144,8 +149,8 @@ const Index = () => {
           }} animate={{
             opacity: 1
           }} transition={{
-            duration: 0.7,
-            delay: 0.8
+            duration: 0.5,
+            delay: 0.4
           }}>
               {[{
               icon: Shield,
@@ -160,9 +165,9 @@ const Index = () => {
               label: "AML/CFT",
               sub: "Compliant"
             }].map((badge, idx) => <motion.div key={idx} className="glass-panel px-4 sm:px-6 py-3 sm:py-4 rounded-xl sm:rounded-2xl group cursor-default" whileHover={{
-              scale: 1.05
+              scale: 1.03
             }} transition={{
-              duration: 0.2
+              duration: 0.15
             }}>
                   <div className="flex items-center space-x-2 sm:space-x-3">
                     <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors flex-shrink-0">
@@ -245,15 +250,16 @@ const Index = () => {
             desc: "24/7 monitoring and encryption"
           }].map((feature, idx) => <motion.div key={idx} initial={{
             opacity: 0,
-            y: 20
+            y: 15
           }} whileInView={{
             opacity: 1,
             y: 0
           }} viewport={{
-            once: true
+            once: true,
+            margin: "-50px"
           }} transition={{
-            duration: 0.4,
-            delay: idx * 0.05
+            duration: 0.3,
+            delay: idx * 0.03
           }}>
                 <div className="group p-6 bg-card border-2 border-border rounded-xl hover:border-primary/40 transition-all duration-300 h-full">
                   <div className="flex items-start gap-4">
@@ -315,7 +321,6 @@ const Index = () => {
             <div className="relative p-8 sm:p-12 md:p-16 rounded-2xl sm:rounded-3xl overflow-hidden">
               {/* Gradient background */}
               <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background to-yellow-accent/10" />
-              <div className="absolute inset-0 backdrop-blur-sm" />
               
               {/* Border gradient */}
               <div className="absolute inset-0 rounded-3xl p-[2px] bg-gradient-to-br from-primary via-yellow-accent to-primary">
@@ -325,11 +330,13 @@ const Index = () => {
               <div className="relative z-10 text-center space-y-8">
                 <div className="space-y-4">
                   <motion.div initial={{
-                  scale: 0.9
+                  scale: 0.95
                 }} whileInView={{
                   scale: 1
+                }} viewport={{
+                  once: true
                 }} transition={{
-                  duration: 0.5
+                  duration: 0.4
                 }}>
                     <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-foreground">
                       Ready to <span className="text-gradient">Transform</span> Your Payment Infrastructure?

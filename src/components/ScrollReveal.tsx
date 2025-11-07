@@ -26,12 +26,13 @@ const ScrollReveal = ({ children, delay = 0, direction = "up" }: ScrollRevealPro
         y: 0, 
         x: 0 
       }}
-      viewport={{ once: true, margin: "-100px" }}
+      viewport={{ once: true, margin: "-50px" }}
       transition={{ 
-        duration: 0.8, 
+        duration: 0.5, 
         delay,
-        ease: [0.25, 0.4, 0.25, 1]
+        ease: "easeOut"
       }}
+      style={{ willChange: 'opacity, transform' }}
     >
       {children}
     </motion.div>

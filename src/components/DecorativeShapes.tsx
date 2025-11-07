@@ -6,37 +6,46 @@ const DecorativeShapes = () => {
       {/* Top Right Corner Shape */}
       <motion.div
         className="absolute -top-24 -right-24 w-96 h-96 rounded-full border-4 border-primary/10"
+        style={{ 
+          transform: 'translateZ(0)',
+          willChange: 'transform',
+        }}
         animate={{
           rotate: 360,
-          scale: [1, 1.1, 1],
         }}
         transition={{
-          rotate: { duration: 30, repeat: Infinity, ease: "linear" },
-          scale: { duration: 8, repeat: Infinity, ease: "easeInOut" },
+          duration: 30, 
+          repeat: Infinity, 
+          ease: "linear",
         }}
       />
       
       {/* Bottom Left Corner Shape */}
       <motion.div
         className="absolute -bottom-32 -left-32 w-[500px] h-[500px] rounded-full border-4 border-yellow-accent/10"
+        style={{ 
+          transform: 'translateZ(0)',
+          willChange: 'transform',
+        }}
         animate={{
           rotate: -360,
-          scale: [1, 1.05, 1],
         }}
         transition={{
-          rotate: { duration: 40, repeat: Infinity, ease: "linear" },
-          scale: { duration: 10, repeat: Infinity, ease: "easeInOut" },
+          duration: 40, 
+          repeat: Infinity, 
+          ease: "linear",
         }}
       />
 
-      {/* Floating Dots */}
-      {[...Array(12)].map((_, i) => (
+      {/* Floating Dots - Reduced on mobile */}
+      {[...Array(6)].map((_, i) => (
         <motion.div
           key={i}
-          className="absolute w-2 h-2 rounded-full bg-primary/20"
+          className="absolute w-2 h-2 rounded-full bg-primary/20 hidden md:block"
           style={{
             left: `${Math.random() * 100}%`,
             top: `${Math.random() * 100}%`,
+            transform: 'translateZ(0)',
           }}
           animate={{
             y: [0, -30, 0],
@@ -46,7 +55,7 @@ const DecorativeShapes = () => {
             duration: 3 + Math.random() * 2,
             delay: Math.random() * 2,
             repeat: Infinity,
-            ease: "easeInOut",
+            ease: "linear",
           }}
         />
       ))}

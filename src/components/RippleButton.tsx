@@ -39,7 +39,7 @@ const RippleButton = ({ children, className, onClick, size = "lg", type = "butto
       onClick={addRipple}
       className={cn(
         "relative overflow-hidden group font-semibold",
-        "hover:shadow-lg transition-all duration-300 hover:scale-105",
+        "hover:shadow-lg transition-all duration-200 hover:scale-[1.02]",
         className
       )}
     >
@@ -52,10 +52,11 @@ const RippleButton = ({ children, className, onClick, size = "lg", type = "butto
             top: ripple.y,
             width: 10,
             height: 10,
+            willChange: 'transform, opacity',
           }}
           initial={{ scale: 0, opacity: 1 }}
           animate={{ scale: 30, opacity: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
         />
       ))}
       <span className="relative z-10 flex items-center gap-2">{children}</span>

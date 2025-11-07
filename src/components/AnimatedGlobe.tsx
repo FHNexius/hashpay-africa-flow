@@ -28,6 +28,10 @@ const AnimatedGlobe = () => {
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
+    // Check if user prefers reduced motion
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion) return;
+
     let animationFrameId: number;
     let particles: Array<{
       x: number;
@@ -45,8 +49,12 @@ const AnimatedGlobe = () => {
     resize();
     window.addEventListener("resize", resize);
 
+    // Reduce particle count on mobile for better performance
+    const isMobile = window.innerWidth < 768;
+    const particleCount = isMobile ? 40 : 80;
+
     // Initialize particles
-    for (let i = 0; i < 80; i++) {
+    for (let i = 0; i < particleCount; i++) {
       particles.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
@@ -109,9 +117,10 @@ const AnimatedGlobe = () => {
     <motion.canvas
       ref={canvasRef}
       className="absolute inset-0 w-full h-full"
+      style={{ willChange: 'auto' }}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ duration: 2 }}
+      transition={{ duration: 1.5 }}
     />
   );
 };
