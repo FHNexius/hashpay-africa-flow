@@ -1,9 +1,11 @@
 import { ArrowRight, Zap, Clock, Shield, Globe, Vault, Network, Building2, Heart, Briefcase, TrendingUp, Users, Link2, CheckCircle2, Lock, FileCheck, Eye } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import hashpayLogo from "@/assets/hashpay-logo.png";
+import hashpayLogoLight from "@/assets/hashpay-logo.png";
+import hashpayLogoDark from "@/assets/hashpay-logo-dark.png";
 import AnimatedGlobe from "@/components/AnimatedGlobe";
 import GlassPanel from "@/components/GlassPanel";
 import AnimatedCounter from "@/components/AnimatedCounter";
@@ -16,6 +18,22 @@ import CurvedDivider from "@/components/CurvedDivider";
 import FloatingOrbs from "@/components/FloatingOrbs";
 import DecorativeShapes from "@/components/DecorativeShapes";
 const Index = () => {
+  const [isDark, setIsDark] = useState(false);
+
+  useEffect(() => {
+    const checkDarkMode = () => {
+      setIsDark(document.documentElement.classList.contains("dark"));
+    };
+    checkDarkMode();
+    
+    const observer = new MutationObserver(checkDarkMode);
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+    
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
   const useCases = [{
     icon: Building2,
     title: "Banks & FX Desks",
@@ -417,7 +435,18 @@ const Index = () => {
           }} transition={{
             duration: 0.6
           }}>
-              <img src={hashpayLogo} alt="HashPay" className="h-40" />
+              <AnimatePresence mode="wait">
+                <motion.img 
+                  key={isDark ? "dark" : "light"}
+                  src={isDark ? hashpayLogoDark : hashpayLogoLight} 
+                  alt="HashPay" 
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.3, ease: "easeInOut" }}
+                  className="h-40" 
+                />
+              </AnimatePresence>
               <p className="text-sm text-muted-foreground font-body leading-relaxed">
                 Stablecoin infrastructure for Sub-Saharan Africa
               </p>
