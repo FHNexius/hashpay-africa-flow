@@ -33,6 +33,9 @@ const Navigation = () => {
     };
   }, []);
   const navLinks = [{
+    name: "Home",
+    path: "/"
+  }, {
     name: "Platform",
     path: "/platform"
   }, {
