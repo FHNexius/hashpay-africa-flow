@@ -198,10 +198,14 @@ All colors MUST be HSL.
   }
   
   .glow-hover {
-    transition: var(--transition-smooth);
+    /* Animate only GPU-friendly properties */
+    transition-property: transform, opacity, color, background-color, border-color;
+    transition-duration: 0.3s;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   }
   
   .glow-hover:hover {
+    /* Avoid animating box-shadow to prevent mobile flicker */
     box-shadow: var(--shadow-blue-intense);
     transform: translateY(-2px);
   }
@@ -224,11 +228,17 @@ All colors MUST be HSL.
     backdrop-filter: blur(20px) saturate(180%);
     border: 1px solid hsl(var(--border) / 0.5);
     box-shadow: var(--shadow-elegant);
-    transition: var(--transition-smooth);
+    transition-property: transform, opacity, border-color, background-color;
+    transition-duration: 0.3s;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    will-change: transform, opacity;
   }
   
   .glass-panel:hover {
     border-color: hsl(var(--primary) / 0.3);
+    /* Keep look but avoid animated shadow */
     box-shadow: var(--shadow-lg);
   }
   
@@ -236,7 +246,12 @@ All colors MUST be HSL.
     background: var(--gradient-card);
     border: 1px solid hsl(var(--border));
     box-shadow: var(--shadow-elegant);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition-property: transform, opacity, border-color, background-color;
+    transition-duration: 0.3s;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    will-change: transform, opacity;
   }
   
   .card-premium:hover {

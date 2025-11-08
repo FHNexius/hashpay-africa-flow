@@ -9,7 +9,7 @@ interface FeatureCardProps {
 
 const FeatureCard = ({ icon: Icon, title, description }: FeatureCardProps) => {
   return (
-    <Card className="p-6 bg-card border-border hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10 group">
+    <Card className="p-6 bg-card border-border hover:border-primary/50 transition-all duration-300 group will-change-transform [transform:translateZ(0)]">
       <div className="space-y-4">
         <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
           <Icon className="w-6 h-6 text-primary" />

@@ -12,10 +12,17 @@ const Navigation = () => {
   const [isDark, setIsDark] = useState(false);
   const location = useLocation();
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+    let ticking = false;
+    const onScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setIsScrolled(window.scrollY > 20);
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", onScroll, { passive: true });
     
     // Check for dark mode
     const checkDarkMode = () => {
@@ -28,7 +35,7 @@ const Navigation = () => {
     observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
     
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("scroll", onScroll);
       observer.disconnect();
     };
   }, []);

@@ -72,7 +72,7 @@ const Footer = () => {
                 { name: "Security & Compliance", path: "/security-compliance" },
                 { name: "Contact", path: "/contact" }
               ].map((link) => (
-                <li key={link.path}>
+                <li key={link.name}>
                   <Link 
                     to={link.path} 
                     className="text-sm text-muted-foreground hover:text-primary transition-colors font-body group"
