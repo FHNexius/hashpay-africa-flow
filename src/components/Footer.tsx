@@ -48,6 +48,8 @@ const Footer = () => {
             <motion.img 
               src={isDark ? hashpayLogoDark : hashpayLogoLight}
               alt="HashPay" 
+              width={280}
+              height={160}
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.3 }}
               className="h-40"
