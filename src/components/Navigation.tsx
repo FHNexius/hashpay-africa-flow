@@ -76,8 +76,6 @@ const Navigation = () => {
                 key={isDark ? "dark" : "light"}
                 src={isDark ? hashpayLogoDark : hashpayLogoLight} 
                 alt="HashPay" 
-                width={280}
-                height={160}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
