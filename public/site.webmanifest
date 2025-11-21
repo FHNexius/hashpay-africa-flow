@@ -1,0 +1,21 @@
+{
+  "name": "HashPay",
+  "short_name": "HashPay",
+  "description": "Stablecoin Infrastructure for Sub-Saharan Africa",
+  "icons": [
+    {
+      "src": "/favicon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#0FBAB4",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "start_url": "/"
+}
