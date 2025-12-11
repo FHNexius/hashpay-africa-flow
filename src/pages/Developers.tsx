@@ -302,11 +302,13 @@ print(lock)`,
               on-ramp and off-ramp operations.
             </p>
 
-            <Link to="/contact">
-              <Button size="lg" className="text-base sm:text-lg px-6 sm:px-8 py-6 w-full sm:w-auto mx-4 sm:mx-0">
-                Request Early API Access
-              </Button>
-            </Link>
+            <div className="pt-2 sm:pt-4">
+              <Link to="/contact">
+                <Button size="lg" className="text-base sm:text-lg px-6 sm:px-8 py-6 w-full sm:w-auto">
+                  Request Early API Access
+                </Button>
+              </Link>
+            </div>
           </motion.div>
         </div>
       </section>
