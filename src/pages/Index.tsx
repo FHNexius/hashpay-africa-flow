@@ -17,6 +17,7 @@ import AfricaMapNetwork from "@/components/AfricaMapNetwork";
 import CurvedDivider from "@/components/CurvedDivider";
 import FloatingOrbs from "@/components/FloatingOrbs";
 import DecorativeShapes from "@/components/DecorativeShapes";
+
 const Index = () => {
   const [isDark, setIsDark] = useState(false);
 
@@ -37,15 +38,15 @@ const Index = () => {
   const useCases = [{
     icon: Building2,
     title: "Banks & FX Desks",
-    description: "Hedge and hold reserves in stablecoins; regulated FX with institutional custody, compliance, and treasury tools."
+    description: "Manage treasury operations with stablecoin reserves; compliant FX with secure custody and reporting tools."
   }, {
     icon: Users,
     title: "Fintechs & PSPs",
-    description: "Embed compliant stablecoin settlement with SDKs, webhooks, sandbox access, and reduced time-to-market."
+    description: "Embed compliant stablecoin settlement with simple APIs, webhooks, and sandbox access."
   }, {
     icon: Briefcase,
     title: "Corporates & NGOs",
-    description: "24/7 cross-border settlement with audit trails, multi-sig controls, and compliance reporting."
+    description: "24/7 cross-border settlement with audit trails, multi-approval controls, and compliance reporting."
   }, {
     icon: Network,
     title: "Payment Processors",
@@ -53,8 +54,9 @@ const Index = () => {
   }, {
     icon: TrendingUp,
     title: "Liquidity Partners",
-    description: "Provide or access stablecoin liquidity programmatically through institutional infrastructure."
+    description: "Provide or access stablecoin liquidity through our secure infrastructure."
   }];
+
   return <div className="min-h-screen">
       <Navigation />
 
@@ -100,14 +102,14 @@ const Index = () => {
                 duration: 0.4,
                 delay: 0.05
               }}>
-                  <span className="text-sm font-semibold text-primary">Licensed & Regulated FX Infrastructure</span>
+                  <span className="text-sm font-semibold text-primary">Stablecoin FX & Settlement Platform</span>
                 </motion.div>
               </div>
               
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-bold leading-[1.1] text-foreground mb-6 px-4">
-                Institutional Stablecoin Infrastructure for{" "}
+                Stablecoin-Powered FX Infrastructure for{" "}
                 <span className="relative inline-block">
-                  <span className="text-gradient animate-gradient">Africa</span>
+                  <span className="text-gradient animate-gradient">Ethiopia</span>
                   <motion.span className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-primary to-yellow-accent rounded-full" 
                     style={{ willChange: 'transform' }}
                     initial={{
@@ -135,7 +137,7 @@ const Index = () => {
             duration: 0.5,
             delay: 0.2
           }} className="text-lg sm:text-xl md:text-2xl text-muted-foreground font-body max-w-4xl mx-auto leading-relaxed px-4">
-              Connect global liquidity to African markets with instant settlement, full compliance, and institutional-grade infrastructure.
+              Connect global liquidity to Ethiopian markets with instant settlement, USDC and USDT support, and compliant infrastructure.
             </motion.p>
 
             <motion.div className="flex flex-col sm:flex-row gap-4 justify-center pt-6 px-4 w-full sm:w-auto" initial={{
@@ -172,16 +174,16 @@ const Index = () => {
           }}>
               {[{
               icon: Shield,
-              label: "Licensed FX Bureau",
-              sub: "Ethiopia NBE"
+              label: "U.S. Parent Company",
+              sub: "Minnesota, USA"
             }, {
-              icon: Lock,
-              label: "SOC 2 Type II",
-              sub: "Certified"
+              icon: Globe,
+              label: "USDC & USDT",
+              sub: "Supported"
             }, {
               icon: CheckCircle2,
-              label: "AML/CFT",
-              sub: "Compliant"
+              label: "Compliant Partners",
+              sub: "On & Off-Ramp"
             }].map((badge, idx) => <motion.div key={idx} className="glass-panel px-4 sm:px-6 py-3 sm:py-4 rounded-xl sm:rounded-2xl group cursor-default" whileHover={{
               scale: 1.03
             }} transition={{
@@ -220,9 +222,9 @@ const Index = () => {
           </ScrollReveal>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 max-w-6xl mx-auto px-4">
-            <FlowStep number="01" title="Connect" description="Secure API or banking integration with automated compliance." icon={Link2} delay={0} />
-            <FlowStep number="02" title="Convert" description="Real-time fiat ↔ stablecoin with 120s rate lock." icon={Network} delay={0.1} />
-            <FlowStep number="03" title="Settle" description="Instant payouts or custody in Fireblocks MPC wallets." icon={Vault} delay={0.2} />
+            <FlowStep number="01" title="Connect" description="Secure API or banking integration with compliance verification." icon={Link2} delay={0} />
+            <FlowStep number="02" title="Convert" description="Real-time fiat ↔ USDC/USDT with competitive rate lock." icon={Network} delay={0.1} />
+            <FlowStep number="03" title="Settle" description="Instant payouts or secure custody with authorized partners." icon={Vault} delay={0.2} />
           </div>
         </div>
       </section>
@@ -236,7 +238,7 @@ const Index = () => {
                 Why Choose <span className="text-gradient">HashPay</span>
               </h2>
               <p className="text-base sm:text-lg text-muted-foreground font-body max-w-2xl mx-auto">
-                Enterprise infrastructure for African markets
+                Simple, secure infrastructure for Ethiopian markets
               </p>
             </div>
           </ScrollReveal>
@@ -248,24 +250,24 @@ const Index = () => {
             desc: "T+0 settlement with real-time confirmation"
           }, {
             icon: Shield,
-            title: "Licensed & Compliant",
-            desc: "Regulated FX Bureau + AML/CFT aligned"
+            title: "Building Compliance",
+            desc: "Working with regulatory experts in the U.S. and Ethiopia"
           }, {
             icon: Vault,
-            title: "Institutional Custody",
-            desc: "Fireblocks MPC wallets with multi-tier security"
+            title: "Secure Custody",
+            desc: "Partner with authorized custody providers"
           }, {
             icon: Globe,
-            title: "Built for Africa",
-            desc: "Optimized for Sub-Saharan corridors"
+            title: "USDC & USDT Support",
+            desc: "Circle and Tether stablecoin integration"
           }, {
             icon: Network,
-            title: "Unified API",
-            desc: "Event-sourced ledger and reconciliation"
+            title: "Simple API",
+            desc: "Clean integration with full documentation"
           }, {
             icon: Lock,
-            title: "Bank-Grade Security",
-            desc: "24/7 monitoring and encryption"
+            title: "Industry-Standard Security",
+            desc: "Following best practices for data protection"
           }].map((feature, idx) => <motion.div key={idx} initial={{
             opacity: 0,
             y: 15
@@ -362,7 +364,7 @@ const Index = () => {
                   </motion.div>
                   
                   <p className="text-base sm:text-lg md:text-xl text-muted-foreground font-body max-w-3xl mx-auto leading-relaxed px-4">
-                    Join leading financial institutions building on compliant stablecoin rails
+                    Join businesses building on compliant stablecoin rails with USDC and USDT
                   </p>
                 </div>
 
@@ -387,7 +389,7 @@ const Index = () => {
                   </div>
                   <div className="flex items-center gap-2 text-muted-foreground">
                     <CheckCircle2 className="w-5 h-5 text-primary" />
-                    <span>Fast integration</span>
+                    <span>Simple integration</span>
                   </div>
                   <div className="flex items-center gap-2 text-muted-foreground">
                     <CheckCircle2 className="w-5 h-5 text-primary" />
@@ -407,214 +409,8 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="border-t border-border bg-background relative overflow-hidden">
-        {/* Animated blue accent line */}
-        <motion.div className="absolute top-0 left-0 h-0.5 bg-gradient-primary" initial={{
-        width: 0
-      }} whileInView={{
-        width: "100%"
-      }} viewport={{
-        once: true
-      }} transition={{
-        duration: 2,
-        ease: "easeInOut"
-      }} />
-
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
-            {/* Brand */}
-            <motion.div className="space-y-6" initial={{
-            opacity: 0,
-            y: 20
-          }} whileInView={{
-            opacity: 1,
-            y: 0
-          }} viewport={{
-            once: true
-          }} transition={{
-            duration: 0.6
-          }}>
-              <AnimatePresence mode="wait">
-                <motion.img 
-                  key={isDark ? "dark" : "light"}
-                  src={isDark ? hashpayLogoDark : hashpayLogoLight} 
-                  alt="HashPay" 
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.3, ease: "easeInOut" }}
-                  className="h-40" 
-                />
-              </AnimatePresence>
-              <p className="text-sm text-muted-foreground font-body leading-relaxed">
-                Stablecoin infrastructure for Sub-Saharan Africa
-              </p>
-            </motion.div>
-
-            {/* Company */}
-            <motion.div initial={{
-            opacity: 0,
-            y: 20
-          }} whileInView={{
-            opacity: 1,
-            y: 0
-          }} viewport={{
-            once: true
-          }} transition={{
-            duration: 0.6,
-            delay: 0.1
-          }}>
-              <h3 className="font-heading font-semibold mb-6 text-lg text-foreground">Company</h3>
-              <ul className="space-y-3">
-                {[{
-                name: "Platform",
-                path: "/platform"
-              }, {
-                name: "Solutions",
-                path: "/solutions"
-              }, {
-                name: "Security & Compliance",
-                path: "/security-compliance"
-              }, {
-                name: "Contact",
-                path: "/contact"
-              }].map(link => <li key={link.path}>
-                    <Link to={link.path} className="text-sm text-muted-foreground hover:text-primary transition-colors font-body">
-                      {link.name}
-                    </Link>
-                  </li>)}
-              </ul>
-            </motion.div>
-
-            {/* Services */}
-            <motion.div initial={{
-            opacity: 0,
-            y: 20
-          }} whileInView={{
-            opacity: 1,
-            y: 0
-          }} viewport={{
-            once: true
-          }} transition={{
-            duration: 0.6,
-            delay: 0.2
-          }}>
-              <h3 className="font-heading font-semibold mb-6 text-lg text-foreground">Services</h3>
-              <ul className="space-y-3">
-                {[{
-                name: "On-Ramp",
-                path: "/platform"
-              }, {
-                name: "Off-Ramp",
-                path: "/platform"
-              }, {
-                name: "Custody",
-                path: "/platform"
-              }, {
-                name: "FX Engine",
-                path: "/platform"
-              }].map(link => <li key={link.path}>
-                    <Link to={link.path} className="text-sm text-muted-foreground hover:text-primary transition-colors font-body">
-                      {link.name}
-                    </Link>
-                  </li>)}
-              </ul>
-            </motion.div>
-
-            {/* Developers */}
-            <motion.div initial={{
-            opacity: 0,
-            y: 20
-          }} whileInView={{
-            opacity: 1,
-            y: 0
-          }} viewport={{
-            once: true
-          }} transition={{
-            duration: 0.6,
-            delay: 0.3
-          }}>
-              <h3 className="font-heading font-semibold mb-6 text-lg text-foreground">Developers</h3>
-              <ul className="space-y-3">
-                <li>
-                  <Link to="/developers" className="text-sm text-muted-foreground hover:text-primary transition-colors font-body">
-                    API Documentation
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/developers" className="text-sm text-muted-foreground hover:text-primary transition-colors font-body">
-                    Sandbox Access
-                  </Link>
-                </li>
-                <li className="text-sm text-muted-foreground/50 font-body">
-                  Changelog <span className="text-xs">(Coming Soon)</span>
-                </li>
-              </ul>
-            </motion.div>
-
-            {/* Contact */}
-            <motion.div initial={{
-            opacity: 0,
-            y: 20
-          }} whileInView={{
-            opacity: 1,
-            y: 0
-          }} viewport={{
-            once: true
-          }} transition={{
-            duration: 0.6,
-            delay: 0.4
-          }}>
-              <h3 className="font-heading font-semibold mb-6 text-lg text-foreground">Contact</h3>
-              <ul className="space-y-3">
-                <li>
-                  <a href="mailto:admin@hashpayremit.com" className="text-sm text-muted-foreground hover:text-primary transition-colors font-body">
-                    admin@hashpayremit.com
-                  </a>
-                </li>
-                <li className="text-sm text-muted-foreground font-body">
-                  Operating in Ethiopia & Sub-Saharan Africa
-                </li>
-              </ul>
-              
-              <div className="mt-6 pt-6 border-t border-border">
-                <p className="text-sm text-muted-foreground font-body mb-3">Legal</p>
-                <ul className="space-y-2">
-                  <li>
-                    <Link to="/legal/privacy" className="text-xs text-muted-foreground hover:text-primary transition-colors font-body">
-                      Privacy Policy
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="/legal/terms" className="text-xs text-muted-foreground hover:text-primary transition-colors font-body">
-                      Terms of Service
-                    </Link>
-                  </li>
-                </ul>
-              </div>
-            </motion.div>
-          </div>
-
-          {/* Bottom bar */}
-          <motion.div className="mt-16 pt-8 border-t border-border" initial={{
-          opacity: 0
-        }} whileInView={{
-          opacity: 1
-        }} viewport={{
-          once: true
-        }} transition={{
-          duration: 0.6,
-          delay: 0.4
-        }}>
-            <div className="text-center">
-              <p className="text-sm text-muted-foreground font-body">
-                © {new Date().getFullYear()} HashPay LLC. All rights reserved.
-              </p>
-            </div>
-          </motion.div>
-        </div>
-      </footer>
+      <Footer />
     </div>;
 };
+
 export default Index;

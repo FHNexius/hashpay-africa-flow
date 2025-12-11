@@ -6,9 +6,11 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+
 const Developers = () => {
   const [activeSection, setActiveSection] = useState("overview");
   const [copiedCode, setCopiedCode] = useState<string | null>(null);
+  
   const sidebarItems = [{
     id: "overview",
     label: "Overview",
@@ -31,11 +33,13 @@ const Developers = () => {
     icon: Clock,
     comingSoon: true
   }];
+  
   const copyToClipboard = (code: string, id: string) => {
     navigator.clipboard.writeText(code);
     setCopiedCode(id);
     setTimeout(() => setCopiedCode(null), 2000);
   };
+  
   const codeExamples = {
     onramp: {
       curl: `curl -X POST https://api.hashpayremit.com/v1/transactions/onramp \\
@@ -45,7 +49,6 @@ const Developers = () => {
     "amount": 1000,
     "currency": "USD",
     "stablecoin": "USDC",
-    "network": "polygon",
     "destination_address": "0x742d35Cc6634C0532925a3b844Bc9e7595f0bEb",
     "idempotency_key": "txn_12345"
   }'`,
@@ -59,7 +62,6 @@ const Developers = () => {
     amount: 1000,
     currency: 'USD',
     stablecoin: 'USDC',
-    network: 'polygon',
     destination_address: '0x742d35Cc6634C0532925a3b844Bc9e7595f0bEb',
     idempotency_key: 'txn_12345'
   })
@@ -79,7 +81,6 @@ response = requests.post(
         'amount': 1000,
         'currency': 'USD',
         'stablecoin': 'USDC',
-        'network': 'polygon',
         'destination_address': '0x742d35Cc6634C0532925a3b844Bc9e7595f0bEb',
         'idempotency_key': 'txn_12345'
     }
@@ -93,7 +94,6 @@ print(data)`,
   "amount": 1000,
   "currency": "USD",
   "stablecoin": "USDC",
-  "network": "polygon",
   "destination_address": "0x742d35Cc6634C0532925a3b844Bc9e7595f0bEb",
   "rate_locked_until": "2025-01-15T10:32:45Z",
   "estimated_completion": "2025-01-15T10:35:00Z",
@@ -108,7 +108,6 @@ print(data)`,
     "amount": 500,
     "stablecoin": "USDC",
     "currency": "ETB",
-    "network": "stellar",
     "bank_account": {
       "account_number": "1234567890",
       "bank_code": "CBE"
@@ -125,7 +124,6 @@ print(data)`,
     amount: 500,
     stablecoin: 'USDC',
     currency: 'ETB',
-    network: 'stellar',
     bank_account: {
       account_number: '1234567890',
       bank_code: 'CBE'
@@ -148,7 +146,6 @@ response = requests.post(
         'amount': 500,
         'stablecoin': 'USDC',
         'currency': 'ETB',
-        'network': 'stellar',
         'bank_account': {
             'account_number': '1234567890',
             'bank_code': 'CBE'
@@ -167,7 +164,6 @@ print(data)`,
   "currency": "ETB",
   "fiat_amount": 28500.00,
   "exchange_rate": 57.00,
-  "network": "stellar",
   "bank_account": {
     "account_number": "****7890",
     "bank_code": "CBE"
@@ -217,8 +213,7 @@ print(quote)`,
   "exchange_rate": 0.9985,
   "you_receive": 998.50,
   "fees": {
-    "network_fee": 0.50,
-    "service_fee": 1.00
+    "service_fee": 1.50
   },
   "expires_at": "2025-01-15T10:42:30Z",
   "created_at": "2025-01-15T10:40:30Z"
@@ -272,6 +267,7 @@ print(lock)`,
 }`
     }
   };
+
   return <div className="min-h-screen bg-background">
       <Navigation />
 
@@ -301,14 +297,16 @@ print(lock)`,
             </h1>
 
             <p className="text-base sm:text-lg md:text-xl text-muted-foreground font-body max-w-3xl mx-auto px-4">
-              Integrate with Africa&apos;s licensed stablecoin FX infrastructure.
-              REST APIs, webhooks, and real-time settlement endpoints for on-ramp,
-              off-ramp, and custody operations.
+              Integrate with our stablecoin FX infrastructure.
+              REST APIs, webhooks, and real-time settlement endpoints for USDC and USDT 
+              on-ramp and off-ramp operations.
             </p>
 
-            <Button size="lg" className="text-base sm:text-lg px-6 sm:px-8 py-6 w-full sm:w-auto mx-4 sm:mx-0">
-              Request Early API Access
-            </Button>
+            <Link to="/contact">
+              <Button size="lg" className="text-base sm:text-lg px-6 sm:px-8 py-6 w-full sm:w-auto mx-4 sm:mx-0">
+                Request Early API Access
+              </Button>
+            </Link>
           </motion.div>
         </div>
       </section>
@@ -343,8 +341,8 @@ print(lock)`,
                   <div>
                     <h2 className="text-4xl font-heading font-bold mb-4">Overview</h2>
                     <p className="text-lg text-muted-foreground font-body">
-                      The HashPay API enables seamless integration with licensed stablecoin
-                      infrastructure across Sub-Saharan Africa. Build compliant on-ramp and
+                      The HashPay API enables seamless integration with our stablecoin
+                      infrastructure. Build compliant USDC and USDT on-ramp and
                       off-ramp solutions with real-time FX conversion.
                     </p>
                   </div>
@@ -356,16 +354,16 @@ print(lock)`,
                   desc: "Simple HTTP endpoints with JSON responses"
                 }, {
                   icon: Key,
-                  title: "OAuth 2.0",
-                  desc: "Secure authentication and authorization"
+                  title: "Secure Authentication",
+                  desc: "API key authentication with secure access"
                 }, {
                   icon: Webhook,
                   title: "Real-time Webhooks",
                   desc: "Instant notifications for transaction events"
                 }, {
                   icon: Clock,
-                  title: "T+0 Settlement",
-                  desc: "Same-day settlement and confirmation"
+                  title: "Fast Settlement",
+                  desc: "Quick settlement and confirmation"
                 }].map((feature, idx) => <div key={idx} className="p-6 border border-border rounded-xl bg-card hover:border-primary/50 transition-all">
                         <feature.icon className="w-8 h-8 text-primary mb-4" />
                         <h3 className="text-xl font-heading font-semibold mb-2">{feature.title}</h3>
@@ -376,11 +374,11 @@ print(lock)`,
                   <div className="bg-yellow-500/10 border border-yellow-500/20 rounded-xl p-6">
                     <h3 className="text-xl font-heading font-semibold mb-2 flex items-center text-foreground">
                       <Clock className="w-5 h-5 mr-2 text-yellow-600 dark:text-yellow-400" />
-                      Full API Docs - Q1 2026
+                      Full API Docs - Coming Soon
                     </h3>
                     <p className="text-muted-foreground font-body">
                       Complete API documentation with interactive examples, SDKs for multiple languages,
-                      and comprehensive integration guides launching Q1 2026.
+                      and comprehensive integration guides launching soon.
                     </p>
                   </div>
                 </motion.div>}
@@ -396,7 +394,7 @@ print(lock)`,
                   <div>
                     <h2 className="text-4xl font-heading font-bold mb-4">Authentication</h2>
                     <p className="text-lg text-muted-foreground font-body">
-                      HashPay uses OAuth 2.0 for secure API authentication. All requests must
+                      HashPay uses API key authentication for secure access. All requests must
                       include a valid Bearer token in the Authorization header.
                     </p>
                   </div>
@@ -405,7 +403,7 @@ print(lock)`,
                     <h3 className="text-2xl font-heading font-semibold">Getting Your API Key</h3>
                     <ol className="space-y-3 text-muted-foreground font-body list-decimal list-inside">
                       <li>Contact our sales team to request API access</li>
-                      <li>Complete KYB verification and compliance onboarding</li>
+                      <li>Complete verification and onboarding</li>
                       <li>Receive your API credentials via secure channel</li>
                       <li>Test in sandbox environment before going live</li>
                     </ol>
@@ -424,10 +422,10 @@ print(lock)`,
                   <div className="bg-yellow-500/10 border border-yellow-500/20 rounded-xl p-6">
                     <h3 className="text-xl font-heading font-semibold mb-2 flex items-center text-foreground">
                       <Clock className="w-5 h-5 mr-2 text-yellow-600 dark:text-yellow-400" />
-                      Coming Soon - Q1 2026
+                      Coming Soon
                     </h3>
                     <p className="text-muted-foreground font-body">
-                      OAuth 2.0 authentication with automatic token refresh and full API key management portal.
+                      Full authentication documentation with API key management portal coming soon.
                     </p>
                   </div>
                 </motion.div>}
@@ -443,7 +441,7 @@ print(lock)`,
                   <div>
                     <h2 className="text-4xl font-heading font-bold mb-4">API Endpoints</h2>
                     <p className="text-lg text-muted-foreground font-body mb-8">
-                      Core endpoints for managing stablecoin transactions and settlements.
+                      Core endpoints for managing USDC and USDT transactions and settlements.
                     </p>
                   </div>
 
@@ -457,7 +455,7 @@ print(lock)`,
                         <code className="font-mono text-lg text-foreground">/v1/transactions/onramp</code>
                       </div>
                       <p className="text-muted-foreground font-body">
-                        Convert fiat currency to stablecoins with instant settlement.
+                        Convert fiat currency to USDC or USDT with fast settlement.
                       </p>
                     </div>
 
@@ -471,12 +469,10 @@ print(lock)`,
 
                       {Object.entries(codeExamples.onramp).map(([lang, code]) => <TabsContent key={lang} value={lang}>
                           <div className="relative syntax-highlight">
-                            <button onClick={() => copyToClipboard(code, `onramp-${lang}`)} className="absolute top-4 right-4 p-2 hover:bg-primary/10 rounded transition-colors">
-                              {copiedCode === `onramp-${lang}` ? <Check className="w-4 h-4 text-green-500" /> : <Copy className="w-4 h-4 text-muted-foreground" />}
+                            <button onClick={() => copyToClipboard(code, `onramp-${lang}`)} className="absolute top-4 right-4 text-primary hover:text-primary/80 transition-colors">
+                              {copiedCode === `onramp-${lang}` ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
                             </button>
-                            <pre className="overflow-x-auto code-block">
-                              <code className="text-foreground">{code}</code>
-                            </pre>
+                            <pre className="text-sm overflow-x-auto"><code>{code}</code></pre>
                           </div>
                         </TabsContent>)}
                     </Tabs>
@@ -492,7 +488,7 @@ print(lock)`,
                         <code className="font-mono text-lg text-foreground">/v1/transactions/offramp</code>
                       </div>
                       <p className="text-muted-foreground font-body">
-                        Convert stablecoins to fiat currency with bank settlement.
+                        Convert USDC or USDT to Ethiopian Birr (ETB) with payout to local banks.
                       </p>
                     </div>
 
@@ -506,18 +502,16 @@ print(lock)`,
 
                       {Object.entries(codeExamples.offramp).map(([lang, code]) => <TabsContent key={lang} value={lang}>
                           <div className="relative syntax-highlight">
-                            <button onClick={() => copyToClipboard(code, `offramp-${lang}`)} className="absolute top-4 right-4 p-2 hover:bg-primary/10 rounded transition-colors">
-                              {copiedCode === `offramp-${lang}` ? <Check className="w-4 h-4 text-green-500" /> : <Copy className="w-4 h-4 text-muted-foreground" />}
+                            <button onClick={() => copyToClipboard(code, `offramp-${lang}`)} className="absolute top-4 right-4 text-primary hover:text-primary/80 transition-colors">
+                              {copiedCode === `offramp-${lang}` ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
                             </button>
-                            <pre className="overflow-x-auto code-block">
-                              <code className="text-foreground">{code}</code>
-                            </pre>
+                            <pre className="text-sm overflow-x-auto"><code>{code}</code></pre>
                           </div>
                         </TabsContent>)}
                     </Tabs>
                   </div>
 
-                  {/* Get Quotes Endpoint */}
+                  {/* Quotes Endpoint */}
                   <div className="space-y-6 border border-border rounded-xl p-6 bg-card">
                     <div>
                       <div className="flex items-center space-x-3 mb-3">
@@ -527,7 +521,7 @@ print(lock)`,
                         <code className="font-mono text-lg text-foreground">/v1/quotes</code>
                       </div>
                       <p className="text-muted-foreground font-body">
-                        Get real-time FX quotes for currency pairs.
+                        Get real-time exchange rate quotes for USDC and USDT conversions.
                       </p>
                     </div>
 
@@ -541,12 +535,10 @@ print(lock)`,
 
                       {Object.entries(codeExamples.quotes).map(([lang, code]) => <TabsContent key={lang} value={lang}>
                           <div className="relative syntax-highlight">
-                            <button onClick={() => copyToClipboard(code, `quotes-${lang}`)} className="absolute top-4 right-4 p-2 hover:bg-primary/10 rounded transition-colors">
-                              {copiedCode === `quotes-${lang}` ? <Check className="w-4 h-4 text-green-500" /> : <Copy className="w-4 h-4 text-muted-foreground" />}
+                            <button onClick={() => copyToClipboard(code, `quotes-${lang}`)} className="absolute top-4 right-4 text-primary hover:text-primary/80 transition-colors">
+                              {copiedCode === `quotes-${lang}` ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
                             </button>
-                            <pre className="overflow-x-auto code-block">
-                              <code className="text-foreground">{code}</code>
-                            </pre>
+                            <pre className="text-sm overflow-x-auto"><code>{code}</code></pre>
                           </div>
                         </TabsContent>)}
                     </Tabs>
@@ -562,7 +554,7 @@ print(lock)`,
                         <code className="font-mono text-lg text-foreground">/v1/rate-locks</code>
                       </div>
                       <p className="text-muted-foreground font-body">
-                        Lock exchange rates for 120 seconds to guarantee pricing.
+                        Lock an exchange rate for a specified duration before executing a transaction.
                       </p>
                     </div>
 
@@ -576,28 +568,13 @@ print(lock)`,
 
                       {Object.entries(codeExamples.rateLock).map(([lang, code]) => <TabsContent key={lang} value={lang}>
                           <div className="relative syntax-highlight">
-                            <button onClick={() => copyToClipboard(code, `ratelock-${lang}`)} className="absolute top-4 right-4 p-2 hover:bg-primary/10 rounded transition-colors">
-                              {copiedCode === `ratelock-${lang}` ? <Check className="w-4 h-4 text-green-500" /> : <Copy className="w-4 h-4 text-muted-foreground" />}
+                            <button onClick={() => copyToClipboard(code, `ratelock-${lang}`)} className="absolute top-4 right-4 text-primary hover:text-primary/80 transition-colors">
+                              {copiedCode === `ratelock-${lang}` ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
                             </button>
-                            <pre className="overflow-x-auto code-block">
-                              <code className="text-foreground">{code}</code>
-                            </pre>
+                            <pre className="text-sm overflow-x-auto"><code>{code}</code></pre>
                           </div>
                         </TabsContent>)}
                     </Tabs>
-                  </div>
-
-                  {/* Additional Endpoint - Get Transaction */}
-                  <div className="p-6 border border-border rounded-xl bg-card">
-                    <div className="flex items-center space-x-3 mb-2">
-                      <span className="px-3 py-1 bg-blue-500/10 text-blue-600 dark:text-blue-400 rounded font-mono text-sm font-semibold">
-                        GET
-                      </span>
-                      <code className="font-mono text-foreground">/v1/transactions/{'{id}'}</code>
-                    </div>
-                    <p className="text-sm text-muted-foreground font-body">
-                      Retrieve transaction status and details by transaction ID.
-                    </p>
                   </div>
                 </motion.div>}
 
@@ -612,60 +589,60 @@ print(lock)`,
                   <div>
                     <h2 className="text-4xl font-heading font-bold mb-4">Webhooks</h2>
                     <p className="text-lg text-muted-foreground font-body">
-                      Receive real-time notifications about transaction events, settlement
-                      confirmations, and system updates.
+                      Receive real-time notifications for transaction events. Configure webhook
+                      endpoints to track status changes, completions, and failures.
                     </p>
                   </div>
 
                   <div className="space-y-4">
-                    <h3 className="text-2xl font-heading font-semibold">Event Types</h3>
-                    <div className="grid gap-4">
+                    <h3 className="text-2xl font-heading font-semibold">Supported Events</h3>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       {[{
-                    event: "TRANSACTION_CREATED",
+                    event: "transaction.created",
                     desc: "New transaction initiated"
                   }, {
-                    event: "RATE_LOCKED",
-                    desc: "FX rate locked for transaction"
+                    event: "transaction.completed",
+                    desc: "Transaction successfully completed"
                   }, {
-                    event: "SETTLED",
-                    desc: "Transaction successfully settled"
+                    event: "transaction.failed",
+                    desc: "Transaction failed"
                   }, {
-                    event: "FAILED",
-                    desc: "Transaction failed or rejected"
+                    event: "rate_lock.expired",
+                    desc: "Rate lock has expired"
                   }].map((webhook, idx) => <div key={idx} className="p-4 border border-border rounded-lg bg-card">
-                          <code className="font-mono text-primary">{webhook.event}</code>
-                          <p className="text-sm text-muted-foreground font-body mt-2">{webhook.desc}</p>
+                          <code className="text-sm text-primary font-mono">{webhook.event}</code>
+                          <p className="text-sm text-muted-foreground mt-1">{webhook.desc}</p>
                         </div>)}
+                    </div>
+                  </div>
+
+                  <div className="bg-muted/30 border border-border rounded-xl p-6">
+                    <h3 className="text-xl font-heading font-semibold mb-4">Example Webhook Payload</h3>
+                    <div className="relative syntax-highlight">
+                      <pre className="text-sm overflow-x-auto"><code>{`{
+  "event": "transaction.completed",
+  "timestamp": "2025-01-15T10:35:00Z",
+  "data": {
+    "id": "txn_abc123xyz",
+    "status": "completed",
+    "amount": 1000,
+    "currency": "USD",
+    "stablecoin": "USDC"
+  }
+}`}</code></pre>
                     </div>
                   </div>
 
                   <div className="bg-yellow-500/10 border border-yellow-500/20 rounded-xl p-6">
                     <h3 className="text-xl font-heading font-semibold mb-2 flex items-center text-foreground">
                       <Clock className="w-5 h-5 mr-2 text-yellow-600 dark:text-yellow-400" />
-                      Coming Soon - Q1 2026
+                      Coming Soon
                     </h3>
                     <p className="text-muted-foreground font-body">
-                      Webhook management portal with real-time event logs, retry configuration, and signature verification.
+                      Webhook management dashboard with retry policies and event logs coming soon.
                     </p>
                   </div>
                 </motion.div>}
-
-              {/* Request API Access CTA */}
-              <div className="mt-16 p-8 bg-gradient-to-br from-primary/10 to-primary/5 border border-primary/20 rounded-2xl text-center">
-                <h3 className="text-2xl font-heading font-bold mb-4 text-foreground">Ready to Get Started?</h3>
-                <p className="text-muted-foreground font-body mb-6 max-w-2xl mx-auto">
-                  Request early access to HashPay&apos;s API and start building compliant
-                  stablecoin infrastructure today. Contact{' '}
-                  <a href="mailto:developers@hashpayremit.com" className="text-primary hover:underline font-semibold">
-                    developers@hashpayremit.com
-                  </a>
-                </p>
-                <Link to="/contact">
-                  <Button size="lg" className="text-lg px-8">
-                    Request Early API Access
-                  </Button>
-                </Link>
-              </div>
             </main>
           </div>
         </div>
@@ -674,4 +651,5 @@ print(lock)`,
       <Footer />
     </div>;
 };
+
 export default Developers;

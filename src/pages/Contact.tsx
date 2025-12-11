@@ -46,7 +46,7 @@ const Contact = () => {
               Get in Touch
             </h1>
             <p className="text-base sm:text-lg md:text-xl text-muted-foreground">
-              Ready to integrate HashPay's stablecoin infrastructure? 
+              Ready to learn more about HashPay's stablecoin FX infrastructure? 
               Let's discuss how we can support your use case.
             </p>
           </div>
@@ -161,10 +161,23 @@ const Contact = () => {
                       <MapPin className="w-6 h-6 text-primary" />
                     </div>
                     <div>
-                      <h3 className="font-semibold mb-1 text-foreground">Operating Region</h3>
-                      <p className="text-muted-foreground">Ethiopia & Sub-Saharan Africa</p>
-                      <p className="text-sm text-muted-foreground mt-1">
-                        Licensed FX Bureau in Ethiopia
+                      <h3 className="font-semibold mb-1 text-foreground">Headquarters</h3>
+                      <p className="text-muted-foreground">
+                        1000 E 146th St, Suite 104<br />
+                        Burnsville, MN 55337<br />
+                        United States
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="p-3 bg-primary/10 rounded-lg">
+                      <MapPin className="w-6 h-6 text-primary" />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold mb-1 text-foreground">Operations</h3>
+                      <p className="text-muted-foreground">
+                        Addis Ababa, Ethiopia
                       </p>
                     </div>
                   </div>
