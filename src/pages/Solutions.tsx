@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -10,17 +11,17 @@ const Solutions = () => {
       id: "banks",
       label: "Banks & FX Desks",
       icon: Building2,
-      title: "Regulated Treasury Infrastructure",
-      description: "Hedge and hold reserves in stablecoins with complete compliance and custody controls.",
+      title: "Treasury & FX Solutions",
+      description: "Manage treasury operations with stablecoin reserves and compliant FX services.",
       benefits: [
-        "Licensed FX framework",
-        "Institutional custody via Fireblocks MPC",
+        "USDC & USDT support",
+        "Secure custody partnerships",
         "Real-time treasury visibility",
         "Automated reconciliation",
         "Transparent rate pricing",
-        "Multi-sig approval workflows"
+        "Multi-approval workflows"
       ],
-      integration: "Direct API integration or banking rails with automated KYC/AML verification.",
+      integration: "API integration or banking rails with partner verification.",
       cta: "Contact Banking Team"
     },
     {
@@ -28,11 +29,11 @@ const Solutions = () => {
       label: "Fintechs & PSPs",
       icon: Smartphone,
       title: "Embedded Stablecoin Settlement",
-      description: "Add compliant stablecoin rails to your platform with minimal integration time.",
+      description: "Add compliant stablecoin rails to your platform with simple integration.",
       benefits: [
         "RESTful API with webhooks",
         "Sandbox environment",
-        "Pre-built SDKs",
+        "Documentation & support",
         "Reduced time-to-market",
         "24/7 settlement",
         "Transparent pricing"
@@ -48,9 +49,9 @@ const Solutions = () => {
       description: "Manage international payments and disbursements with complete audit trails.",
       benefits: [
         "24/7 instant settlement",
-        "Multi-currency support",
-        "Immutable audit logs",
-        "Multi-sig controls",
+        "USD to ETB support",
+        "Full audit logs",
+        "Multi-approval controls",
         "Compliance reporting",
         "Treasury dashboards"
       ],
@@ -62,9 +63,9 @@ const Solutions = () => {
       label: "Payment Processors",
       icon: CreditCard,
       title: "Instant Merchant Payouts",
-      description: "Enable real-time merchant settlements with minimal FX spread.",
+      description: "Enable real-time merchant settlements with competitive FX rates.",
       benefits: [
-        "Instant payouts",
+        "Fast payouts",
         "Batch processing",
         "Automated reconciliation",
         "Competitive FX rates",
@@ -78,17 +79,17 @@ const Solutions = () => {
       id: "liquidity",
       label: "Liquidity Partners",
       icon: Droplets,
-      title: "Programmatic Liquidity Access",
-      description: "Provide or access stablecoin liquidity through our institutional infrastructure.",
+      title: "Liquidity Partnership",
+      description: "Provide or access stablecoin liquidity through our secure infrastructure.",
       benefits: [
-        "Deep liquidity pools",
-        "API-first access",
+        "Liquidity access",
+        "API-first integration",
         "Competitive rates",
         "Real-time settlement",
-        "Multi-corridor coverage",
+        "Ethiopia corridor",
         "Partnership opportunities"
       ],
-      integration: "Direct market access via API with real-time pricing and settlement.",
+      integration: "Direct access via API with real-time pricing and settlement.",
       cta: "Become a Partner"
     }
   ];
@@ -161,9 +162,11 @@ const Solutions = () => {
                       <p className="text-sm sm:text-base text-muted-foreground mb-4 sm:mb-6">
                         {solution.integration}
                       </p>
-                      <Button size="lg" className="w-full md:w-auto py-6 text-base">
-                        {solution.cta}
-                      </Button>
+                      <Link to="/contact">
+                        <Button size="lg" className="w-full md:w-auto py-6 text-base">
+                          {solution.cta}
+                        </Button>
+                      </Link>
                     </div>
                   </div>
 
@@ -171,7 +174,7 @@ const Solutions = () => {
                     <div className="flex flex-wrap items-center gap-3 sm:gap-4 text-xs sm:text-sm text-muted-foreground">
                       <span className="flex items-center gap-2">
                         <div className="w-2 h-2 bg-green-500 rounded-full flex-shrink-0" />
-                        <span>Licensed & Compliant</span>
+                        <span>Building Compliance</span>
                       </span>
                       <span className="flex items-center gap-2">
                         <div className="w-2 h-2 bg-green-500 rounded-full flex-shrink-0" />
@@ -179,7 +182,7 @@ const Solutions = () => {
                       </span>
                       <span className="flex items-center gap-2">
                         <div className="w-2 h-2 bg-green-500 rounded-full flex-shrink-0" />
-                        <span>T+0 Settlement</span>
+                        <span>USDC & USDT</span>
                       </span>
                     </div>
                   </div>

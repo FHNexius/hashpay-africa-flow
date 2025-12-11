@@ -53,7 +53,7 @@ const Footer = () => {
               className="h-40"
             />
             <p className="text-sm text-muted-foreground font-body leading-relaxed">
-              Licensed stablecoin infrastructure for Sub-Saharan Africa
+              Stablecoin-powered FX infrastructure for Ethiopia
             </p>
           </motion.div>
 
@@ -161,7 +161,7 @@ const Footer = () => {
               <li className="flex items-start space-x-3">
                 <MapPin className="w-4 h-4 mt-0.5 text-primary flex-shrink-0" />
                 <span className="text-sm text-muted-foreground font-body">
-                  Operating in Ethiopia & Sub-Saharan Africa
+                  Burnsville, MN, USA
                 </span>
               </li>
             </ul>

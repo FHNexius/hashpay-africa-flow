@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { CheckCircle2 } from "lucide-react";
@@ -7,82 +8,82 @@ const Platform = () => {
   const modules = [
     {
       title: "On-Ramp",
-      description: "Convert USD/fiat to USDC/USDT with automated deposit detection, confirmations, and idempotency.",
+      description: "Convert USD/fiat to USDC or USDT through our authorized partner network.",
       features: [
-        "Instant deposit detection",
-        "Multi-chain support",
+        "Deposit detection",
+        "USDC & USDT support",
         "Automated confirmations",
-        "Idempotency guarantees"
+        "Partner banking integration"
       ]
     },
     {
       title: "Off-Ramp",
-      description: "Convert USDC/USDT to ETB/fiat with orchestrated payout reconciliation.",
+      description: "Convert USDC/USDT to ETB/fiat with compliant payout processing.",
       features: [
-        "Instant payout processing",
-        "Multi-corridor support",
+        "Fast payout processing",
+        "Ethiopia corridor support",
         "Automated reconciliation",
-        "Bank integration"
+        "Authorized payout partners"
       ]
     },
     {
       title: "FX Engine",
-      description: "Live pricing with 120-second rate lock, transparent spreads, and automated hedging.",
+      description: "Live pricing with rate lock, transparent spreads, and competitive rates.",
       features: [
-        "120-second rate lock",
+        "Rate lock feature",
         "Real-time pricing",
-        "25-50bps spread buffer",
-        "Auto-hedge >$10k transactions"
+        "Transparent spreads",
+        "Competitive rates"
       ]
     },
     {
-      title: "Settlement Orchestrator",
-      description: "Saga-based orchestration with forward/compensate logic, retries, and circuit breakers.",
+      title: "Settlement",
+      description: "Reliable settlement processing with retries and status tracking.",
       features: [
-        "Saga pattern implementation",
-        "Automated retries",
-        "Dead letter queue",
-        "Circuit breakers"
+        "Automated processing",
+        "Retry handling",
+        "Status tracking",
+        "Confirmation notifications"
       ]
     },
     {
-      title: "Event-Sourced Ledger",
-      description: "Immutable transaction events with CQRS read models and complete auditability.",
+      title: "Transaction Ledger",
+      description: "Complete transaction records with full auditability.",
       features: [
-        "Immutable event log",
-        "CQRS architecture",
-        "Idempotency keys",
-        "Complete audit trail"
+        "Complete transaction log",
+        "Audit trail",
+        "Unique transaction IDs",
+        "Export capabilities"
       ]
     },
     {
-      title: "Fireblocks MPC Custody",
-      description: "Institutional-grade custody with hot/warm/cold wallet policies and automated rebalancing.",
+      title: "Secure Custody",
+      description: "Partner with authorized custody providers for secure asset storage.",
       features: [
-        "MPC wallet technology",
-        "Multi-tier policy engine",
-        "Automated rebalancing",
-        "Webhook integration"
+        "Authorized custody partners",
+        "Secure storage",
+        "Balance management",
+        "Withdrawal processing"
       ]
     },
     {
-      title: "Reconciliation Engine",
-      description: "Three-way matching between ledger, blockchain, and PSP with automated discrepancy workflows.",
+      title: "Reconciliation",
+      description: "Matching between ledger and partner records with discrepancy handling.",
       features: [
-        "Hourly on-chain matching",
-        "PSP data ingestion",
-        "Daily checksums",
-        "Discrepancy workflows"
+        "Regular matching",
+        "Partner data integration",
+        "Balance verification",
+        "Discrepancy alerts"
       ]
     },
     {
-      title: "Compliance & Risk",
-      description: "Real-time rules engine with async screening and manual review workflows.",
+      title: "Compliance",
+      description: "Built-in compliance checks working with regulatory advisors.",
       features: [
-        "Synchronous rules engine",
-        "Sumsub/Chainalysis screening",
-        "AML/CFT compliance",
-        "Manual review SLAs"
+        "Partner verification",
+        "Transaction monitoring",
+        "Working toward approvals",
+        "Compliance reporting"
       ]
     }
   ];
@@ -97,11 +98,11 @@ const Platform = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center mb-12 sm:mb-16">
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 text-foreground">
-              Platform Architecture
+              Platform Overview
             </h1>
             <p className="text-base sm:text-lg md:text-xl text-muted-foreground">
-              Licensed stablecoin FX infrastructure built for institutional performance. 
-              Modular, event-sourced, and compliance-ready from day one.
+              Stablecoin-powered FX infrastructure built for simplicity and reliability. 
+              USDC and USDT support with compliant on-ramp and off-ramp partners.
             </p>
           </div>
         </div>
@@ -140,14 +141,16 @@ const Platform = () => {
       <section className="py-12 sm:py-16 md:py-20 bg-background">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 text-foreground">
-            Ready to integrate?
+            Ready to get started?
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-muted-foreground mb-6 sm:mb-8 max-w-2xl mx-auto">
-            Get started with HashPay's institutional infrastructure today.
+            Contact us to learn more about HashPay's stablecoin FX infrastructure.
           </p>
-          <Button size="lg" className="text-base sm:text-lg px-6 sm:px-8 py-6 w-full sm:w-auto">
-            Request Platform Access
-          </Button>
+          <Link to="/contact">
+            <Button size="lg" className="text-base sm:text-lg px-6 sm:px-8 py-6 w-full sm:w-auto">
+              Contact Sales
+            </Button>
+          </Link>
         </div>
       </section>
 

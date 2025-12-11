@@ -1,32 +1,88 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Shield, Lock, FileCheck, Database, Eye, CheckCircle2 } from "lucide-react";
+
 const SecurityCompliance = () => {
   const sections = [{
     icon: Shield,
-    title: "Security Infrastructure",
-    items: ["TLS 1.3 encryption with HSTS", "mTLS for service-to-service communication", "Role-based access control (RBAC)", "Multi-factor authentication (2FA)", "Vault/Secrets Manager for key management", "AES-256 encryption at rest", "WORM (Write Once Read Many) audit logs", "Regular penetration testing"]
+    title: "Security Practices",
+    items: [
+      "Industry-standard encryption",
+      "Secure data transmission",
+      "Access controls and authentication",
+      "Regular security reviews",
+      "Secure key management",
+      "Data protection at rest",
+      "Audit logging",
+      "Monitoring and alerts"
+    ]
   }, {
     icon: FileCheck,
-    title: "Regulatory Compliance",
-    items: ["Licensed FX Bureau in Ethiopia (NBE)", "AML/CFT compliance framework", "OFAC sanctions screening", "PEP and adverse media checks", "Suspicious activity monitoring", "Automated reporting workflows", "KYC/KYB verification", "Transaction monitoring"]
+    title: "Compliance Approach",
+    items: [
+      "Working with U.S. regulatory advisors",
+      "Collaborating with Ethiopian regulatory experts",
+      "Building compliant pathways",
+      "Partner verification processes",
+      "Transaction monitoring",
+      "Reporting capabilities",
+      "Know Your Customer (KYC) support",
+      "Know Your Business (KYB) support"
+    ]
   }, {
     icon: Database,
     title: "Auditability & Transparency",
-    items: ["Immutable event-sourced ledger", "7+ year data retention", "Exportable audit reports", "Regulator-ready documentation", "Complete transaction history", "Reconciliation reports", "Compliance dashboards", "Real-time monitoring"]
+    items: [
+      "Complete transaction records",
+      "Data retention policies",
+      "Exportable reports",
+      "Clear documentation",
+      "Transaction history",
+      "Reconciliation reports",
+      "Compliance dashboards",
+      "Status monitoring"
+    ]
   }, {
     icon: Lock,
     title: "Custody & Asset Security",
-    items: ["Fireblocks MPC wallet technology", "Multi-tier wallet policy (hot/warm/cold)", "Multi-signature approvals", "Time-locked transactions", "Automated rebalancing", "On-chain monitoring", "Webhook reconciliation", "Insurance coverage"]
+    items: [
+      "Authorized custody partners",
+      "Secure wallet management",
+      "Multi-approval workflows",
+      "Withdrawal controls",
+      "Balance management",
+      "Partner verification",
+      "Secure asset storage",
+      "Regular auditing"
+    ]
   }, {
     icon: Eye,
     title: "Transaction Monitoring",
-    items: ["Real-time risk scoring", "Behavioral analytics", "Velocity checks", "Pattern detection", "Anomaly alerts", "Manual review queues", "Escalation workflows", "Case management"]
+    items: [
+      "Transaction review",
+      "Activity monitoring",
+      "Volume tracking",
+      "Pattern awareness",
+      "Alert notifications",
+      "Review processes",
+      "Escalation procedures",
+      "Case documentation"
+    ]
   }, {
     icon: CheckCircle2,
     title: "Reconciliation & Accuracy",
-    items: ["Three-way reconciliation (ledger, chain, PSP)", "Hourly on-chain matching", "Automated checksum validation", "Discrepancy detection", "SLA-based resolution", "Balance verification", "Settlement confirmation", "Audit trail generation"]
+    items: [
+      "Ledger matching",
+      "Regular verification",
+      "Automated validation",
+      "Discrepancy detection",
+      "Timely resolution",
+      "Balance verification",
+      "Settlement confirmation",
+      "Audit trail maintenance"
+    ]
   }];
+
   return <div className="min-h-screen bg-background">
       <Navigation />
       
@@ -39,8 +95,8 @@ const SecurityCompliance = () => {
               Security & Compliance
             </h1>
             <p className="text-base sm:text-lg md:text-xl text-muted-foreground">
-              Bank-grade security, regulatory compliance, and complete auditability 
-              built into every layer of our infrastructure.
+              We follow industry-standard security practices and work closely with 
+              regulatory experts in both the U.S. and Ethiopia.
             </p>
           </div>
         </div>
@@ -57,19 +113,19 @@ const SecurityCompliance = () => {
                 </div>
                 <div>
                   <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-1">
-                    Licensed FX Bureau
+                    U.S. Parent Company
                   </h3>
                   <p className="text-sm sm:text-base text-muted-foreground">
-                    Authorized by the National Bank of Ethiopia
+                    HashPay LLC, Burnsville, Minnesota
                   </p>
                 </div>
               </div>
               <div className="flex flex-wrap justify-center gap-2 sm:gap-3 w-full md:w-auto">
-                <div className="px-3 sm:px-4 py-2 bg-green-500/10 text-green-700 dark:text-green-400 rounded-lg font-medium text-xs sm:text-sm">
-                  AML/CFT Compliant
-                </div>
                 <div className="px-3 sm:px-4 py-2 bg-blue-500/10 text-blue-700 dark:text-blue-400 rounded-lg font-medium text-xs sm:text-sm">
-                  SOC 2 Ready
+                  Building Compliance
+                </div>
+                <div className="px-3 sm:px-4 py-2 bg-green-500/10 text-green-700 dark:text-green-400 rounded-lg font-medium text-xs sm:text-sm">
+                  USDC & USDT
                 </div>
               </div>
             </div>
@@ -101,10 +157,25 @@ const SecurityCompliance = () => {
         </div>
       </section>
 
-      {/* Trust Markers */}
-      
+      {/* Regulatory Note */}
+      <section className="py-12 sm:py-16 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto bg-card border border-border rounded-xl sm:rounded-2xl p-6 sm:p-8">
+            <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-4">
+              Regulatory Approach
+            </h3>
+            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+              HashPay is actively building compliant pathways and working with regulatory advisors 
+              in both the United States and Ethiopia. We are pursuing required approvals and 
+              maintaining compliant relationships with authorized on-ramp and off-ramp service providers. 
+              Our platform supports USDC (Circle) and USDT (Tether) for all FX and settlement operations.
+            </p>
+          </div>
+        </div>
+      </section>
 
       <Footer />
     </div>;
 };
+
 export default SecurityCompliance;
