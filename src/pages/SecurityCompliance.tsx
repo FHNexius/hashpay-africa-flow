@@ -1,88 +1,32 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Shield, Lock, FileCheck, Database, Eye, CheckCircle2 } from "lucide-react";
-
 const SecurityCompliance = () => {
   const sections = [{
     icon: Shield,
     title: "Security Practices",
-    items: [
-      "Industry-standard encryption",
-      "Secure data transmission",
-      "Access controls and authentication",
-      "Regular security reviews",
-      "Secure key management",
-      "Data protection at rest",
-      "Audit logging",
-      "Monitoring and alerts"
-    ]
+    items: ["Industry-standard encryption", "Secure data transmission", "Access controls and authentication", "Regular security reviews", "Secure key management", "Data protection at rest", "Audit logging", "Monitoring and alerts"]
   }, {
     icon: FileCheck,
     title: "Compliance Approach",
-    items: [
-      "Working with U.S. regulatory advisors",
-      "Collaborating with Ethiopian regulatory experts",
-      "Building compliant pathways",
-      "Partner verification processes",
-      "Transaction monitoring",
-      "Reporting capabilities",
-      "Know Your Customer (KYC) support",
-      "Know Your Business (KYB) support"
-    ]
+    items: ["Working with U.S. regulatory advisors", "Collaborating with Ethiopian regulatory experts", "Building compliant pathways", "Partner verification processes", "Transaction monitoring", "Reporting capabilities", "Know Your Customer (KYC) support", "Know Your Business (KYB) support"]
   }, {
     icon: Database,
     title: "Auditability & Transparency",
-    items: [
-      "Complete transaction records",
-      "Data retention policies",
-      "Exportable reports",
-      "Clear documentation",
-      "Transaction history",
-      "Reconciliation reports",
-      "Compliance dashboards",
-      "Status monitoring"
-    ]
+    items: ["Complete transaction records", "Data retention policies", "Exportable reports", "Clear documentation", "Transaction history", "Reconciliation reports", "Compliance dashboards", "Status monitoring"]
   }, {
     icon: Lock,
     title: "Custody & Asset Security",
-    items: [
-      "Authorized custody partners",
-      "Secure wallet management",
-      "Multi-approval workflows",
-      "Withdrawal controls",
-      "Balance management",
-      "Partner verification",
-      "Secure asset storage",
-      "Regular auditing"
-    ]
+    items: ["Authorized custody partners", "Secure wallet management", "Multi-approval workflows", "Withdrawal controls", "Balance management", "Partner verification", "Secure asset storage", "Regular auditing"]
   }, {
     icon: Eye,
     title: "Transaction Monitoring",
-    items: [
-      "Transaction review",
-      "Activity monitoring",
-      "Volume tracking",
-      "Pattern awareness",
-      "Alert notifications",
-      "Review processes",
-      "Escalation procedures",
-      "Case documentation"
-    ]
+    items: ["Transaction review", "Activity monitoring", "Volume tracking", "Pattern awareness", "Alert notifications", "Review processes", "Escalation procedures", "Case documentation"]
   }, {
     icon: CheckCircle2,
     title: "Reconciliation & Accuracy",
-    items: [
-      "Ledger matching",
-      "Regular verification",
-      "Automated validation",
-      "Discrepancy detection",
-      "Timely resolution",
-      "Balance verification",
-      "Settlement confirmation",
-      "Audit trail maintenance"
-    ]
+    items: ["Ledger matching", "Regular verification", "Automated validation", "Discrepancy detection", "Timely resolution", "Balance verification", "Settlement confirmation", "Audit trail maintenance"]
   }];
-
   return <div className="min-h-screen bg-background">
       <Navigation />
       
@@ -115,9 +59,7 @@ const SecurityCompliance = () => {
                   <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-1">
                     U.S. Parent Company
                   </h3>
-                  <p className="text-sm sm:text-base text-muted-foreground">
-                    HashPay LLC, Burnsville, Minnesota
-                  </p>
+                  <p className="text-sm sm:text-base text-muted-foreground">HashPay LLC</p>
                 </div>
               </div>
               <div className="flex flex-wrap justify-center gap-2 sm:gap-3 w-full md:w-auto">
@@ -177,5 +119,4 @@ const SecurityCompliance = () => {
       <Footer />
     </div>;
 };
-
 export default SecurityCompliance;
